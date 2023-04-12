@@ -8,40 +8,32 @@ Con las librerias beautifulsoup4, lxml y requests
 import bs4
 import requests
 
+# Variables
 raiz = 'http://books.toscrape.com/catalogue/page-'
 extension = '.html'
+fin_url = True
+page = 0
+lista_titulos = []
 
+# Bucle para formar url y añadir a una lista
+while fin_url:
 
-def comprobar_enlaces(http, ext):
-    """ Comprobar si el enlace existe """
+    page += 1
+    page = str(page)
 
-    # Variables
-    enlaces = []
-    fin_url = True
-    page = 0
+    enlace = raiz + page + extension
 
-    # Bucle para formar url y añadir a una lista
-    while fin_url:
+    resultado = requests.get(enlace)
+    sopa = bs4.BeautifulSoup(resultado.text, 'lxml')
 
-        page += 1
-        page = str(page)
+    if resultado:
+        page = int(page)
 
-        enlace = http + page + ext
+        # Todos los títulos
+        titulos = sopa.select('.product_pod a')
+        for title in titulos:
+            if title.get('title') != None:
+                lista_titulos.append(title.get('title'))
 
-        resultado = requests.get(enlace)
-
-        if resultado:
-            enlaces.append(enlace)
-            page = int(page)
-            # BORRAR CUANDO ESTE LISTO EL RESTO DEL DOCUMENTO
-            break
-        else:
-            fin_url = False
-
-    return enlaces
-
-
-print(comprobar_enlaces(raiz, extension))
-
-
-# sopa = bs4.BeautifulSoup(resultado.text, 'lxml')
+    else:
+        fin_url = False
