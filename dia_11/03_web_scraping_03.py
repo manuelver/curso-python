@@ -33,6 +33,7 @@ def comprobar_enlaces(http, ext):
         if resultado:
             enlaces.append(enlace)
             page = int(page)
+            # BORRAR CUANDO ESTE LISTO EL RESTO DEL DOCUMENTO
             break
         else:
             fin_url = False
