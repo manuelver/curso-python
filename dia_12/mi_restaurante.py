@@ -1,5 +1,5 @@
 """
-Aplicación de facturación - Mi restaurant
+Programa día 12 - Aplicación de facturación - Mi restaurant
 
 tkinter
 """
