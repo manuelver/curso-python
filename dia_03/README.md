@@ -377,9 +377,9 @@ print(mi_diccionario["recursos"][1])
 
 Métodos para listar los nombres de:
 
-| Método    | Descripción           |
-| --------- | --------------------- |
-| keys( )   | las claves            |
+|  Método   | Descripción           |
+| :-------: | :-------------------- |
+|  keys( )  | las claves            |
 | values( ) | los valores           |
 | items( )  | los pares clave:valor |
 
@@ -601,16 +601,16 @@ Los booleanos son tipos de datos binarios (True/False), que surgen de operacione
 ### 3.9.1. - operadores lógicos
 
 | Operador | Descripción                                  |
-| -------- | -------------------------------------------- |
-| `==`     | igual a                                      |
-| `!=`     | no igual a                                   |
-| `>`      | mayor que                                    |
-| `<`      | menos que                                    |
-| `>=`     | mayor o igual a                              |
-| `<=`     | menor o igual a                              |
-| `and`    | y (True si dos declaraciones son True)       |
-| `or`     | o (True si al menos una declaración es True) |
-| `not`    | no (invierte el valor del booleano           |
+| :------: | :------------------------------------------- |
+|   `==`   | igual a                                      |
+|   `!=`   | no igual a                                   |
+|   `>`    | mayor que                                    |
+|   `<`    | menos que                                    |
+|   `>=`   | mayor o igual a                              |
+|   `<=`   | menor o igual a                              |
+|  `and`   | y (True si dos declaraciones son True)       |
+|   `or`   | o (True si al menos una declaración es True) |
+|  `not`   | no (invierte el valor del booleano           |
 
 ## 3.10. - Proyecto del Día 3
 
