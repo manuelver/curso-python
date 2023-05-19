@@ -16,6 +16,23 @@
   - [Ficheros y documentación del día 2](#ficheros-y-documentación-del-día-2)
 
 ## 2.1. - Tipos de datos
+En Python tenemos varios tipos o estructuras de datos, que son fundamentales en programación ya que almacenan información, y nos permiten manipularla. 
+
+| texto (srt) | números (int, float) | booleanos (bool) |
+| ----------- | -------------------- | ---------------- |
+| "Python"    | Int 3                | True             |
+| "750"       | float 3.0            | False            |
+
+
+| estructuras     | Descripción        | mutable              | ordenada (Tiene índice) | duplicados         |
+| --------------- | ------------------ | -------------------- | ----------------------- | ------------------ |
+| listas []       | *list*             | :white_check_mark:   | :white_check_mark:      | :white_check_mark: |
+| tuplas ()       | *Entre paréntesis* | :x:                  | :white_check_mark:      | :white_check_mark: |
+| sets {}         | *Entre llaves*     | :white_check_mark:   | :x:                     | :x:                |
+| diccionarios {} | *dic key:valor*    | :white_check_mark: * | :x: **                  | :white_check_mark: |
+
+*: En Python 3.7+, existen consideraciones		**: key es única; value puede repetirse
+
 
 ## 2.2. - Variables
 
