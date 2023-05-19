@@ -1,44 +1,46 @@
-# Curso de python
-## [Manuel Vergara](https://vergaracarmona.es) – 2023
+# Curso de python 🚀
 
+Este repositorio contiene los apuntes tomados en diversos cursos de python, en especial en el curso «[Python total](https://www.udemy.com/course/python-total)» impartido por «Escuela Directa» que consta de 30 horas aproximadamente de vídeo-tutoriales. Las prácticas y ejercicios aquí contenidos tuvieron una duración de más de 200 horas.
 
-Este documento contiene los apuntes tomados en el curso «[Python total](https://www.udemy.com/course/python-total)» impartido por «Escuela Directa» en enero y febrero de 2023. El curso udemy consta de 30 horas aproximadamente de vídeo-tutoriales. Las prácticas aquí contenidas tuvieron una duración de alrededor de unas 150 horas.
+Los apuntes no fueron pensados para compartirlos, por ello pueden tener lagunas de información o contenido adicional respecto al curso, ya que se redactaron para recordar procedimientos y conceptos que el autor creyó relevantes. Teniendo un documento, a mi parecer, tan completo y entendiendo que el conocimiento debe ser libre se decidió compartirlo. Cualquier error puedes abrir un issue o contactar conmigo.
 
-Los apuntes no fueron pensados para compartirlos, por ello pueden tener lagunas de información o contenido adicional respecto al curso, ya que se redactaron para recordar procedimientos y conceptos que el autor creyó relevantes. Teniendo un documento, a mi parecer, tan completo y entendiendo que el conocimiento debe ser libre se decidió compartirlo. 
-
-Si te parece útil este documento puedes agradecerlo a través de las vías de contacto de la web https://vergaracarmona.es 
+Si te parece útil este documento puedes agradecerlo a través de las vías de contacto de la web https://vergaracarmona.es o [invítandome a un café](#invítame-a-un-café-☕️) ☕️
 
 Recuerda, 
->*"Quien se corta su propia leña se calienta dos veces"*
 
----
-<br>
+> *"Quien se corta su propia leña se calienta dos veces"* 
 
-## Licencia
+# Qué es python según chatGPT
 
-![](https://creativecommons.org/wp-content/themes/cc/images/cc.logo.white.svg)
+Python es un lenguaje de programación interpretado y de alto nivel. Fue creado por Guido van Rossum y lanzado por primera vez en 1991. Python se destaca por su sintaxis clara y legible, lo que lo hace muy accesible tanto para principiantes como para programadores experimentados.
 
-Esta obra está bajo una Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional. Para ver una copia de esta licencia, visite https://creativecommons.org/licenses/by-sa/4.0/legalcode.es.
+Una de las características distintivas de Python es su enfoque en la legibilidad del código, lo que se conoce como el principio "bello es mejor que feo" (beautiful is better than ugly). Esto se logra mediante el uso de una sintaxis clara y estructurada que facilita la comprensión y el mantenimiento del código.
 
-Usted es libre de:
-- Compartir — copiar y redistribuir el material en cualquier medio o formato
-- Adaptar — remezclar, transformar y crear a partir del material para cualquier finalidad, incluso comercial.
+Python es un lenguaje multipropósito, lo que significa que se puede utilizar para una amplia variedad de aplicaciones, como desarrollo web, análisis de datos, inteligencia artificial, automatización de tareas, desarrollo de juegos y más. Tiene una amplia biblioteca estándar que proporciona módulos y funciones para realizar diversas tareas comunes, lo que facilita el desarrollo de aplicaciones sin tener que escribir todo desde cero.
 
-Bajo las condiciones siguientes:
-- Reconocimiento — Debe reconocer adecuadamente la autoría, proporcionar un enlace a la licencia e indicar si se han realizado cambios. Puede hacerlo de cualquier manera razonable, pero no de una manera que sugiera que tiene el apoyo del licenciador o lo recibe por el uso que hace.
-- Compartir Igual — Si remezcla, transforma o crea a partir del material, deberá difundir sus contribuciones bajo la misma licencia que el original.
+Una de las razones por las que Python ha ganado popularidad es su comunidad activa y su ecosistema de paquetes. Existen numerosas bibliotecas y marcos de trabajo desarrollados por la comunidad que amplían las capacidades de Python en diferentes áreas, como Django para desarrollo web, NumPy y pandas para análisis de datos, TensorFlow y PyTorch para aprendizaje automático, entre otros.
 
-![](https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png)
+Además, Python es conocido por ser un lenguaje fácil de aprender y utilizar. Su sintaxis intuitiva y legible permite a los programadores escribir código de manera más rápida y eficiente, lo que reduce el tiempo de desarrollo y facilita la colaboración en proyectos.
 
-- No hay restricciones adicionales — No puede aplicar términos legales o medidas tecnológicas que legalmente restrinjan realizar aquello que la licencia permite.
+En resumen, Python es un lenguaje de programación de alto nivel, interpretado y fácil de aprender que se utiliza ampliamente en una variedad de aplicaciones, desde desarrollo web hasta análisis de datos e inteligencia artificial. Su enfoque en la legibilidad del código y su comunidad activa lo convierten en una elección popular entre los programadores.
 
-Esta licencia está aceptada para Obras Culturales Libres.
-El licenciador no puede revocar estas libertades mientras cumpla con los términos de la licencia.
+## Tabla de comparación con otros lenguajes
 
----
-<br>
+| Característica        | Python                                           | Java                                     | C++                                     | JavaScript                                |
+| --------------------- | ------------------------------------------------ | ---------------------------------------- | --------------------------------------- | ----------------------------------------- |
+| Paradigma             | Multiparadigma                                   | Orientado a objetos, estructurado        | Multiparadigma                          | Multiparadigma                            |
+| Tipado                | Dinámico                                         | Estático                                 | Estático                                | Dinámico                                  |
+| Sintaxis              | Concisa y legible                                | Verbosa                                  | Compleja                                | Flexible                                  |
+| Uso principal         | Desarrollo web, ciencia de datos, automatización | Desarrollo de aplicaciones empresariales | Desarrollo de sistemas, videojuegos     | Desarrollo web, aplicaciones interactivas |
+| Bibliotecas           | Amplia variedad                                  | Amplia variedad                          | Amplia variedad                         | Amplia variedad                           |
+| Orientación a objetos | Sí                                               | Sí                                       | Sí                                      | Sí                                        |
+| Rendimiento           | Moderado                                         | Alto                                     | Alto                                    | Moderado                                  |
+| Comunidad y soporte   | Gran comunidad, abundante documentación          | Gran comunidad, abundante documentación  | Gran comunidad, abundante documentación | Gran comunidad, abundante documentación   |
+| Curva de aprendizaje  | Baja                                             | Moderada                                 | Alta                                    | Baja                                      |
 
-##  Índice de las materias de los días
+Esta tabla solo proporciona una comparación general entre los lenguajes y que cada uno tiene sus propias fortalezas y áreas de aplicación específicas.
+
+**Índice de los contenidos de cada día** 📎
 
 - [Día 1 - Programa un creador de nombres](dia_01/README.md)
   - 1.1. - print
@@ -170,3 +172,27 @@ El licenciador no puede revocar estas libertades mientras cumpla con los términ
   - 16.24. - Terminar el sitio
 - [Día 17 - Extra bibliotecas para hacking ético](dia_17/README.md)
   - 17.1. - Bibliotecas
+
+---
+<br>
+
+## Licencia
+
+- [Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional](LICENSE) 
+
+---
+
+<br><br>
+
+# Agradecimientos 🎁
+
+<br>
+
+# Invítame a un café ☕️
+
+<p>
+<a href="https://www.buymeacoffee.com/manuelver"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="https://www.buymeacoffee.com/manuelver" /></a>
+</p>
+
+<br><br><br>
+[Manu](https://vergaracarmona.es) 😊
