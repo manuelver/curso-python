@@ -24,17 +24,17 @@
 En Python tenemos varios tipos o estructuras de datos, que son fundamentales en programación ya que almacenan información, y nos permiten manipularla. 
 
 | texto (srt) | números (int, float) | booleanos (bool) |
-| ----------- | -------------------- | ---------------- |
-| "Python"    | Int 3                | True             |
-| "750"       | float 3.0            | False            |
+| :---------: | :------------------: | :--------------: |
+|  "Python"   |        Int 3         |       True       |
+|    "750"    |      float 3.0       |      False       |
 
 
-| estructuras     | Descripción        | mutable            | ordenada (Tiene índice) | duplicados                  |
-| --------------- | ------------------ | ------------------ | ----------------------- | --------------------------- |
-| listas []       | *list*             | :heavy_check_mark: | :heavy_check_mark:      | :heavy_check_mark:          |
-| tuplas ()       | *Entre paréntesis* | :x:                | :heavy_check_mark:      | :heavy_check_mark:          |
-| sets {}         | *Entre llaves*     | :heavy_check_mark: | :x:                     | :x:                         |
-| diccionarios {} | *dic key:valor*    | :heavy_check_mark: | :x: *                   | :x: : :heavy_check_mark: ** |
+|   estructuras   | Descripción        |      mutable       | ordenada (Tiene índice) |         duplicados          |
+| :-------------: | ------------------ | :----------------: | :---------------------: | :-------------------------: |
+|    listas []    | *list*             | :heavy_check_mark: |   :heavy_check_mark:    |     :heavy_check_mark:      |
+|    tuplas ()    | *Entre paréntesis* |        :x:         |   :heavy_check_mark:    |     :heavy_check_mark:      |
+|     sets {}     | *Entre llaves*     | :heavy_check_mark: |           :x:           |             :x:             |
+| diccionarios {} | *dic key:valor*    | :heavy_check_mark: |          :x: *          | :x: : :heavy_check_mark: ** |
 
 *: En Python 3.7+, existen consideraciones		**: key es única; value puede repetirse
 
@@ -125,16 +125,17 @@ print(f"Mi auto es {color_auto} y de matrícula {matricula}")
 
 Veamos cuáles son los operadores matemáticos básicos de Python, que utilizaremos para realizar cálculos:
 
-| Descripción                                       | Operador |
-| ------------------------------------------------- | -------- |
-| Suma                                              | +        |
-| Resta                                             | -        |
-| Multiplicación                                    | *        |
-| División                                          | /        |
-| Cociente (división "al piso". Redondeo)           | //       |
-| Resto (módulo) (Útil para detectar valores pares) | %        |
-| Potencia                                          | **       |
-| Raíz cuadrada	(¡es un caso especial de potencia!) | **0.5    |
+| Operador | Descripción                                       |
+| :------: | :------------------------------------------------ |
+|    +     | Suma                                              |
+|    -     | Resta                                             |
+|    *     | Multiplicación                                    |
+|    /     | División                                          |
+|    //    | Cociente (división "al piso". Redondeo)           |
+|    %     | Resto (módulo) (Útil para detectar valores pares) |
+|    **    | Potencia                                          |
+|  **0.5   | Raíz cuadrada (¡es un caso especial de potencia!) |
+
 
 ## 2.8. - Redondeo
 
