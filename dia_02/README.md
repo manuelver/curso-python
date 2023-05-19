@@ -31,10 +31,10 @@ En Python tenemos varios tipos o estructuras de datos, que son fundamentales en 
 
 | estructuras     | Descripción        | mutable            | ordenada (Tiene índice) | duplicados                  |
 | --------------- | ------------------ | ------------------ | ----------------------- | --------------------------- |
-| listas []       | *list*             | :white_check_mark: | :white_check_mark:      | :white_check_mark:          |
-| tuplas ()       | *Entre paréntesis* | :x:                | :white_check_mark:      | :white_check_mark:          |
-| sets {}         | *Entre llaves*     | :white_check_mark: | :x:                     | :x:                         |
-| diccionarios {} | *dic key:valor*    | :white_check_mark: | :x: *                   | :x: : :white_check_mark: ** |
+| listas []       | *list*             | :heavy_check_mark: | :heavy_check_mark:      | :heavy_check_mark:          |
+| tuplas ()       | *Entre paréntesis* | :x:                | :heavy_check_mark:      | :heavy_check_mark:          |
+| sets {}         | *Entre llaves*     | :heavy_check_mark: | :x:                     | :x:                         |
+| diccionarios {} | *dic key:valor*    | :heavy_check_mark: | :x: *                   | :x: : :heavy_check_mark: ** |
 
 *: En Python 3.7+, existen consideraciones		**: key es única; value puede repetirse
 
