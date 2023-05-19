@@ -139,7 +139,7 @@ Esta tabla solo proporciona una comparación general entre los lenguajes y que c
 - [Día 10 - Programa el juego "Invasión espacial"](dia_10/README.md)
   - 10.1. - Distancia entre dos puntos
   - 10.2. - Convertir el Juego en un Archivo Ejecutable (.exe)
-- [Día 11 - Programa un extracto de datos web](dia_11/README.md)
+- [Día 11 - Programa un web scraping](dia_11/README.md)
   - 11.1. - Extraer elementos de una clase
 - [Día 12 - Programa un gestor de restaurantes](dia_12/README.md)
 - [Día 13 - Programa un asistente de voz](dia_13/README.md)
