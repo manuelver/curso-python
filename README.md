@@ -1,6 +1,6 @@
 # Curso de python 🚀
 
-Este repositorio contiene los apuntes tomados en diversos cursos de python, en especial en el curso «[Python total](https://www.udemy.com/course/python-total)» impartido por «Escuela Directa» que consta de 30 horas aproximadamente de vídeo-tutoriales. Las prácticas y ejercicios aquí contenidos tuvieron una duración de más de 200 horas.
+Este repositorio contiene los apuntes tomados en diversos cursos de python, en especial en el curso «[Python total](https://www.udemy.com/course/python-total)» impartido por «Escuela Directa» que consta de 30 horas aproximadamente de vídeo-tutoriales. Las prácticas y ejercicios aquí contenidos tuvieron una duración de más de 200 horas, de mucho café e insomnio.
 
 Los apuntes no fueron pensados para compartirlos, por ello pueden tener lagunas de información o contenido adicional respecto al curso, ya que se redactaron para recordar procedimientos y conceptos que el autor creyó relevantes. Teniendo un documento, a mi parecer, tan completo y entendiendo que el conocimiento debe ser libre se decidió compartirlo. Cualquier error puedes abrir un issue o contactar conmigo.
 
@@ -9,6 +9,10 @@ Si te parece útil este documento puedes agradecerlo a través de las vías de c
 Recuerda, 
 
 > *"Quien se corta su propia leña se calienta dos veces"* 
+
+
+---
+<br>
 
 # Qué es python según chatGPT
 
@@ -40,7 +44,10 @@ En resumen, Python es un lenguaje de programación de alto nivel, interpretado y
 
 Esta tabla solo proporciona una comparación general entre los lenguajes y que cada uno tiene sus propias fortalezas y áreas de aplicación específicas.
 
-**Índice de los contenidos de cada día** 📎
+---
+<br>
+
+# **Índice de los contenidos de cada día** 📎
 
 - [Día 1 - Programa un creador de nombres](dia_01/README.md)
   - 1.1. - print
