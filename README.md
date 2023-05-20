@@ -226,7 +226,7 @@ Por supuesto, quiero agradecer a [Federico Garay](https://ar.linkedin.com/in/fed
 
 También a todos los compas que me han apoyado en este camino.
 
-[![Solo no puedes, con amigos sí. 🤝](https://youtu.be/Ds7tje_Y0CM)](hhttps://youtu.be/Ds7tje_Y0CM)
+> [Solo no puedes, con amigos sí. 🤝](https://youtu.be/Ds7tje_Y0CM)
 
 
 <br>
