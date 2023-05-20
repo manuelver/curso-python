@@ -138,7 +138,6 @@ Quizá encuentres aquí cosas que no están en el curso, o viceversa, son apunte
   - 16.23. - Estilo de la barra de cerca
   - 16.24. - Terminar el sitio
 - [Día 17 - Extra bibliotecas para hacking ético](dia_17/README.md)
-  - 17.1. - Bibliotecas
 
 # Índice de ficheros
 

@@ -183,7 +183,6 @@ Esta tabla solo proporciona una comparación general entre los lenguajes y que c
   - 16.23. - Estilo de la barra de cerca
   - 16.24. - Terminar el sitio
 - [Día 17 - Extra bibliotecas para hacking ético](python-total/dia_17/README.md)
-  - 17.1. - Bibliotecas
 
 ---
 <br>
