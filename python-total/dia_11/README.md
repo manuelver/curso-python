@@ -1,4 +1,18 @@
+**A partir de este tema la mayoría son ejercicios prácticos. Como has visto hasta ahora, el código está documentado y es una buena fuente de apuntes.**
+
 # Día 11 - Programa un extracto de datos web
+
+Web scraping = raspar internet
+- Reglas del web scraping
+- Limitaciones del web scraping
+
+Se utilizarán tres bibliotecas: beautifulsoup4, lxml y requests. Se deben instalar:
+```python
+pip install beautifulsoup4
+pip install requests
+```
+
+Enlace: https://escueladirecta-blog.blogspot.com/
 
 ## Índice
 - [Día 11 - Programa un extracto de datos web](#día-11---programa-un-extracto-de-datos-web)
@@ -7,6 +21,18 @@
   - [Ficheros y documentación](#ficheros-y-documentación)
 
 ## 11.1. - Extraer elementos de una clase
+
+| Carácter  |           Sintaxis            | Resultados                                                                                       |
+| :-------: | :---------------------------: | :----------------------------------------------------------------------------------------------- |
+|     "     |     `soup.select('div')`      | Todos los elementos con la etiqueta 'div'                                                        |
+|     #     |  `soup.select('#estilo_4')`   | Elementos que contengan id='estilo4'                                                             |
+|     .     | `soup.select('.columna_der')` | Elementos que contengan class='columna der'                                                      |
+| (ESPACIO) |   `soup.select('div span')`   | Cualquier elemento llamado 'span' dentro de un elemento 'div'                                    |
+|     >     |   `soup.select('div>span')`   | Cualquier elemento llamado 'span' directamente dentro de un elemento 'div', sin nada en el medio |
+
+Enlace: https://www.escueladirecta.com/courses
+
+Enlace: https://toscrape.com/
 
 ## Ficheros y documentación
 - [01_web_scraping_01.py](01_web_scraping_01.py)
