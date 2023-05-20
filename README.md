@@ -2,10 +2,10 @@
 
 Este repositorio contiene los apuntes tomados en diversos cursos de python reflejados en la siguiente tabla:
 
-|        Curso | Índice repo                                               | Duración personal | Duración de vídeos | Fuente original                                                                                                                 |
-| -----------: | :-------------------------------------------------------- | :---------------: | :----------------: | :------------------------------------------------------------------------------------------------------------------------------ |
-| Python total | [contenidos](#índice-de-los-contenidos-de-python-total-📎) |     200 horas     |      30 horas      | [Escuela Directa](https://www.udemy.com/course/python-total)                                                                    |
-|    HolaMundo | [contenidos](#índice-de-los-contenidos-de-holamundo-📎)    |      5 horas      |      15 horas      | [Aprende python ahora! Curso completo e intensivo desde cero](https://www.youtube.com/watch?v=tQZy0U8s9LY&ab_channel=HolaMundo) |
+|        Curso | Índice repo                                             | Duración personal | Duración de vídeos | Fuente original                                                                                                                 |
+| -----------: | :------------------------------------------------------ | :---------------: | :----------------: | :------------------------------------------------------------------------------------------------------------------------------ |
+| Python total | [contenidos](#índice-de-los-contenidos-de-python-total) |     200 horas     |      30 horas      | [Escuela Directa](https://www.udemy.com/course/python-total)                                                                    |
+|    HolaMundo | [contenidos](#índice-de-los-contenidos-de-holamundo)    |      5 horas      |      15 horas      | [Aprende python ahora! Curso completo e intensivo desde cero](https://www.youtube.com/watch?v=tQZy0U8s9LY&ab_channel=HolaMundo) |
 
 Las prácticas y ejercicios aquí contenidos son los que hice mediante los cursos mencionados y por investigación propia, con mucho café e insomnio. Realmente, los apuntes no fueron pensados para compartirlos, por ello pueden tener lagunas de información o contenido adicional respecto al curso, ya que se redactaron para recordar procedimientos y conceptos que EMHO me parecieron relevantes. Teniendo un documento, a mi parecer, tan completo y entendiendo que el conocimiento debe ser libre se decidió compartirlos. Por eso, **cualquier error puedes abrir un issue o contactar conmigo**.
 
@@ -52,7 +52,7 @@ Esta tabla solo proporciona una comparación general entre los lenguajes y que c
 ---
 <br>
 
-# **Índice de los contenidos de python-total** 📎
+# **Índice de los contenidos de python-total**
 
 - [Día 1 - Programa un creador de nombres](python-total/dia_01/README.md)
   - 1.1. - print
@@ -188,7 +188,7 @@ Esta tabla solo proporciona una comparación general entre los lenguajes y que c
 ---
 <br>
 
-# **Índice de los contenidos de HolaMundo** 📎
+# **Índice de los contenidos de HolaMundo**
 
 - [Descripción de los contenidos](HolaMundo/README.md)
   - 01_calculadora.py
