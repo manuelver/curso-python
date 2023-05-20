@@ -1,0 +1,3 @@
+"""
+Argumentos indefinidos (*args)
+"""
