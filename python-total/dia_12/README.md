@@ -1,7 +1,25 @@
 # Día 12 - Programa un gestor de restaurantes
 
-## Índice
-[Día 12 - Programa un gestor de restaurantes](#día-12---programa-un-gestor-de-restaurantes)
+Tkinter sirve para programar interfaces gráficas de usuario.
+```python
+from tkinter import *
+from tkinter import filedialog, messagebox
+```
+
+Enlace. Lista de colores de Tkinter: https://es.wikibooks.org/wiki/Python/Interfaz_gr%C3%A1fica_con_Tkinter/Los_nombres_de_los_colores
+
+![](../img/dia12_01.png)
+
+Para el Frame (marco) podemos indicar el relief con estas opciones:
+- Flat
+- Raised
+- Sunked
+- Groove
+- Ridge
+
+Para darle una especie de tridimensionalidad.
+
+![](../img/dia12_02.png)
 
 ## Ficheros y documentación
 
