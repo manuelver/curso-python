@@ -1,11 +1,13 @@
 # Apuntes de python de holamundo
 
-Estos apuntes y ejercicios en python han sido realizados viendo un vídeo de Holamundo:
+Estos apuntes y ejercicios en python han sido realizados viendo un vídeo de Holamundo de [Nicolás Schürmann](https://www.linkedin.com/in/nicolasschurmann/):
 - [Aprende python ahora! Curso completo e intensivo desde cero](https://www.youtube.com/watch?v=tQZy0U8s9LY&ab_channel=HolaMundo)
 
 ¡Te recomiendo que lo veas y hagas tus propios apuntes! Este repositorio es para mi uso personal, pero si te sirve de ayuda, ¡me alegro!
 
-## Scripts del curso
+Quizá encuentres aquí cosas que no están en el vídeo, o viceversa, son apuntes personales 😊
+
+## Trabajados realizados en el curso
 - [01_calculadora.py](01_calculadora.py)
 - [02_if01.py](02_if.py)
 - [02_if02.py](02_if02.py)
