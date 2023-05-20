@@ -1,5 +1,15 @@
 # Día 14 - Programa un controlador de asistencia
 
+**Paso 1** – Reconocimiento facial
+
+**Paso 2** – Análisis facial
+
+**Paso 3** – Convertir la imágen en datos
+
+hog → Histograms of oriented gradients for human detection https://en.wikipedia.org/wiki/Histogram_of_oriented_gradients 
+
+Vscode: https://visualstudio.microsoft.com/es/downloads/
+
 ## Índice
 - [Día 14 - Programa un controlador de asistencia](#día-14---programa-un-controlador-de-asistencia)
   - [Índice](#índice)
@@ -7,6 +17,28 @@
   - [Ficheros y documentación](#ficheros-y-documentación)
 
 ## 14.1. - Bibliotecas
+
+- **cmake**: es una biblioteca de software que se utiliza para construir y compilar aplicaciones de software. Es muy útil para proyectos que tienen dependencias y para proyectos que deben compilarse en diferentes sistemas operativos. *Documentación de CMake*: https://cmake.org/documentation/
+- **dlib**: es una biblioteca de procesamiento de imágenes y aprendizaje automático en C++ que se puede utilizar en Python. Es muy utilizada en aplicaciones de reconocimiento facial, detección de objetos y seguimiento de objetos. *Documentación de dlib*: http://dlib.net/documentation.html
+- **face**-recognition: es una biblioteca de Python basada en dlib, que permite detectar y reconocer caras en imágenes y vídeos. Utiliza técnicas de aprendizaje automático para identificar características faciales únicas, y es muy útil en aplicaciones de seguridad, reconocimiento de personas y análisis de imágenes. *Documentación de face-recognition*: https://face-recognition.readthedocs.io/en/latest/
+- **numpy**: es una biblioteca de Python para computación científica que se utiliza para realizar operaciones matemáticas en matrices y vectores. Es muy útil en aplicaciones de análisis de datos, aprendizaje automático, procesamiento de señales y otras áreas de la ciencia y la ingeniería. *Documentación de NumPy*: https://numpy.org/doc/
+- **opencv-python**: es una biblioteca de procesamiento de imágenes y vídeo en Python. Proporciona funciones para leer, escribir y procesar imágenes y vídeos, así como para realizar operaciones avanzadas como reconocimiento facial, detección de objetos y seguimiento de objetos. *Documentación de OpenCV (Python)*: https://docs.opencv.org/master/
+
+Para instalar estas bibliotecas en Ubuntu, hay varias opciones:
+- Con el comando `sudo apt-get install` seguido del nombre del paquete.
+- Con el comando `pip install` seguido del nombre de la biblioteca.
+- Con el comando `conda install` seguido del nombre de la biblioteca.
+
+
+Cuando realizamos la comparación de las imágenes, con las caras codificadas y mediante el código:
+```python
+fr.compare_faces(lista_imagenes, imagen_a_comparar)
+```
+
+Tienen un valor True cuando tiene un valor de 0.6 (Valor por defecto) en el punto de comparación (La distancia entre ambas caras)
+
+Los ficheros .csv se llaman así por Comma-Separated Values" (Valores separados por comas), lo que indica que se trata de un formato de archivo en el que los datos están separados por comas.
+
 
 ## Ficheros y documentación
 
