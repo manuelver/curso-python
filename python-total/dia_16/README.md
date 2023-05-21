@@ -330,7 +330,106 @@ Si añadimos una nueva tarea veremos que nos permite añadir los campos que indi
 
 ![](../img/dia16_20.png)
 
+He añadido tres tareas para las pruebas.
+
 ## 16.6. - Configurar la vista
+
+Después de la prueba anterior vamos a traer una lista de objetos dinámica desde el fichero `base/views.py`. Importamos ListView:
+```python
+from django.views.generic.list import ListView
+```
+
+Creamos una clase que recoja la función. Para funcionar requiere de un módelo (lista de objetos completa) y un query set que haga la consulta filtrada de objetos. Pero tendremos que importar la Tarea de models:
+```python
+from .models import Tarea
+```
+
+La clase queda así:
+```python
+class ListaPendientes(ListView):
+  model = Tarea
+```
+
+Por ahora, el documento base/views.py lo tenemos así:
+```python
+from django.shortcuts import render
+from django.views.generic.list import ListView
+from .models import Tarea
+
+# Create your views here.
+
+class ListaPendientes(ListView):
+  model = Tarea
+```
+
+Vamos a `base/urls.py` donde tendremos que indicar que importar la ListaPendientes:
+```python
+from .views import ListaPendientes
+```
+También tenemos que cambiar el path añadiendo la ListaPendientes e indicando que lo lea como vista. El documento queda así:
+```python
+from django.urls import path
+from .views import ListaPendientes
+
+urlpatterns = [
+    path('', ListaPendientes.as_view(), name='pendientes')
+]
+```
+
+Ya hemos conectado la url a nuestra vista pero aun no hemos dicho como debe mostrarlo. Por eso, si entramos en la url nos da un error que nos indica que no existe el template, etc
+
+![](../img/dia16_21.png)
+
+Entonces, para indicar las plantillas tenemos que ir a proyecto/settings.py e indicar el path de donde coger las plantillas en DIRS. El fragmento de código entero es el siguiente:
+```python
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': ['../base/templates'],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+```
+
+Vamos a crear la plantilla que nos dice, pero en una carpeta dentro de base que le llamaremos templates, y dentro con otro directorio que se llame base. Dentro crearemos el html que nos pide.
+
+![](../img/dia16_22.png)
+
+En este fichero vamos a añadir el texto html que queramos.
+```html
+<h1>Lista de pendientes</h1>
+<table>
+    <tr>
+        <th>Elementos</th>
+    </tr>
+    {% for tarea in object_list %}
+    <tr>
+        <td>{{ tarea.titulo }}</td>
+    </tr>
+    {% empty %}
+    <h3>No hay elementos en esta lista</h3>
+    {% endfor %}
+</table>
+```
+
+Entonces, ya veremos nuestra lista en la url:
+
+![](../img/dia16_23.png)
+
+Para personalizar el object_list y que sea más legible, vamos a views y añadimos esta línea a la clase ListaPendientes:
+```python
+context_object_name = 'tareas'
+```
+
+Ya lo podemos cambiar por tareas.
 
 ## 16.7. - Configurar la vista de Detalle
 
