@@ -433,6 +433,50 @@ Ya lo podemos cambiar por tareas.
 
 ## 16.7. - Configurar la vista de Detalle
 
+En base/views vamos a importar la función para los detalles y crearemos una clase más. Quedando el fichero así:
+```python
+from django.shortcuts import render
+from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
+from .models import Tarea
+
+# Create your views here.
+
+class ListaPendientes(ListView):
+    model = Tarea
+    context_object_name = 'tareas'
+
+class DetalleTarea(DetailView):
+    model = Tarea
+```
+
+Y necesitaremos crear otro fichero html como plantilla. Por defecto será tarea_detail.html, pero luego podemos ver como cambiar el nombre. Tendremos que incluir en base/urls.py el import y el path de la tarea, quedando el documento así:
+```python
+from django.urls import path
+from .views import ListaPendientes, DetalleTarea
+
+urlpatterns = [
+    path('', ListaPendientes.as_view(), name='pendientes'),
+    path('tarea/<int:pk>', DetalleTarea.as_view(), name='tarea')
+]
+```
+
+En el nombre del path se ha incluido `<int:pk>` que es el número intenger de la Primary Key.
+
+En el html creado añadimos lo siguiente:
+```html
+<h1>Tarea: {{object}} </h1>
+```
+
+Esto hará que tenga el nombre de la tarea en cada url con un número de primary key válido:
+
+![](../img/dia16_24.png)
+
+![](../img/dia16_25.png)
+
+Ahora podemos personalizar el object en base/views.py añadiendo a nuestra clase  context_object_name con tarea y cambiando la palabra object por tarea del html.
+Ahora vamos a personalizar el nombre del html de tarea_details.html por tarea.html y lo vamos a incluir en base/views.py, en la clase DetalleTarea, el template_name con la ubicación 'base/tarea.html'.
+
 ## 16.8. - Crear Links a Detalle
 
 ## 16.9. - Agregar nueva tarea
