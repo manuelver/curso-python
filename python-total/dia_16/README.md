@@ -539,6 +539,7 @@ reverse_lazy se ocupa de redirigir la página cuando encuentre el evento que se 
 ```python
 success_url = reverse_lazy('tareas')
 ```
+Pero al poner tareas tenemos que asegurarnos que en el fichero urls.py tengamos los mismo, que no es así. Tenemos «Pendientes», así que vamos a cambiar este nombre por tareas que tiene más lógica. 
 
 De nuevo, tendremos que añadir la nueva página en el fichero urls.py, importando la clase y añadiendo el path. Quedando el documento así:
 ```python
@@ -546,7 +547,7 @@ from django.urls import path
 from .views import ListaPendientes, DetalleTarea, CrearTarea
 
 urlpatterns = [
-    path('', ListaPendientes.as_view(), name='pendientes'),
+    path('', ListaPendientes.as_view(), name='tareas'),
     path('tarea/<int:pk>', DetalleTarea.as_view(), name='tarea'),
     path('crear-tarea/', CrearTarea.as_view(), name='crear-tarea')
 ]
@@ -567,6 +568,30 @@ Ahora ya podemos ver el enlace que nos lleva a la nueva página creada:
 ![](../img/dia16_27.png)
 
 ## 16.10. - Formulario para nueva tarea
+
+Vamos a darle brilo al html del formulario "tarea_form.html". Los campos del formulario se añaden automáticamente con `{{form}}`, pero tenemos que darle un método para que se vea mejor. Por defecto es as_table:
+
+![](../img/dia16_28.png)
+
+Horrible, pero tenemos dos métodos más. Formato lista con as_ul:
+
+![](../img/dia16_29.png)
+
+O como párrafo, as_p, que es el que dejaremos:
+
+![](../img/dia16_30.png)
+
+Ya podemos probarlo, pero tendremos un error. Nos falta un fragmento de código:
+```python
+{% csrf_token %}
+```
+El código `{% csrf_token %}` es una directiva utilizada en algunas plantillas o sistemas de generación estática de sitios web, como Hugo o Jekyll.
+
+Esta directiva se utiliza para generar un token de seguridad CSRF (Cross-Site Request Forgery) y se inserta en un formulario HTML. El token CSRF ayuda a prevenir ataques de falsificación de solicitudes entre sitios, asegurando que las solicitudes enviadas al servidor sean legítimas y no provengan de fuentes maliciosas.
+
+El token se genera y se incluye en el formulario para que cuando el usuario envíe el formulario, el servidor pueda verificar que el token es válido y corresponde a la sesión actual del usuario. Esto ayuda a proteger contra ataques en los que un tercero intenta enviar solicitudes maliciosas en nombre del usuario.
+
+Ahora ya podemos crear tareas desde la página creada y que nos reenvíe a la página principal 😎
 
 ## 16.11. - Editar tarea
 
