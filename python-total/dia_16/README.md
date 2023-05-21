@@ -479,6 +479,40 @@ Ahora vamos a personalizar el nombre del html de tarea_details.html por tarea.ht
 
 ## 16.8. - Crear Links a Detalle
 
+Simplemente, en la página de tarea_list.html incluimos el encabezado vacío de una nueva columna de la tabla:
+```html
+<th></th>
+```
+
+E incluimos dentro del loop for una nueva columna con el texto Ver que contenga la lógica de la página, con el nombre tarea y el id de tarea:
+```html
+<td><a href="{% url 'tarea' tarea.id %}">Ver</a></td>
+```
+
+Quedando así el html:
+```html
+<h1>Lista de pendientes</h1>
+<table>
+    <tr>
+        <th>Elementos</th>
+        <th></th>
+    </tr>
+    {% for tarea in tareas %}
+    <tr>
+        <td>{{ tarea.titulo }}</td>
+        <td><a href="{% url 'tarea' tarea.id %}">Ver</a></td>
+    </tr>
+    {% empty %}
+    <h3>No hay elementos en esta lista</h3>
+    {% endfor %}
+</table>
+```
+
+Y así la vista en el navegador:
+
+![](../img/dia16_26.png)
+
+
 ## 16.9. - Agregar nueva tarea
 
 ## 16.10. - Formulario para nueva tarea
