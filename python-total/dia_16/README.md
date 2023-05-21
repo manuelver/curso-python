@@ -512,8 +512,59 @@ Y así la vista en el navegador:
 
 ![](../img/dia16_26.png)
 
-
 ## 16.9. - Agregar nueva tarea
+
+Seguimos editando base/views.ppy y base/urls.py. En views.py importamos una clase más:
+```python
+from django.views.generic.detail import DetailView
+```
+
+Creamos la clase CreaTarea que tendrá una lógica un poco más compleja porque el sistema que recoja un pedido que creará un nuevo elemento que se incluirá en la lista. Esta clase tomará un formulario por defecto de models.py basados en los campos que incluimos.
+
+Se puede incluir en la clase una lista con todos los elementos que queremos en el formulario:
+```python
+fields= ['titulo', 'descripcion', 'completo', 'creado']
+```
+
+Pero en este caso queremos todos los campos, así que utilizaremos 
+```python
+fields= '__all__'
+```
+Y para asegurarnos que cuando se envíe el formulario con éxito el usuario vaya a otra página distinta tenemos que importar otra herramienta:
+```python
+from django.urls import reverse_lazy
+```
+
+reverse_lazy se ocupa de redirigir la página cuando encuentre el evento que se le indique. Cargamos la url donde se redirige con success_url
+```python
+success_url = reverse_lazy('tareas')
+```
+
+De nuevo, tendremos que añadir la nueva página en el fichero urls.py, importando la clase y añadiendo el path. Quedando el documento así:
+```python
+from django.urls import path
+from .views import ListaPendientes, DetalleTarea, CrearTarea
+
+urlpatterns = [
+    path('', ListaPendientes.as_view(), name='pendientes'),
+    path('tarea/<int:pk>', DetalleTarea.as_view(), name='tarea'),
+    path('crear-tarea/', CrearTarea.as_view(), name='crear-tarea')
+]
+```
+
+Ahora necesitaremos un nuevo fichero html en templates que le llamaremos tarea_form.html que es el nombre por defecto. Para las pruebas tan solo ponemos un título:
+```html
+<h1>Formulario de tareas</h1>
+```
+
+Y por último, para que la página principal tenga un enlace que redirija a la página nueva, tendremos que editar tareas_list.html añadiendo este fragmento de código html:
+```html
+<a href="{% url 'crear-tarea' %}">Crear nueva tarea</a>
+```
+
+Ahora ya podemos ver el enlace que nos lleva a la nueva página creada:
+
+![](../img/dia16_27.png)
 
 ## 16.10. - Formulario para nueva tarea
 
