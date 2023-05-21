@@ -58,7 +58,7 @@ En la actualidad, Python se aplica en los campos de inteligencia artificial y ma
 ## Información en tablas de python 📊
 
 <details>
-<summary>Tabla desplegable de **Usos de Python y sus Bibliotecas/módulos**</summary>
+<summary>Tabla desplegable de <strong>Usos de Python y sus Bibliotecas/módulos</strong></summary>
 
 |                                          Uso principal | Bibliotecas/módulos utilizados                                                |
 | -----------------------------------------------------: | :---------------------------------------------------------------------------- |
@@ -202,7 +202,7 @@ En la actualidad, Python se aplica en los campos de inteligencia artificial y ma
 
 </details>
 <details>
-<summary>Tabla desplegable de **comparación con otros lenguajes de programación**</summary>
+<summary>Tabla desplegable de <strong>comparación con otros lenguajes de programación</strong></summary>
 
 | Característica        | Python                                           | Java                                     | C++                                     | JavaScript                                |
 | --------------------- | ------------------------------------------------ | ---------------------------------------- | --------------------------------------- | ----------------------------------------- |
