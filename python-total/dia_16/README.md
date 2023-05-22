@@ -598,11 +598,33 @@ Para rematar, vamos a poner un enlace para volver desde la página del formulari
 <a href="{% url 'tareas' %}">Volver</a>
 ```
 
-![](../img/dia16_30.png)
+![](../img/dia16_31.png)
 
 ## 16.11. - Editar tarea
 
+En base/views.py vamos a importar una nueva clase:
+```python
+from django.views.generic.edit import CreateView, UpdateView
+```
 
+Y añadimos una nueva clase:
+```python
+class EditarTarea(UpdateView):
+model = Tarea
+fields = '__all__'
+success_url = reverse_lazy('tareas')
+```
+
+Y podemos ir a base/urls.py para añadir una nueva página. Importamos EditarTarea y añadimos el path:
+```python
+path('editar-tarea/<int:pk>', EditarTarea.as_view(), name='editar-tarea')
+```
+
+Entonces, el html de editar tarea tiene que tener una nueva columna con el hipervínculo de modificar la tarea. Tenemos que añador la celda de cabecera `<th></th>` y la del enlace `<td><a href="{% url 'editar-tarea' tarea.id %}">Editar</a></td>`.
+
+Dará este resultado:
+
+![](../img/dia16_32.png)
 
 ## 16.12. - Eliminar tarea
 
