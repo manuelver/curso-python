@@ -593,7 +593,16 @@ El token se genera y se incluye en el formulario para que cuando el usuario env�
 
 Ahora ya podemos crear tareas desde la página creada y que nos reenvíe a la página principal 😎
 
+Para rematar, vamos a poner un enlace para volver desde la página del formulario a la página principal:
+```html
+<a href="{% url 'tareas' %}">Volver</a>
+```
+
+![](../img/dia16_30.png)
+
 ## 16.11. - Editar tarea
+
+
 
 ## 16.12. - Eliminar tarea
 
