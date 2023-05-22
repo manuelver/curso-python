@@ -628,6 +628,49 @@ Dará este resultado:
 
 ## 16.12. - Eliminar tarea
 
+Esto será muy parecido a lo anterior. Vayamos por documentos.
+Añadimos en tarea_list.html:
+```html
+<th></th>
+```
+
+y:
+```html
+<td><a href="{% url 'eliminar-tarea' tarea.id %}">Eliminar</a></td>
+```
+
+En views.py importamos la clase DeleteView 
+```python
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+```
+
+y añadimos una nueva clase:
+```python
+class EliminarTarea(DeleteView):
+    model = Tarea
+    context_object_name = 'tarea'
+    success_url = reverse_lazy('tareas')
+```
+
+Ahora abrimos un nuevo html que le llamaremos como el sistema lo marca por defecto, tarea_confirm_delete.html y añadimos:
+```html
+<a href="{% url 'tareas' %}">Volver</a>
+
+<form method="post" action="">
+    {% csrf_token %}
+    <p>Vas a eliminar esta tarea: "{{tarea}}"</p>
+    <input type="submit" value="Eliminar">
+</form>
+```
+
+Ahora nos queda importar EliminarTarea en urls.py y añadir el path:
+```python
+path('eliminar-tarea/<int:pk>', EliminarTarea.as_view(), name='eliminar-tarea')
+```
+
+Ya podemos eliminar tareas 😎
+
+
 ## 16.13. - Crear la lógica de Logueo / Deslogueo
 
 ## 16.14. - Formulario de Logueo / Deslogueo
