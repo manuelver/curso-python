@@ -773,6 +773,35 @@ Así nos desviará a la página de logueo sin no estamos registrados.
 
 ## 16.16. - Información específica de usuario
 
+Cada usuario debe ver tan solo sus tareas, para eso vamos a añadir un nuevo usuario en el panel de administración de django. Así que en views.py vamos añadir el método GetContentData y sobreescribirlo en la calse de ListaPendientes:
+```python
+def get_context_data(self, **kwarg):
+    context = super().get_context_data(**kwarg)
+    context['tareas'] = context['tareas'].filter(usuario=self.request.user)
+    context['count'] = context['tareas'].filter(completo=False).count()
+    return context
+```
+
+Se puede ver dos filtros al contexto, el primero es para que solo se vea las tareas del usuario registrado y el segundo es para que solo se vean las tareas que no estén completas.
+
+Ahora, con el nuevo usuario creado no veremos las tareas del anterior usuario:
+
+![](../img/dia16_35.png)
+
+Ahora, si un usuario crea una tarea queremos que se le asigne a si mismo, así que vamos a views.py y en la clase de CrearTarea redefinimos la función de form_valid:
+```python
+def form_valid(self, form):
+    form.instance.usuario = self.request.user
+    return super(CrearTarea, self).form_valid(form)
+```
+
+Y en la misma clase, donde tenemos que aparezcan todos los campos con __all__ tenemos que dar la lista para que no de la opción de escoger el usuario. También lo tendremos que hacer en EditarTarea:
+```python
+fields = ['titulo', 'descripcion', 'completo']
+```
+
+![](../img/dia16_36.png)
+
 ## 16.17. - Registrar nuevo usuario
 
 ## 16.18. - Barra de búsquedas

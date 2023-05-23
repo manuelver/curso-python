@@ -23,6 +23,13 @@ class ListaPendientes(LoginRequiredMixin, ListView):
     model = Tarea
     context_object_name = 'tareas'
 
+    def get_context_data(self, **kwarg):
+        context = super().get_context_data(**kwarg)
+        context['tareas'] = context['tareas'].filter(usuario=self.request.user)
+        context['count'] = context['tareas'].filter(completo=False).count()
+
+        return context
+
 
 class DetalleTarea(LoginRequiredMixin, DetailView):
     model = Tarea
@@ -32,13 +39,18 @@ class DetalleTarea(LoginRequiredMixin, DetailView):
 
 class CrearTarea(LoginRequiredMixin, CreateView):
     model = Tarea
-    fields = '__all__'
+    fields = ['titulo', 'descripcion', 'completo']
     success_url = reverse_lazy('tareas')
+
+    def form_valid(self, form):
+        form.instance.usuario = self.request.user
+
+        return super(CrearTarea, self).form_valid(form)
 
 
 class EditarTarea(LoginRequiredMixin, UpdateView):
     model = Tarea
-    fields = '__all__'
+    fields = ['titulo', 'descripcion', 'completo']
     success_url = reverse_lazy('tareas')
 
 
