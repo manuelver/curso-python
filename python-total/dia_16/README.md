@@ -1,5 +1,9 @@
 # Día 16 - Programa una aplicación web de tareas pendientes
 
+En la tarea de hoy vamos a describir detalladamente el proceso de creación de una aplicación web de tareas pendientes. Este proyecto es un ejemplo de una aplicación web completa que incluye una base de datos sqlite3, autenticación, listas de tareas, formularios, validación, sesiones, y más. 
+
+El código no está comentado pero veréis en este documento cada detalle, por eso es más largo que los anteriores.
+
 ## Índice
 - [Día 16 - Programa una aplicación web de tareas pendientes](#día-16---programa-una-aplicación-web-de-tareas-pendientes)
   - [Índice](#índice)
