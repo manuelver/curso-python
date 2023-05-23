@@ -697,7 +697,7 @@ Vamos a poner el anterior fragmento de código dentro de un if, quedando así:
     <p>
         {{request.user}}
     </p>
-    <a href="">Salir</a>
+    <a href="{% url 'logout' %}">Salir</a>
 
 {% else %}
 
@@ -710,7 +710,66 @@ En el siguiente punto veremos como construir el formulario de logueo.
 
 ## 16.14. - Formulario de Logueo / Deslogueo
 
+Nos vamos a views.py, importamos la siguiente vista:
+```python
+from django.contrib.auth.views import LoginView
+```
+
+Y añadimos la siguiente clase, que tiene sentido que este arriba del todo, y dentro de la clase definimos el nombre del template, que queremos todos los campos que contiene LoginView, activar la redirección después de la autenticación y redefinimos la función get_success_url para que vaya a la página principal después del loguearse:
+class Logueo(LoginView):
+```python
+template_name = "base/login.html"
+field = '__all__'
+redirect_authenticated_user = True
+def get_success_url(self):
+    return reverse_lazy('tareas')
+```
+Ahora vamos a configurar las urls.py para que llegue al path. Importamos Logueo y añadimos el path:
+```python
+path('login/', Logueo.as_view(), name='login'),
+```
+
+Creamos el fichero en login.html en template/base con el siguiente contenido:
+```html
+<h1>Ingresar</h1>
+
+<form method="post" action="">
+
+    {% csrf_token %}
+
+    {{form.as_p}}
+    <input type="submit" value="Ingresar">
+
+</form>
+```
+
+Para desloguear vamos a usar directamente el formulario que nos brinda django. En urls.py importamos la siguiente clase:
+```python
+from django.contrib.auth.views import LogoutView
+```
+
+y añadimos el path:
+```python
+path('logout/', LogoutView.as_view(next_page='login'), name='logout'),
+```
+
 ## 16.15. - Restringir acceso
+
+Nos vamos a views.py e importamos nueva clase:
+```python
+from django.contrib.auth.mixins import LoginRequiredMixin
+```
+
+Con esta clase podríamos gestionar los atributos de un determinado usuario, si va a ser administrador, si va a tener alguna otra autorización especial, si va a ser un usuario común. Etc También la restricción de las vistas.
+
+Tendremos que incluirlo en las clase que queramos que herede esta opción, como en ListaPendientes, en DetalleTarea y en definitiva, en todas las clases menos en la de logueo.
+
+Pero si ahora intentamos entrar sin estar logueados nos saldrá un página de error de django. Para personalizarla tenemos que ir a settings.py y vamos a incluir esta línea de código antes de Static Files:
+```python
+LOGIN_URL = 'login'
+```
+
+Así nos desviará a la página de logueo sin no estamos registrados.
 
 ## 16.16. - Información específica de usuario
 
