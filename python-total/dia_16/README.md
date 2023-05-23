@@ -664,6 +664,7 @@ Ahora abrimos un nuevo html que le llamaremos como el sistema lo marca por defec
 ```
 
 Ahora nos queda importar EliminarTarea en urls.py y añadir el path:
+
 ```python
 path('eliminar-tarea/<int:pk>', EliminarTarea.as_view(), name='eliminar-tarea')
 ```
@@ -672,6 +673,40 @@ Ya podemos eliminar tareas 😎
 
 
 ## 16.13. - Crear la lógica de Logueo / Deslogueo
+
+Vamos a adaptar el fichero principal tarea_list.html para que tenga una condicional que detecte si el usuario está logueado o que enlace una página de logueo. También incluimos una barra horizontal para separarlo del contenido.
+```html
+<p>
+    {{request.user}}
+</p>
+<hr>
+```
+
+Podemos ver el logueo con "Inspeccionar elemento" / Application /cookies / sessionid
+
+![](../img/dia16_33.png)
+
+Si lo borramos nos deslogueamos y aparecerá como usuario anonimo.
+
+![](../img/dia16_34.png)
+
+Vamos a poner el anterior fragmento de código dentro de un if, quedando así:
+```html
+{% if request.user.is_authenticated %}
+
+    <p>
+        {{request.user}}
+    </p>
+    <a href="">Salir</a>
+
+{% else %}
+
+    <a href="{% url 'login' %}">Iniciar sesión</a>
+
+{% endif %}
+```
+
+En el siguiente punto veremos como construir el formulario de logueo.
 
 ## 16.14. - Formulario de Logueo / Deslogueo
 
