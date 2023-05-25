@@ -808,6 +808,96 @@ fields = ['titulo', 'descripcion', 'completo']
 
 ## 16.17. - Registrar nuevo usuario
 
+> Siempre vamos cambiando lo mismo: Enlace, formulario, vista y urls.
+
+Empezamos por el enlace en la login.html: 
+```html
+<p>No tienes cuenta<a href="{% url 'registro' %}">Registrate</a></p>
+```
+
+Ahora vamos a crear un nuevo fichero en templates que se llame registro.html:
+```html
+<h1>Registro</h1>
+
+<form method="post" action="">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Registrar">
+
+</form>
+
+<p>Ya tienes cuenta?<a href="{% url 'login' %}">Registrate</a></p>
+```
+
+Ahora creamos una vista para esto en views.py. No hay una vista específica en Django para crear registros, pero podemos aprovechar una vista genérica. Tenemos que añadir 3 clases/métodos:
+```python
+from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
+```
+
+Y añadimos la clase PaginaRegistro:
+```python
+class PaginaRegistro[FormView]:
+    template_name = 'base/registro.html'
+    form_class = UserCreationForm
+    redirect_authenticated_user = True
+    success_url = reverse_lazy('tareas')
+```
+
+Ahora podemos crear el path en la url, antes importando la clase
+```python
+path('registro/', PaginaRegistro.as_view(), name='registro'),
+```
+
+Ahora mismo tenemos el formulario en inglés:
+
+![](../img/dia16_37.png)
+
+Pero lo podemos cambiar al castellano o a muchos otros idiomas en settings.py:
+```python
+LANGUAGE_CODE  = 'es-es'
+```
+
+Cuando actualicemos la página de registro lo tendremos en español: 
+
+![](../img/dia16_38.png)
+
+Para asegurarnos que se loguee el usuario una vez se registre, tenemos que ir a views para sobreescribir PaginaRegistro con una función:
+```python
+def form_valid(self, form):
+    usuario = form.save()
+    if usuario is not None:
+        login(self.request, usuario)
+    return super(PaginaRegistro, self).form_valid(form)
+```
+
+Y para asegurarnos de que un usuario registrado no pueda entrar en la página de registro de nuevo, vamos a modificar de nuevo la clase. Con esto último, la clase entera queda así:
+```python
+class PaginaRegistro(FormView):
+    template_name = 'base/registro.html'
+    form_class = UserCreationForm
+    redirect_authenticated_user = True
+    success_url = reverse_lazy('tareas')
+
+    def form_valid(self, form):
+        usuario = form.save()
+
+        if usuario is not None:
+            login(self.request, usuario)
+
+        return super(PaginaRegistro, self).form_valid(form)
+
+    def get(self, *args, **kwargs):
+
+        if self.request.user.is_authenticated:
+
+            return redirect('tareas')
+
+        return super(PaginaRegistro, self.get(*args, **kwargs))
+```
+
+
 ## 16.18. - Barra de búsquedas
 
 ## 16.19. - Un estilo para todas las vistas
