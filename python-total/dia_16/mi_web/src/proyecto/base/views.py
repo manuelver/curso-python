@@ -38,7 +38,8 @@ class PaginaRegistro(FormView):
     def get(self, *args, **kwargs):
         if self.request.user.is_authenticated:
             return redirect('tareas')
-        return super(PaginaRegistro, self.get(*args, **kwargs))
+
+        return super(PaginaRegistro, self).get(*args, **kwargs)
 
 
 class ListaPendientes(LoginRequiredMixin, ListView):

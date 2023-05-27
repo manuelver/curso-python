@@ -1,3 +1,5 @@
+{% extends 'base/principal.html' %}
+{% block content %}
 
 <a href="{% url 'tareas' %}">Volver</a>
 
@@ -6,3 +8,5 @@
     <p>Vas a eliminar esta tarea: "{{tarea}}"</p>
     <input type="submit" value="Eliminar">
 </form>
+
+{% endblock content %}

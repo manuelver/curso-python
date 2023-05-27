@@ -894,7 +894,7 @@ class PaginaRegistro(FormView):
 
             return redirect('tareas')
 
-        return super(PaginaRegistro, self.get(*args, **kwargs))
+        return super(PaginaRegistro, self).get(*args, **kwargs)
 ```
 
 
@@ -938,7 +938,55 @@ Ahora ya se queda la palabra:
 
 ## 16.19. - Un estilo para todas las vistas
 
+Vamos a crear un estilo para todas las vistas.
+Para empezar, vamos a quitar la columna "ver" que ya no necesitamos. Tan solo de tarea_list.html eliminamos su línea:
+```html
+<td><a href="{% url 'tarea' tarea.id %}">Ver</a></td>
+```
 
+Ahora necesitamos un html completo, con una estructura básica, que le vamos a llamar principal.html y es donde vamos a incluir los estilos. Por ahora le damos un color al fondo para probar y dentro de un div creamos la estructura:
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Lista de Pendientes</title>
+
+        <style>
+
+            body {
+                background-color: aqua;
+            }
+
+        </style>
+
+    </head>
+    <body>
+
+        <div class="container">
+            {% block content %}
+
+            {% endblock content %}
+        </div>
+
+    </body>
+</html>
+```
+
+Ahora vamos a tarea_list.html para indicar que tenga de base el anterior html:
+```html
+{% extends 'base/principal.html' %}
+{% block content %}
+
+{% endblock content %}
+```
+
+Dentro de "block content" se debe incluir el contenido de toda la página tarea_list.html y ahora ya veremos el color aqua de background:
+
+![](../img/dia16_41.png)
+
+Ahora tenemos que repetir la operación en cada una de las páginas para que principal.html tenga el estilo de todas.
 
 ## 16.20. - Estilo general
 
