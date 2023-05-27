@@ -900,7 +900,45 @@ class PaginaRegistro(FormView):
 
 ## 16.18. - Barra de búsquedas
 
+Para las pruebas necesitamos varias tareas que contengan una misma palabra.
+Entonces, en tarea_list.html tenemos que añadir otro form. Como es para obtener información pondremos el método get:
+```html
+<form method="get" action="">
+    {% csrf_token %}
+    <input type="text" name="area-buscar">
+    <input type="submit" value="Buscar">
+</form>
+```
+
+Ahora en views.py vamos a incorporar otro filtro en la clase ListaPendientes, dentro de get_context_data. Hacemos una variable para guardar la cerca que se ingrese en el formulario anterior y antes de devolver el contexto, cambiaremos el filtro del contexto para chequear el título contengan el valor, con un if para que se ejecute si la variable es verdadera:
+```python
+valor_buscado = self.request.GET.get('area-buscar') or ''
+if valor_buscado:
+    context['tareas'] = context['tareas'].filter(
+        titulo__incontains=valor_buscado)
+```
+
+Ahora ya funciona, he buscado vaca:
+
+![](../img/dia16_39.png)
+
+Para mantener la palabra buscada en el formulario debe hacer algún cambio más. Tenemos que añadir esta línea a la anterior función, antes del return:
+```python
+context['valor_buscado'] = valor_buscado
+```
+
+Y al input del formulario, el de la caja de búsqueda, tenemos que añadir el valor de la variable creada:
+```html
+value="{{valor_buscado}}"
+```
+
+Ahora ya se queda la palabra:
+
+![](../img/dia16_40.png)
+
 ## 16.19. - Un estilo para todas las vistas
+
+
 
 ## 16.20. - Estilo general
 

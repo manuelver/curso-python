@@ -17,6 +17,13 @@
 
 <a href="{% url 'crear-tarea' %}">Crear nueva tarea</a>
 
+<form method="get" action="">
+    {% csrf_token %}
+    <input type="text" name="area-buscar" value="{{valor_buscado}}">
+    <input type="submit" value="Buscar">
+</form>
+
+
 <table>
     <tr>
         <th>Elementos</th>
