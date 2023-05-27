@@ -1,16 +1,30 @@
 {% extends 'base/principal.html' %}
 {% block content %}
 
-<h1>Registro</h1>
+<div class="barra_superior">
+    <h1>Registro</h1>
+</div>
 
-<form method="post" action="">
-    {% csrf_token %}
-    {{form.as_p}}
+<div class="cuerpo-tarjeta">
+    
+    <form method="post" action="">
+        {% csrf_token %}
 
-    <input type="submit" value="Registrar">
+        <label>{{form.username.label}} </label>
+        {{form.username}}
 
-</form>
+        <label>{{form.password1.label}} </label>
+        {{form.password1}}
 
-<p>Ya tienes cuenta?<a href="{% url 'login' %}">Login</a></p>
+        <label>{{form.password2.label}} </label>
+        {{form.password2}}
+
+        <input style="margin-top: 12px;" class="boton" type="submit" value="Registrar">
+
+    </form>
+
+    <p>Ya tienes cuenta? <a href="{% url 'login' %}">Login</a></p>
+
+</div>
 
 {% endblock content %}

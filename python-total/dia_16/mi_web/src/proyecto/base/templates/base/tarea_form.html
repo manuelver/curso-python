@@ -1,14 +1,16 @@
 {% extends 'base/principal.html' %}
 {% block content %}
 
-<h1>Formulario de tareas</h1>
+<div class="barra_superior">
+    <a href="{% url 'tareas' %}">&#x2190; Volver</a>
+</div>
 
-<a href="{% url 'tareas' %}">Volver</a>
-
-<form method="post" action="">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Enviar">
-</form>
+<div class="cuerpo-tarjeta">
+    <form method="post" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="boton" type="submit" value="Enviar">
+    </form>
+</div>
 
 {% endblock content %}

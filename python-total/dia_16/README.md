@@ -1271,6 +1271,117 @@ Nos queda así:
 
 ## 16.24. - Terminar el sitio
 
+Vamos a tareas_form.html para poner un enlace que permita volver al inicio:
+```html
+<div class="barra_superior">
+    <a href="{% url 'tareas' %}">&#x1F860; Volver</a>
+</div>
+```
+- Le agregamos una flecha con un icono html.
+- En el input del boton incluimos la clase creada al botón de la página principal.
+
+El formulario completo lo metemos en un div con otra clase para darle estilo:
+```html
+{% extends 'base/principal.html' %}
+{% block content %}
+
+<div class="barra_superior">
+    <a href="{% url 'tareas' %}">&#x2190; Volver</a>
+</div>
+
+<div class="cuerpo-tarjeta">
+    <form method="post" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="" type="submit" value="Enviar">
+    </form>
+</div>
+
+{% endblock content %}
+```
+
+A darle estilo:
+```css
+.cuerpo-tarjeta {
+    padding: 10px 20px;
+}
+```
+
+Queda así:
+
+![](../img/dia16_48.png)
+
+Vamos a tarea_confirm_delete.html y copiamos lo que hemos hecho anteriormente para volver. Y encapsulamos el form en un div con la misma clase que antes, también en el input de submit:
+```html
+{% extends 'base/principal.html' %}
+{% block content %}
+<div class="barra_superior">
+    <a href="{% url 'tareas' %}">&#x2190; Volver</a>
+</div>
+<div class="cuerpo-tarjeta">
+    <form method="post" action="">
+        {% csrf_token %}
+        <p>Vas a eliminar esta tarea: "{{tarea}}"</p>
+        <input  class="boton" type="submit" value="Eliminar">
+    </form>
+</div>
+{% endblock content %}
+```
+
+Ya tiene el estilo, lo único que le doy otro color al botón:
+
+![](../img/dia16_49.png)
+
+
+Ahora le toca a login.html. Creamos el div de la clase barra_superio pero sin volver, esta vez ponemos el h1 de la página. Metemos el form y la pregunta ¿Tienes cuenta?  en un div con clase cuerpo-tarjeta y, por último, le damos la clase al input submit:
+```html
+{% extends 'base/principal.html' %}
+{% block content %}
+<div class="barra_superior">
+    <h1>Ingresar</h1>
+</div>
+<div class="cuerpo-tarjeta">
+    <form method="post" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="boton" type="submit" value="Ingresar">
+    </form>
+    <p>¿No tienes cuenta?<a href="{% url 'registro' %}">Registrate</a></p>
+</div>
+{% endblock content %}
+```
+
+Queda así:
+
+![](../img/dia16_50.png)
+
+En registro.html es igual. Pero además, vamos a modificar el form por defecto poniendo uno a uno los inputs para que no se vea el texto aclaratorio y le damos una aclaración de estilo al input submit para separar el botón del último input:
+```html
+{% extends 'base/principal.html' %}
+{% block content %}
+<div class="barra_superior">
+    <h1>Registro</h1>
+</div>
+<div class="cuerpo-tarjeta">
+    <form method="post" action="">
+        {% csrf_token %}
+        <label>{{form.username.label}} </label>
+        {{form.username}}
+        <label>{{form.password1.label}} </label>
+        {{form.password1}}
+        <label>{{form.password2.label}} </label>
+        {{form.password2}}
+        <input style="margin-top: 12px;" class="boton" type="submit" value="Registrar">
+    </form>
+    <p>Ya tienes cuenta? <a href="{% url 'login' %}">Login</a></p>
+</div>
+{% endblock content %}
+```
+
+Y queda así:
+
+![](../img/dia16_51.png)
+
 ## Ficheros y documentación
 - [mi_web](mi_web/)
 - [web_Python_Total](web_Python_Total/)

@@ -1,12 +1,15 @@
 {% extends 'base/principal.html' %}
 {% block content %}
+<div class="barra_superior">
+    <a href="{% url 'tareas' %}">&#x2190; Volver</a>
+</div>
 
-<a href="{% url 'tareas' %}">Volver</a>
-
-<form method="post" action="">
-    {% csrf_token %}
-    <p>Vas a eliminar esta tarea: "{{tarea}}"</p>
-    <input type="submit" value="Eliminar">
-</form>
+<div class="cuerpo-tarjeta">
+    <form method="post" action="">
+        {% csrf_token %}
+        <p>Vas a eliminar esta tarea: "{{tarea}}"</p>
+        <input class="boton" type="submit" value="Eliminar">
+    </form>
+</div>
 
 {% endblock content %}
