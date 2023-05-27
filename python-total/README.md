@@ -139,6 +139,9 @@ Quizá encuentres aquí cosas que no están en el curso, o viceversa, son apunte
   - 16.24. - Terminar el sitio
 - [Día 17 - Extra bibliotecas para hacking ético](dia_17/README.md)
 
+
+[Apuntes en PDF](https://vergaracarmona.es/wp-content/uploads/2023/05/Apuntes_python_Manuel_Vergara.pdf)
+
 # Índice de ficheros
 
 ```shell
@@ -473,36 +476,6 @@ python-total
 │   │   └── 100asistente_virtual.py
 │   ├── 14_controlador_asistencia
 │   │   └── 101asistencia.py
-│   └── 16_web
-│       └── 102mi_web.zip
-└──  img
-    ├── dia03_01.png
-    ├── dia03_02.png
-    ├── dia03_03.png
-    ├── dia03_04.png
-    ├── dia03_05.png
-    ├── dia03_06.png
-    ├── dia03_07.png
-    ├── dia03_08.png
-    ├── dia03_09.png
-    ├── dia03_10.png
-    ├── dia03_11.png
-    ├── dia03_12.png
-    ├── dia03_13.png
-    ├── dia03_14.png
-    ├── dia03_15.png
-    ├── dia03_16.png
-    ├── dia03_17.png
-    ├── dia03_18.png
-    ├── dia03_19.png
-    ├── dia03_20.png
-    ├── dia03_21.png
-    ├── dia05_01.png
-    ├── dia05_02.png
-    ├── dia06_01.png
-    ├── dia07_01.png
-    ├── dia07_02.png
-    ├── dia07_03.png
-    ├── dia08_01.png
-    └── dia08_02.png
+└── └── 16_web
+        └── 102mi_web.zip 
 ```
