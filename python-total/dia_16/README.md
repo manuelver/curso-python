@@ -28,7 +28,7 @@ El código no está comentado pero veréis en este documento cada detalle, por e
   - [16.19. - Un estilo para todas las vistas](#1619---un-estilo-para-todas-las-vistas)
   - [16.20. - Estilo general](#1620---estilo-general)
   - [16.21. - Estilo de barra superiores](#1621---estilo-de-barra-superiores)
-  - [16.22. - estilo de la lista](#1622---estilo-de-la-lista)
+  - [16.22. - Estilo de la lista](#1622---estilo-de-la-lista)
   - [16.23. - Estilo de la barra de cerca](#1623---estilo-de-la-barra-de-cerca)
   - [16.24. - Terminar el sitio](#1624---terminar-el-sitio)
   - [Ficheros y documentación](#ficheros-y-documentación)
@@ -1090,7 +1090,120 @@ Ha cambiado alguna cosa del estilo anterior ;)
 ![](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.giphy.com%2Fmedia%2FyYSSBtDgbbRzq%2F200.gif%3Fcid%3D790b76118yhtff6mmxhy9ojr6rdl947gsqlix11omo40cf9a%26rid%3D200.gif%26ct%3Dg&f=1&nofb=1&ipt=cdebe4ce51497641456ad4d87fced65575a7dc985aabade10e3fa770d1c476bd&ipo=images)
 
 
-## 16.22. - estilo de la lista
+## 16.22. - Estilo de la lista
+
+En tarea_list.html eliminamos el hr y el h1 de Lista de pendientes.
+Por ahora comentamos el código del enlace de crear nueva tarea y del formulario de búsqueda.
+Vamos así:
+
+![](../img/dia16_44.png)
+
+Ahora vamos a eliminar la tabla, pero antes vamos a ubicarlo en otro div con una nueva clase. Vamos a meter el loop for de la tareas, tan solo el principio y el final, con el empty. Dentro ponemos otro div con una nueva clase. Dentro añadimos las tareas completas con un if y otro div. 
+
+Por ahora, este código descrito es esto:
+```html
+<div class="envoltorio-items-tarea">
+    {% for tarea in tareas %}
+    <div class="envoltorio-tarea">
+        {% if tarea.completo %}
+        <div class="titulo-tarea">
+        </div>
+    </div>
+    {% empty %}
+    <h3>No hay elementos en esta lista</h3>
+    {% endfor %}
+</div>
+```
+
+Ahora, dentro del div con la clase titulo-tarea hacemos una estructura de divs en la que por ahora ponemos tareas completas con la url de la tarea en cursiva y tachado. 
+
+Tenemos este código:
+```html
+<div class="envoltorio-items-tarea">
+    {% for tarea in tareas %}
+    <div class="envoltorio-tarea">
+        {% if tarea.completo %}
+        <div class="titulo-tarea">
+            <div class="icono-tarea-completa">
+            </div>
+            <i><s><a href="{% url 'editar-tarea' tarea.id %}">{{tarea}}</a></s></i>
+        </div>
+        {% endif %}
+    </div>
+    {% empty %}
+    <h3>No hay elementos en esta lista</h3>
+    {% endfor %}
+</div>
+```
+
+Y se ve esto:
+
+![](../img/dia16_45.png)
+
+Completamos con un else la tarea no completa, que será igual que la anterior pero cambiando la clase a incompleta y quitando la cursiva y el tachado:
+```html
+{% else %}
+<div class="titulo-tarea">
+    <div class="icono-tarea-incompleta">
+    </div>
+    <a href="{% url 'editar-tarea' tarea.id %}">{{tarea}}</a>
+</div>
+```
+
+Ahora vamos a incluir el icono de un x para eliminar las tareas. Aprovechando el enlace que ya teníamos de eliminar tarea pero le vamos a dar clase al enlace y le añadimos el icono x de esta web: https://www.htmlsymbols.xyz/
+
+Escogemos estas aspas: https://www.htmlsymbols.xyz/unicode/U+2A2F
+
+Se tendrá que poner antes del endif y del else para que los dos tipos de tarea (completa|incompleta) tengan el aspa:
+```html
+<a class="enlace--eliminar" href="{% url 'eliminar-tarea' tarea.id %}">&#x2A2F;</a>
+```
+Ahora ya podemos eliminar toda la tabla.
+
+Vamos a darle estilo:
+```css
+.envoltorio-tarea {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fff;
+    border-top: 1px solid rgb(225,225,225);
+}
+.titulo-tarea {
+    display: flex;
+}
+.titulo-tarea a {
+    text-decoration: none;
+    color: #4B5156;
+    margin-left: 10px;
+}
+.icono-tarea-completa {
+    width: 20px;
+    height: 20px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+}
+.icono-tarea-incompleta {
+    width: 20px;
+    height: 20px;
+    background-color: #FFC107;
+    border-radius: 50%;
+}
+.enlace-eliminar {
+    text-decoration: none;
+    font-weight: 900;
+    color: #FF0000;
+    font-size: 22px;
+    line-height: 0;
+}
+```
+
+Queda así:
+
+![](../img/dia16_46.png)
+
+Verás que voy corrigiendo otros errores... 
 
 ## 16.23. - Estilo de la barra de cerca
 
