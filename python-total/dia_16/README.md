@@ -1048,6 +1048,48 @@ Y por ahora queda así:
 
 ## 16.21. - Estilo de barra superiores
 
+En tarea_list.html, añadimos un div al principio del "block content" con un h1 de saludo al usuario (El nombre se transforma con title, para que la primera letra sea mayúscula) y un h3 que muestre las tareas incompletas (Lo muestra en singular y en plural con {{count|pluralize}} ). Tendremos que añadir en el div el bloque de usuario que ya construimos. Queda así:
+```html
+<div class="barra_superior">
+    <div>
+        <h1>Hola {{request.user|title}}</h1>
+        <h3 style="margin:0">Tienes <i>{{count}}</i> tarea{{count|pluralize}} incompleta{{count|pluralize}}</h3>
+    </div>
+    {% if request.user.is_authenticated %}
+    <p>
+        {{request.user}}
+    </p>
+    <a href="{% url 'logout' %}">Salir</a>
+    {% else %}
+    <a href="{% url 'login' %}">Iniciar sesión</a>
+    {% endif %}
+</div>
+```
+
+Ahora vamos a darle estilo en la página principal.html para que se aplique a la clase del div:
+```html
+.barra_superior {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    background: linear-gradient(90deg, #1e7dcb 0%, #547482 65%, #77c2e2 100%);
+}
+.barra_superior a {
+    color: #fff;
+}
+```
+
+Por ahora tenemos esto:
+
+![](../img/dia16_43.png)
+
+Ha cambiado alguna cosa del estilo anterior ;) 
+
+![](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.giphy.com%2Fmedia%2FyYSSBtDgbbRzq%2F200.gif%3Fcid%3D790b76118yhtff6mmxhy9ojr6rdl947gsqlix11omo40cf9a%26rid%3D200.gif%26ct%3Dg&f=1&nofb=1&ipt=cdebe4ce51497641456ad4d87fced65575a7dc985aabade10e3fa770d1c476bd&ipo=images)
+
+
 ## 16.22. - estilo de la lista
 
 ## 16.23. - Estilo de la barra de cerca

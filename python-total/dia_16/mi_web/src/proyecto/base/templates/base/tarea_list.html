@@ -2,17 +2,26 @@
 
 {% block content %}
 
-{% if request.user.is_authenticated %}
+<div class="barra_superior">
+    <div>
+        <h1>Hola {{request.user|title}}</h1>
+        <h3 style="margin:0">Tienes <i>{{count}}</i> tarea{{count|pluralize}} incompleta{{count|pluralize}}</h3>
+    </div>
+
+    {% if request.user.is_authenticated %}
     <p>
         {{request.user}}
     </p>
+
     <a href="{% url 'logout' %}">Salir</a>
 
-{% else %}
+    {% else %}
 
     <a href="{% url 'login' %}">Iniciar sesión</a>
 
-{% endif %}
+    {% endif %}
+
+</div>
 
 <hr>
 
