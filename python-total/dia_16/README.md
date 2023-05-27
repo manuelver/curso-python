@@ -29,7 +29,7 @@ El código no está comentado pero veréis en este documento cada detalle, por e
   - [16.20. - Estilo general](#1620---estilo-general)
   - [16.21. - Estilo de barra superiores](#1621---estilo-de-barra-superiores)
   - [16.22. - Estilo de la lista](#1622---estilo-de-la-lista)
-  - [16.23. - Estilo de la barra de cerca](#1623---estilo-de-la-barra-de-cerca)
+  - [16.23. - Estilo de la barra de búsquedas](#1623---estilo-de-la-barra-de-búsquedas)
   - [16.24. - Terminar el sitio](#1624---terminar-el-sitio)
   - [Ficheros y documentación](#ficheros-y-documentación)
 
@@ -1205,7 +1205,69 @@ Queda así:
 
 Verás que voy corrigiendo otros errores... 
 
-## 16.23. - Estilo de la barra de cerca
+## 16.23. - Estilo de la barra de búsquedas
+
+Vamos a descomentar el form de busquedas para añadirlo también.
+Para darle estilo en vez de clase le damos un id ya que será solo una vez que se usará. Metemos el buscador y agregar nueva tarea en un div con id.
+Le damos estilo al form con el parámetro:
+```css
+style="margin-top: 20px;display: flex;
+```
+
+Al enlace de crear tarea le damos también un id. Y el texto también lo cambiamos por un signo: https://www.htmlsymbols.xyz/unicode/U+002B
+
+Ahora a darle estilo:
+```css
+#envoltorio-agregar-buscar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+#enlace-agregar {
+    text-decoration: none;
+    color: #fff;
+    background-color: #4CAF50;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 900;
+}
+```
+
+Ahora para darle estilo al botón de buscar tenemos que añadirle una clase al input. Y volvemos a principal a darle estilo:
+```css
+input[type=text], 
+input[type=password], 
+textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #EB796F;
+    width: 90%;
+    font-size: 1.1em;
+    font-weight: 900;
+}
+label {
+    padding-top: 10px !important;
+    display: block;
+    font-size: 1.1em;
+    font-weight: 900;
+}
+.boton {
+    text-decoration: none;
+    color: #fff;
+    background-color: #4CAF50;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 900;
+}
+```
+
+Nos queda así:
+
+![](../img/dia16_47.png)
 
 ## 16.24. - Terminar el sitio
 

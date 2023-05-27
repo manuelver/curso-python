@@ -20,15 +20,17 @@
 
 </div>
 
-<!-- 
-<a href="{% url 'crear-tarea' %}">Crear nueva tarea</a>
 
-<form method="get" action="">
-    {% csrf_token %}
-    <input type="text" name="area-buscar" value="{{valor_buscado}}">
-    <input type="submit" value="Buscar">
-</form> 
--->
+<div id="envoltorio-agregar-buscar">
+
+    <form method="get" action="" style="display: flex;">
+        <input type="text" name="area-buscar" value="{{valor_buscado}}">
+        <input class="boton" type="submit" value="Buscar">
+    </form> 
+
+    <a id="enlace-agregar" href="{% url 'crear-tarea' %}">&#x2B;</a>
+
+</div>
 
 <div class="envoltorio-items-tarea">
 
