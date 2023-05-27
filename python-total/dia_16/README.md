@@ -990,7 +990,61 @@ Ahora tenemos que repetir la operación en cada una de las páginas para que pri
 
 ## 16.20. - Estilo general
 
+Vamos a coger una fuente de google font y añadir el link en el head de principal, justo antes de style:
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+```
 
+Y añadimos al estilo de body la fuente:
+```html
+font-family: 'Abel', sans-serif;
+```
+También:
+- En body:
+  - Vamos a añadir color con ayuda de una paleta online: https://html-color.codes/ y cambiamos el color horrible de aqua.
+  - También le añadimos un padding top. 
+- Creamos otro encapsulamiento css en .container, que es la clase que le dimos al div de principal donde contiene el resto de páginas. A este le damos:
+  - un tamaño máximo, 
+  - un margen automático, 
+  - un color de background, 
+  - y una sombra
+- Le damos estilo a los encabezados (h1,h2,...), con:
+  -  una fuente distinta 
+  -  y lo centramos.
+- Le damos un color distinto a los enlaces y quitamos el subrayado.
+
+En definitiva, hemos incluido esto en style:
+```html
+        <style>
+            body {
+                background-color: #E5D4D1;
+                font-family: 'Abel', sans-serif;
+                padding-top: 60px;
+            }
+            .container {
+                max-width: 550px;
+                margin: auto;
+                background-color: #E1DFDE;
+                -webkit-box-shadow: 2px 2px 13px -4px rgba(0,0,0,0.21);
+                box-shadow:  2px 2px 13px -4px rgba(0,0,0,0.21);
+                padding: 30px;
+            }
+            h1,h2,h3,h4,h5,h6 {
+                font-family: 'Lato', sans-serif;
+                text-align: center;
+            }
+            a {
+                text-decoration: none;
+                color: #996E66;
+            }
+        </style>
+```
+
+Y por ahora queda así:
+
+![](../img/dia16_42.png)
 
 ## 16.21. - Estilo de barra superiores
 
