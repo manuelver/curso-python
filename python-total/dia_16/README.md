@@ -990,6 +990,8 @@ Ahora tenemos que repetir la operación en cada una de las páginas para que pri
 
 ## 16.20. - Estilo general
 
+
+
 ## 16.21. - Estilo de barra superiores
 
 ## 16.22. - estilo de la lista
