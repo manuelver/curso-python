@@ -2,12 +2,13 @@
 
 Este repositorio contiene los apuntes tomados en diversos cursos de python reflejados en la siguiente tabla:
 
-|        Curso | Ubicación                              |   Nivel    | Duración de vídeos | Duración personal | Fuente original                                                                           |
-| -----------: | :------------------------------------- | :--------: | :----------------: | :---------------: | :---------------------------------------------------------------------------------------- |
-|    HolaMundo | [contenidos](./HolaMundo/README.md)    |    Bajo    |      5 horas       |     15 horas      | [Aprende python ahora!](https://www.youtube.com/watch?v=tQZy0U8s9LY&ab_channel=HolaMundo) |
-| Python total | [contenidos](./python-total/README.md) | intermedio |      30 horas      |     200 horas     | [Escuela Directa](https://www.udemy.com/course/python-total)                              |
+|        Curso | Ubicación                                       |   Nivel    | Duración de vídeos | Duración personal | Fuente original                                                                             |
+| -----------: | :---------------------------------------------- | :--------: | :----------------: | :---------------: | :------------------------------------------------------------------------------------------ |
+|    HolaMundo | [contenidos](./HolaMundo/README.md)             |    Bajo    |      5 horas       |     15 horas      | [Aprende python ahora!](https://www.youtube.com/watch?v=tQZy0U8s9LY&ab_channel=HolaMundo)   |
+| Python total | [contenidos](./python-total/README.md)          | intermedio |      30 horas      |     200 horas     | [Escuela Directa](https://www.udemy.com/course/python-total)                                |
+| Python total | [contenidos](./scripts-hacking-etico/README.md) |  avanzado  |        ---         |     10 horas      | [ChapGPT](https://www.chat.openai.com), [Canal Telegram](https://t.me/seguridadinformatic4) |
 
-Las prácticas y ejercicios aquí contenidos son los que hice mediante los cursos mencionados y por investigación propia, con mucho café e insomnio. Realmente, los apuntes no fueron pensados para compartirlos, por ello pueden tener lagunas de información o contenido adicional respecto al curso, ya que se redactaron para recordar procedimientos y conceptos que EMHO me parecieron relevantes. Teniendo un documento, a mi parecer, tan completo y entendiendo que el conocimiento debe ser libre se decidió compartirlos. Por eso, si encuentras **cualquier error puedes abrir una issue o contactar conmigo**.
+Las prácticas y ejercicios aquí contenidos son los que hice mediante los cursos mencionados o por investigación propia, con mucho café para combatir el insomnio. Realmente, los apuntes no fueron pensados para compartirlos, por ello pueden tener lagunas de información o contenido adicional respecto al curso, ya que se redactaron para recordar procedimientos y conceptos que EMHO me parecieron relevantes. Teniendo estos documentos tan completos y entendiendo que el conocimiento debe ser libre, se decidió compartirlos. Si encuentras **cualquier error puedes abrir una issue o contactar conmigo**.
 
 Si te parece útil este documento puedes agradecerlo a través de las vías de contacto de la [web](https://vergaracarmona.es) o invítandome a un café ☕️ ⬇️
 
