@@ -1,4 +1,8 @@
-# Día 17 - Extra. Bibliotecas para hacking ético
+# Ejercicios con bibliotecas para hacking ético
+
+Estos ejercicios se han creado directamente usando Inteligencias Artificales.
+
+## Bibliotecas
 
 Bibliotecas útiles para la manipulación de paquetes de red, la programación de red asincrónica, la generación de datos falsos, la criptografía, la creación de exploits y pruebas de penetración, etc
 - **Python-nmap**: es una biblioteca de Python que se utiliza para interactuar con el escáner de puertos nmap. Proporciona una interfaz de Python para nmap y permite a los usuarios realizar escaneos de red, descubrir hosts y puertos abiertos, y obtener información detallada sobre los sistemas y servicios de red. *Documentación*: https://pypi.org/project/python-nmap/
