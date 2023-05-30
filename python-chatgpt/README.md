@@ -1,5 +1,7 @@
 # APUNTES PYTHON Y CHATGPT
 
+![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDY2MDM0MGFjY2EwNGU0NjcwMDFlYzM1M2EzZGJmMWRiMDViOWVmNyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/iIqmM5tTjmpOB9mpbn/giphy.gif)
+
 ## Índice
 
 ## TEMA 1 - Introducción a ChatGPT y sus aplicaciones

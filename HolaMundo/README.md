@@ -7,6 +7,8 @@ Estos apuntes y ejercicios en python han sido realizados viendo un vídeo de Hol
 
 Quizá encuentres aquí cosas que no están en el vídeo, o viceversa, son apuntes personales 😊
 
+![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjYyNTFlZjI0NjhiMTgzMzI2MWEyNjdlZDhhYzc1YWRmOGEzNzMxZSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/coxQHKASG60HrHtvkt/giphy.gif)
+
 ## Trabajados realizados en el curso
 - [01_calculadora.py](01_calculadora.py)
 - [02_if01.py](02_if.py)

@@ -17,7 +17,7 @@ Recuerda,
 
 > *"Quien se corta su propia leña se calienta dos veces"* 
 
-
+![](https://media.giphy.com/media/KAq5w47R9rmTuvWOWa/giphy.gif)
 ---
 <br>
 

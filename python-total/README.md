@@ -7,6 +7,8 @@ Estos apuntes y ejercicios en python han sido realizados en el trascurso del cur
 
 Quizá encuentres aquí cosas que no están en el curso, o viceversa, son apuntes personales 😊
 
+![](https://media.giphy.com/media/LYBHgc2yiO07G3dkkQ/giphy.gif)
+
 # Índice del curso y apuntes realizados
 
 - [Día 1 - Programa un creador de nombres](dia_01/README.md)

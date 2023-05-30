@@ -2,6 +2,8 @@
 
 Estos ejercicios se han creado directamente usando Inteligencias Artificales.
 
+![](https://media.giphy.com/media/NlIa1aW3oikdNkfE07/giphy.gif)
+
 ## Bibliotecas
 
 Bibliotecas útiles para la manipulación de paquetes de red, la programación de red asincrónica, la generación de datos falsos, la criptografía, la creación de exploits y pruebas de penetración, etc
