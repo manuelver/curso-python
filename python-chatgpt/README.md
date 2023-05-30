@@ -106,7 +106,18 @@ Ejecutando el programa podemos ver todos los modelos, para aislar los nombres se
 python3 code/miPrograma.py | jq '.data[].id'
 ```
 
+[Guía del comando jq](https://vergaracarmona.es/guia-del-comando-jq/)
+
 ![](https://vergaracarmona.es/wp-content/uploads/2022/11/json_everywhere-1024x696.jpg)
+
+
+### 2.3. - Descripción y documentación de las bibliotecas
+
+**os:** La librería os proporciona funciones para interactuar con el sistema operativo en Python. Permite realizar tareas relacionadas con el sistema operativo, como acceder a variables de entorno, manipular rutas de archivos y directorios, ejecutar comandos en la línea de comandos, entre otros. Documentación oficial: https://docs.python.org/3/library/os.html 
+
+**openai:** La librería Python de OpenAI, llamada openai, proporciona una interfaz para acceder a modelos de lenguaje avanzados desarrollados por OpenAI, como GPT-3.5. Puedes utilizar la librería openai para generar texto, completar oraciones, responder preguntas, traducir texto, entre otros usos relacionados con el procesamiento del lenguaje natural (NLP). Documentación oficial: https://platform.openai.com/docs/libraries
+
+**dotenv:** La librería dotenv es una herramienta popular utilizada para cargar variables de entorno desde archivos de configuración en aplicaciones Python. Permite definir variables de entorno en un archivo .env y luego cargar esas variables en el entorno de ejecución de la aplicación. Esto proporciona una forma conveniente de gestionar configuraciones sensibles y separarlas del código fuente. La librería dotenv es ampliamente utilizada en combinación con frameworks como Django o Flask. Documentación oficial: https://pypi.org/project/python-dotenv/ 
 
 ## TEMA 3 - Interactuar con ChatGPT usando Python
 
