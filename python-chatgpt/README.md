@@ -120,6 +120,39 @@ python3 code/miPrograma.py | jq '.data[].id'
 **dotenv:** La librería dotenv es una herramienta popular utilizada para cargar variables de entorno desde archivos de configuración en aplicaciones Python. Permite definir variables de entorno en un archivo .env y luego cargar esas variables en el entorno de ejecución de la aplicación. Esto proporciona una forma conveniente de gestionar configuraciones sensibles y separarlas del código fuente. La librería dotenv es ampliamente utilizada en combinación con frameworks como Django o Flask. Documentación oficial: https://pypi.org/project/python-dotenv/ 
 
 ## TEMA 3 - Interactuar con ChatGPT usando Python
+### 3.1. - Realizar peticiones básicas a chatgpt
+
+- Paso 1 – Preparar la petición
+- 
+Vamos a definir el modelo que queremos utilizar y que pregunta queremos hacer. Por ejemplo, vamos a crear una variable con el modelo y en otra variable ponemos la pregunta, que se llama prompt: 
+```python
+modelo = "text-davinci-002"
+prompt = "¿Cuál es la capital de Costa Rica?"
+```
+
+- Paso 2 – Enviar la petición
+
+Usaremos la biblioteca openai para almacenar la respuesta:
+```python
+respuesta = openai.Completion.create(
+    engine=modelo,
+    prompt=prompt,
+    n=1  # Opcional
+)
+```
+
+- Paso 3 – Procesar y mostrar la respuesta
+
+Para mostrar la respuesta en consola:
+```python
+print(respuesta)
+```
+Si queremos mostrar solo el texto de la respuesta:
+```python
+print(respuesta['choices'][0]['text'])
+```
+
+
 
 
 
