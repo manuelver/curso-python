@@ -139,7 +139,7 @@ Usaremos la biblioteca openai para almacenar la respuesta:
 respuesta = openai.Completion.create(
     engine=modelo,
     prompt=prompt,
-    n=1  # Opcional
+    n=1,  # Opcional. Número de respuestas a devolver
 )
 ```
 
@@ -151,8 +151,35 @@ print(respuesta)
 ```
 Si queremos mostrar solo el texto de la respuesta:
 ```python
-print(respuesta['choices'][0]['text'])
+print(respuesta.choices[0].text.strip())
 ```
+
+## 3.2. - Personalización de las peticiones de ChatGPT
+### 3.2.1. - Temperatura (creatividad)
+
+Es un parametro que controla como es de aleatoria la respuesta. Cuanto más alta más diversa será la respuesta, se puede poner valores de 0.1 a 1.
+```python
+temperature=1 
+```
+
+### 3.2.2. - Tokens máximos (largo)
+
+Controlas el largo de la respuesta contando los tokens máximos:
+```python
+max_tokens=100
+```
+
+### 3.2.3. - Cantidad de respuestas
+
+Es con el argumento n que ya habíamos usado, pero necesitaremos un loop for para recorrer las respuestas y mostrarlas:
+```python
+for idx, opcion in enumerate(respuesta.choices):
+    texto_generado = opcion.text.strip()
+    print(f"Respuesta {idx + 1}: {texto_generado}\n")
+```
+
+3.3. - Procesar y analizar las respuestas de chatgpt
+
 
 
 
