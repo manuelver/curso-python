@@ -178,12 +178,75 @@ for idx, opcion in enumerate(respuesta.choices):
     print(f"Respuesta {idx + 1}: {texto_generado}\n")
 ```
 
-3.3. - Procesar y analizar las respuestas de chatgpt
+## 3.3. - Procesar y analizar las respuestas de chatgpt
 
+### 3.3.1. - Analizar la respuesta
 
+Vamos a utilizar bibliotecas python para mejorar el procesamiento del lenguaje natural de la respuesta:
 
+- **SpaCy**: es una biblioteca de procesamiento del lenguaje natural (NLP) de código abierto y muy eficiente. Proporciona una amplia gama de funcionalidades para el procesamiento de texto, como el análisis morfológico, el etiquetado gramatical, el reconocimiento de entidades nombradas, el análisis de dependencias sintácticas, la lematización y la extracción de frases clave. SpaCy se destaca por su rendimiento rápido y su capacidad para procesar grandes volúmenes de texto de manera eficiente. *Documentación*: https://spacy.io/usage
 
+- **TextBlob**: es una biblioteca de procesamiento del lenguaje natural (NLP) basada en NLTK. Ofrece una interfaz sencilla y fácil de usar para realizar tareas comunes de procesamiento de texto, como análisis de sentimientos, corrección ortográfica, tokenización, extracción de frases, lematización y etiquetado gramatical. TextBlob es conocido por su facilidad de uso y su capacidad para realizar tareas básicas de NLP con pocas líneas de código.* Documentación*: https://textblob.readthedocs.io/en/dev/ 
 
+- **NLTK (Natural Language Toolkit)**: es una biblioteca popular y ampliamente utilizada para el procesamiento del lenguaje natural en Python. Ofrece una amplia gama de herramientas y recursos para tareas de procesamiento de texto, como tokenización, etiquetado gramatical, lematización, análisis sintáctico, análisis de sentimientos, clasificación de texto, entre otras. NLTK también proporciona acceso a diversos corpus de texto y modelos pre-entrenados, lo que facilita el desarrollo y la experimentación en el campo del procesamiento del lenguaje natural. *Documentación*: https://www.nltk.org/
+
+Se instalan con pip install <biblioteca> y tendremos que añadirlas con import el en código.
+
+Escogemos spacy para realizar algunas pruebas.
+
+Se instalan con pip install spacy y tendremos que añadirlas con import spacy el en código.
+
+Escogemos el modelo en español en el código con:
+```python
+modelo_spacy = spacy.load("es_core_news_md")
+```
+Este modelo también lo tenemos que instalar en la terminal
+```shell
+python3 -m spacy download es_core_news_md
+```
+
+Ahora imprimimos el analisis de la respuesta e imprimimos la lista de tokens, de categorías gramaticales y la relación de dependencia con su encabezado:
+```python
+analisis = modelo_spacy(texto_generado)
+for token in analisis:
+    print(token.text, token.pos_, token.dep_, token.head.text)
+```
+
+![](img/python-chatgpt02.png)
+
+Ahora vamos a imprimir las entidades y las etiquetas que los categorizan,
+```python
+for ent in analisis.ents:
+    print(ent.text, ent.label_)
+```
+
+![](img/python-chatgpt03.png)
+
+### 3.3.2. - Utilizar la información extraída
+Podemos utilizar la información que hemos extraído. Por ejemplo, puede sacar información de tipo LOC, de ubicación. Con lo cuál se puede generar una pregunta por cada etiqueta de este tipo. Por ejemplo:
+```python
+ubicacion = None
+
+for ent in analisis.ents:
+    # print(ent.text, ent.label_)
+    if ent.label_ == "LOC":
+        ubicacion = ent
+        break
+
+if ubicacion:
+    prompt2 = f"Dime más acerca de {ubicacion}"
+    respuesta2 = openai.Completion.create(
+        engine=modelo,
+        prompt=prompt2,
+        n=1,
+        temperature=1,
+        max_tokens=100
+    )
+
+    print(respuesta2.choices[0].text.strip())
+```
+
+![](img/python-chatgpt04.png)
 
 ## TEMA 4 - Aplicaciones Prácticas de Python + ChatGPT
 
