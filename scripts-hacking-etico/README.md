@@ -28,16 +28,16 @@ Ten en cuenta que este ejercicio es solo una simulación y no debe utilizarse pa
 
 ## Ejercicios propuestos por copilot
 
-- **Ejercicio 1**: instalar la biblioteca de Python `python-nmap` y realizar un escaneo de puertos a la dirección IP `192.168.1.1`
-- **Ejercicio 2**: instalar la biblioteca de Python `impacket` y realizar un escaneo de puertos a la dirección IP `192.168.1.1`
-- **Ejercicio 3**: instalar la biblioteca de Python `requests` y realizar una solicitud HTTP a la dirección URL `proof.local`
-- **Ejercicio 4**: instalar la biblioteca de Python `twisted` y crear un servidor de chat que permita a los usuarios enviar mensajes a todos los demás usuarios conectados
-- **Ejercicio 5**: instalar la biblioteca de Python `faker` y generar 10 nombres aleatorios
-- **Ejercicio 6**: instalar la biblioteca de Python `scapy` y crear un paquete de red personalizado que contenga un mensaje de texto
-- **Ejercicio 7**: instalar la biblioteca de Python `cryptography` y encriptar el mensaje ``
-- **Ejercicio 8**: instalar la biblioteca de Python `pwntools` y crear un exploit que permita a un usuario ejecutar comandos en un servidor remoto
-- **Ejercicio 9**: instalar la biblioteca de Python `paramiko` y crear un cliente SSH que permita a un usuario ejecutar comandos en un servidor remoto
-- **Ejercicio 10**: instalar la biblioteca de Python `pylibnet` y crear un paquete de red personalizado que contenga un mensaje de texto
+- **Ejercicio 1**: instalar la biblioteca de Python `python-nmap` y realizar un escaneo de puertos a la dirección IP `192.168.1.1`.
+- **Ejercicio 2**: instalar la biblioteca de Python `impacket` y realizar un escaneo de puertos a la dirección IP `192.168.1.1`.
+- **Ejercicio 3**: instalar la biblioteca de Python `requests` y realizar una solicitud HTTP a la dirección URL `proof.local`.
+- **Ejercicio 4**: instalar la biblioteca de Python `twisted` y crear un servidor de chat que permita a los usuarios enviar mensajes a todos los demás usuarios conectados.
+- **Ejercicio 5**: instalar la biblioteca de Python `faker` y generar 10 nombres aleatorios.
+- **Ejercicio 6**: instalar la biblioteca de Python `scapy` y crear un paquete de red personalizado que contenga un mensaje de texto.
+- **Ejercicio 7**: instalar la biblioteca de Python `cryptography` y encriptar un mensaje.
+- **Ejercicio 8**: instalar la biblioteca de Python `pwntools` y crear un exploit que permita a un usuario ejecutar comandos en un servidor remoto.
+- **Ejercicio 9**: instalar la biblioteca de Python `paramiko` y crear un cliente SSH que permita a un usuario ejecutar comandos en un servidor remoto.
+- **Ejercicio 10**: instalar la biblioteca de Python `pylibnet` y crear un paquete de red personalizado que contenga un mensaje de texto.
 
 ---
 
@@ -193,6 +193,11 @@ En este ejercicio, utilizamos la biblioteca scapy para crear un paquete de red p
 
 Finalmente, utilizamos la función send de scapy.all para enviar el paquete a la red.
 
+Antes de nada se debe instalar la dependencia:
+```shell
+pip install scapy
+```
+
 ```python
 from scapy.all import *
 
@@ -203,17 +208,35 @@ packet = IP(dst="192.168.1.1")/ICMP()/"Hola, este es un mensaje"
 send(packet)
 ```
 
+Para mostrar los mensajes ICMP entrantes, puedes utilizar el comando tcpdump en la línea de comandos:
+
+```shell
+sudo tcpdump -X icmp
+```
+![](img/03.png)
+
 #### Solución ejercicio 7:
 
 En este ejercicio, utilizamos la biblioteca cryptography para encriptar un mensaje utilizando el algoritmo de cifrado Fernet. Generamos una clave de cifrado utilizando Fernet.generate_key(). Luego, creamos un objeto Fernet con la clave generada.
 
 Definimos un mensaje en la variable message y utilizamos el método encrypt del objeto Fernet para encriptar el mensaje. El mensaje encriptado se almacena en la variable encrypted_message. Finalmente, imprimimos el mensaje encriptado.
 
+Antes de nada se debe instalar la dependencia:
+```shell
+pip install cryptography
+```
+
 ```python
 from cryptography.fernet import Fernet
 
 # Generar una clave de cifrado
 key = Fernet.generate_key()
+
+print(f"Clave de cifrado generada: {key}")
+
+# O utilizar una clave de cifrado ya generada
+
+# key = b'Qd4u32ZW-C3DlWs35tvhgiPUHYP4YmlAfUBAV9EFlBs='
 
 # Crear un objeto Fernet con la clave generada
 cipher = Fernet(key)
@@ -227,6 +250,27 @@ encrypted_message = cipher.encrypt(message)
 # Imprimir el mensaje encriptado
 print(f"Mensaje encriptado: {encrypted_message}")
 ```
+
+Para desencriptar es así:
+
+```python
+from cryptography.fernet import Fernet
+
+key = ""  # Añadir la clave de cifrado generada anteriormente
+
+# Crear un objeto Fernet con la clave
+cipher = Fernet(key)
+
+# Mensaje encriptado
+encrypted_message = ""  # Añadir el mensaje encriptado
+
+# Desencriptar el mensaje
+decrypted_message = cipher.decrypt(encrypted_message)
+
+# Imprimir el mensaje desencriptado
+print(f"Mensaje desencriptado: {decrypted_message}")
+```
+![](img/04.png)
 
 #### Solución ejercicio 8:
 
