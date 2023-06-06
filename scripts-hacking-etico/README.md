@@ -170,8 +170,10 @@ telnet localhost 8000
 
 En este ejercicio, utilizamos la biblioteca faker para generar nombres aleatorios. Creamos un objeto de Faker y luego utilizamos el método name para generar nombres aleatorios. Utilizamos un bucle for para generar y mostrar 10 nombres aleatorios.
 
-Ejercicio 6: Creación de paquete de red personalizado con scapy
-El objetivo de este ejercicio es utilizar la biblioteca scapy para crear un paquete de red personalizado que contenga un mensaje de texto.
+Antes de nada se debe instalar la dependencia:
+```shell
+pip install twisted
+```
 
 ```python
 from faker import Faker
