@@ -36,7 +36,12 @@ Ten en cuenta que este ejercicio es solo una simulación y no debe utilizarse pa
 **Solución según chatGPT:**
 - Solución ejercicio 1:
 
-En este ejercicio, utilizamos la biblioteca python-nmap para realizar un escaneo de puertos a una dirección IP específica. Creamos un objeto de PortScanner, luego llamamos al método scan para escanear los puertos en la dirección IP especificada. Finalmente, iteramos sobre los resultados del escaneo para imprimir el estado de cada puerto.
+En este ejercicio, utilizamos la biblioteca python-nmap para realizar un escaneo de puertos a una dirección IP específica. Creamos un objeto de PortScanner, luego llamamos al método scan para escanear los puertos en la dirección IP especificada. Finalmente, iteramos sobre los resultados del escaneo para imprimir el estado de cada puerto. 
+
+Antes de nada se debe instalar la dependencia:
+```shell
+pip install python-nmap
+```
 
 ```python
 import nmap
