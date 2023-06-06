@@ -4,6 +4,12 @@ Estos ejercicios se han creado directamente usando Inteligencias Artificales.
 
 ![](https://media.giphy.com/media/NlIa1aW3oikdNkfE07/giphy.gif)
 
+Índice:
+- [Bibliotecas](#bibliotecas)
+- [Ejercicios propuestos por copilot](#ejercicios-propuestos-por-copilot)
+- [Ejercicio propuesto por chatGPT](#ejercicio-propuesto-por-chatgpt)
+
+
 ## Bibliotecas
 
 Bibliotecas útiles para la manipulación de paquetes de red, la programación de red asincrónica, la generación de datos falsos, la criptografía, la creación de exploits y pruebas de penetración, etc
@@ -33,8 +39,10 @@ Ten en cuenta que este ejercicio es solo una simulación y no debe utilizarse pa
 - **Ejercicio 9**: instalar la biblioteca de Python `paramiko` y crear un cliente SSH que permita a un usuario ejecutar comandos en un servidor remoto
 - **Ejercicio 10**: instalar la biblioteca de Python `pylibnet` y crear un paquete de red personalizado que contenga un mensaje de texto
 
-**Solución según chatGPT:**
-- Solución ejercicio 1:
+---
+
+### Soluciones según chatGPT:
+#### Solución ejercicio 1:
 
 En este ejercicio, utilizamos la biblioteca python-nmap para realizar un escaneo de puertos a una dirección IP específica. Creamos un objeto de PortScanner, luego llamamos al método scan para escanear los puertos en la dirección IP especificada. Finalmente, iteramos sobre los resultados del escaneo para imprimir el estado de cada puerto. 
 
@@ -58,7 +66,7 @@ for port in result['scan']['192.168.1.1']['tcp']:
     print(f"Puerto {port} está {state}")
 ```
 
-- Solución ejercicio 2:
+#### Solución ejercicio 2:
 
 En este ejercicio, utilizamos la biblioteca impacket para realizar un escaneo de puertos utilizando el protocolo SMB (Server Message Block). Creamos un objeto de SMB cliente y nos conectamos al servidor SMB en la dirección IP especificada. Luego, llamamos al método scan_ports para escanear los puertos. Finalmente, iteramos sobre los puertos encontrados e imprimimos los puertos abiertos.
 
@@ -84,7 +92,7 @@ for port in ports:
     print(f"Puerto {port} está abierto")
 ```
 
-- Solución ejercicio 3:
+#### Solución ejercicio 3:
 
 En este ejercicio, utilizamos la biblioteca requests para realizar una solicitud HTTP GET a una URL específica. Utilizamos la función get de requests pasando la URL como argumento. La respuesta se almacena en la variable response, y podemos acceder al código de estado utilizando response.status_code y al contenido de la respuesta utilizando response.text. Finalmente, imprimimos el código de estado y el contenido de la respuesta.
 
@@ -99,11 +107,16 @@ print(f"Código de estado: {response.status_code}")
 print(f"Contenido de la respuesta: {response.text}")
 ```
 
-- Solución ejercicio 4:
+#### Solución ejercicio 4:
 
 En este ejercicio, utilizamos la biblioteca twisted para crear un servidor de chat básico. Creamos una clase ChatServer que hereda de protocol.Protocol, y en ella mantenemos una lista de todas las conexiones de cliente. Cuando un cliente se conecta, lo agregamos a la lista de conexiones y cuando un cliente se desconecta, lo eliminamos de la lista. Cuando se recibe un mensaje de un cliente, lo imprimimos y luego lo enviamos a todos los otros clientes conectados.
 
 La clase ChatServerFactory hereda de protocol.Factory y se utiliza para construir instancias de ChatServer cuando se establece una nueva conexión. Luego, utilizamos reactor.listenTCP para iniciar el servidor en el puerto 8000.
+
+Antes de nada se debe instalar la dependencia:
+```shell
+pip install twisted
+```
 
 
 ```python
@@ -139,7 +152,21 @@ if __name__ == '__main__':
     reactor.run()
 ```
 
-- Solución ejercicio 5:
+Una vez que el servidor de chat se haya iniciado correctamente, deberías ver el mensaje "Servidor de chat iniciado en el puerto 8000...".
+
+Una vez se ejecute, el servidor de chat quedará esperando conexiones de clientes en el puerto 8000. 
+
+![](img/01.png)
+
+Puedes conectar clientes al servidor utilizando aplicaciones o bibliotecas que admitan el protocolo de chat utilizado por este servidor. Por ejemplo, puedes usar Telnet en la línea de comandos para conectarte al servidor de chat:
+
+```shell
+telnet localhost 8000
+```
+
+![](img/02.png)
+
+#### Solución ejercicio 5:
 
 En este ejercicio, utilizamos la biblioteca faker para generar nombres aleatorios. Creamos un objeto de Faker y luego utilizamos el método name para generar nombres aleatorios. Utilizamos un bucle for para generar y mostrar 10 nombres aleatorios.
 
@@ -158,7 +185,7 @@ for _ in range(10):
     print(name)
 ```
 
-- Solución ejercicio 6:
+#### Solución ejercicio 6:
 
 En este ejercicio, utilizamos la biblioteca scapy para crear un paquete de red personalizado. Creamos un paquete IP utilizando la función IP de scapy.all y especificamos la dirección IP de destino como "192.168.1.1". Añadimos una capa ICMP al paquete utilizando ICMP(). Luego, asignamos el mensaje de texto "Hola, este es un mensaje" al cuerpo del paquete.
 
@@ -174,7 +201,7 @@ packet = IP(dst="192.168.1.1")/ICMP()/"Hola, este es un mensaje"
 send(packet)
 ```
 
-- Solución ejercicio 7:
+#### Solución ejercicio 7:
 
 En este ejercicio, utilizamos la biblioteca cryptography para encriptar un mensaje utilizando el algoritmo de cifrado Fernet. Generamos una clave de cifrado utilizando Fernet.generate_key(). Luego, creamos un objeto Fernet con la clave generada.
 
@@ -199,7 +226,7 @@ encrypted_message = cipher.encrypt(message)
 print(f"Mensaje encriptado: {encrypted_message}")
 ```
 
-- Solución ejercicio 8:
+#### Solución ejercicio 8:
 
 En este ejercicio, utilizamos la biblioteca pwntools para crear un exploit que se conecta a un servidor remoto y ejecuta comandos. Utilizamos la función remote para establecer la conexión con la dirección IP del servidor y el puerto especificado.
 
@@ -225,7 +252,7 @@ print(output)
 conn.close()
 ```
 
-- Solución ejercicio 9:
+#### Solución ejercicio 9:
 
 En este ejercicio, utilizamos la biblioteca paramiko para crear un cliente SSH que se conecta a un servidor remoto y ejecuta comandos. Creamos una instancia de SSHClient.
 
@@ -257,7 +284,7 @@ client.close()
 
 ```
 
-- Solución ejercicio 10:
+#### Solución ejercicio 10:
 
 En este ejercicio, utilizamos la biblioteca pylibnet para crear un paquete de red personalizado. Primero, creamos un paquete Ethernet utilizando libnet_create_packet y especificamos el tipo de enlace como LINKTYPE_ETHERNET.
 
