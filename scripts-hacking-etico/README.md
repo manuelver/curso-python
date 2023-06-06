@@ -8,7 +8,7 @@ Estos ejercicios se han creado directamente usando Inteligencias Artificales.
 
 Bibliotecas útiles para la manipulación de paquetes de red, la programación de red asincrónica, la generación de datos falsos, la criptografía, la creación de exploits y pruebas de penetración, etc
 - **Python-nmap**: es una biblioteca de Python que se utiliza para interactuar con el escáner de puertos nmap. Proporciona una interfaz de Python para nmap y permite a los usuarios realizar escaneos de red, descubrir hosts y puertos abiertos, y obtener información detallada sobre los sistemas y servicios de red. *Documentación*: https://pypi.org/project/python-nmap/
-- **IMPacket**: es una biblioteca de Python para la manipulación de paquetes de red. Proporciona una amplia gama de herramientas para la creación, manipulación y envío de paquetes de red, y es muy útil en aplicaciones de pruebas de penetración y seguridad de red. *Documentación*: https://impacket.readthedocs.io/
+- **IMPacket**: es una biblioteca de Python para la manipulación de paquetes de red. Proporciona una amplia gama de herramientas para la creación, manipulación y envío de paquetes de red, y es muy útil en aplicaciones de pruebas de penetración y seguridad de red. *Documentación*: https://pypi.org/project/impacket/
 - **Requests**: es una biblioteca de Python para hacer solicitudes HTTP. Proporciona una interfaz fácil de usar para realizar solicitudes HTTP, como GET y POST, y permite a los usuarios interactuar con servidores web y API. *Documentación*: https://docs.python-requests.org/en/latest/
 - **Twisted**: es una biblioteca de Python para programación de red asincrónica. Proporciona una amplia gama de herramientas para crear servidores y clientes de red asincrónicos, y es muy útil en aplicaciones de comunicación de red en tiempo real, como chat y videoconferencia. *Documentación*: https://twistedmatrix.com/documents/current/
 - **Faker**: es una biblioteca de Python para generar datos falsos. Proporciona una amplia gama de herramientas para generar nombres, direcciones, números de teléfono y otra información falsa, y es muy útil en aplicaciones de pruebas y simulaciones de datos. *Documentación*: https://faker.readthedocs.io/en/master/
@@ -61,6 +61,11 @@ for port in result['scan']['192.168.1.1']['tcp']:
 - Solución ejercicio 2:
 
 En este ejercicio, utilizamos la biblioteca impacket para realizar un escaneo de puertos utilizando el protocolo SMB (Server Message Block). Creamos un objeto de SMB cliente y nos conectamos al servidor SMB en la dirección IP especificada. Luego, llamamos al método scan_ports para escanear los puertos. Finalmente, iteramos sobre los puertos encontrados e imprimimos los puertos abiertos.
+
+Antes de nada se debe instalar la dependencia:
+```shell
+pip install impacket
+```
 
 ```python
 from impacket import smb
