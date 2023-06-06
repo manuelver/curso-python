@@ -6,7 +6,7 @@ a la dirección IP `192.168.1.1`
 from impacket import smb
 
 # Crear un objeto de cliente SMB
-client = smb.SMB('*SMBSERVER', '192.168.1.1')
+client = smb.SMB('*SMBSERVER', '192.168.1.110')
 
 # Conectar al servidor SMB
 client.connect()
