@@ -280,6 +280,11 @@ Enviamos comandos al servidor utilizando el método sendline de la conexión. En
 
 Finalmente, cerramos la conexión SSH utilizando client.close().
 
+Antes de nada se debe instalar la dependencia:
+```shell
+sudo pip install pwntools
+```
+
 ```python
 from pwn import *
 
