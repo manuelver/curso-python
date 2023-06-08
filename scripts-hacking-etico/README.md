@@ -345,6 +345,8 @@ Utilizamos libnet_build_ethernet para construir el paquete Ethernet, especifican
 
 Finalmente, utilizamos libnet_write para enviar el paquete a la red.
 
+En teoria, deberíamos instalar pylibnet y aplicar este script:
+
 ```python
 from pylibnet import *
 
@@ -372,6 +374,30 @@ libnet_build_ethernet(
 libnet_write(packet)
 ```
 
+Pero resulta que pulibnet tiene problemas de incompatibilidad con python3. Se puede volver a una versión anterior de python, o también, se puede hacer el mismo script con scapy:
+
+```python
+from scapy.all import *
+
+# Crear un paquete Ethernet
+packet = Ether()
+
+# Definir la dirección MAC de origen y destino
+src_mac = "00:11:22:33:44:55"
+dst_mac = "AA:BB:CC:DD:EE:FF"
+
+# Definir el mensaje de texto
+message = "Hola, este es un mensaje"
+
+# Construir el paquete Ethernet
+packet.src = src_mac
+packet.dst = dst_mac
+packet.type = 0x0800  # Tipo de protocolo IP
+packet.payload = message
+
+# Enviar el paquete
+sendp(packet)
+```
 
 ## Ejercicio propuesto por chatGPT
 El ejercicio consistirá en crear un script de pruebas de penetración que realice lo siguiente:
