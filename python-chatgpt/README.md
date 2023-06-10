@@ -250,6 +250,145 @@ if ubicacion:
 
 ## TEMA 4 - Aplicaciones Prácticas de Python + ChatGPT
 
+### 4.1. - Chatbot básico
+
+Lo construimos con un poco de lógica python:
+```python
+import openai
+import os
+from dotenv import load_dotenv
+load_dotenv()
+api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = api_key
+def preguntar_chat_gpt(prompt, modelo="text-davinci-002"):
+    respuesta = openai.Completion.create(
+        engine=modelo,
+        prompt=prompt,
+        n=1,
+        temperature=1.5,
+        max_tokens=150
+    )
+    return respuesta.choices[0].text.strip()
+# Bienvenida
+print("Bienvenido al chatbot de OpenAI GPT-3. \nEscribe \"salir\" cuando quieras terminar la conversación.")
+# Loop para controlar el flujo de la conversación
+while True:
+    ingreso_usuario = input("\nTú: ")
+    if ingreso_usuario == "salir":
+        break
+    prompt = f"Usuario pregunta: {ingreso_usuario}\nChatbot responde: "
+    respuesta_gpt = preguntar_chat_gpt(prompt)
+    print(f"Chatbot: {respuesta_gpt}")
+```
+
+Pero con esto nos encontramos con un problema: No guarda la línia conversacional. Si nos referimos a una respuesta anterior no la recuerda. Se puede ver en esta conversación de besugos:
+
+![](img/python-chatgpt05.png)
+
+### 4.2. - Mantener contexto de las conversaciones
+
+Vamos a crear unas variables para almacenar las conversaciones y crear la funcionalidad necesaria para que cada pregunta se alimente con el historial de la conversación.
+
+Las variables antes del loop son:
+```python
+preguntas_anteriores = []
+respuestas_anteriores = []
+```
+
+y al principio del loop del control de flujo:
+```python
+conversacion_historica = ""
+```
+
+Dentro del loop creamos la lógica para guardar las preguntas y respuestas:
+```python
+preguntas_anteriores.append(ingreso_usuario)
+respuestas_anteriores.append(respuesta_gpt)
+```
+
+Ahora, debemos alimentar a la variable conversación histórica contodo lo que almacenemos. Lo haremos con un loop for:
+```python
+for pregunta, respuesta in zip(preguntas_anteriores, respuestas_anteriores):
+    conversacion_historica += f"Usuario pregunta: {pregunta}\nChatbot responde: {respuesta}\n"
+```
+
+Ahora debemos añadir en el prompt la conversacion_historica:
+```python
+conversacion_historica += prompt
+```
+
+Entonces, a la respuesta_gpt tenemos que cambiar para que la función recoja la converacion_historica. En el print también tenemos que dar directamente la respuesta_gpt porque la conversación ya guarda el diálogo. El código queda así:
+```python
+import openai
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+api_key = os.getenv("OPENAI_API_KEY")
+
+openai.api_key = api_key
+
+preguntas_anteriores = []
+respuestas_anteriores = []
+
+
+def preguntar_chat_gpt(prompt, modelo="text-davinci-002"):
+    """
+    Pregunta a la API de OpenAI GPT-3
+    """
+
+    respuesta = openai.Completion.create(
+        engine=modelo,
+        prompt=prompt,
+        n=1,
+        temperature=1,
+        max_tokens=150
+    )
+
+    return respuesta.choices[0].text.strip()
+
+
+# Bienvenida
+print("Bienvenido al chatbot de OpenAI GPT-3. \nEscribe \"salir\" cuando quieras terminar la conversación.")
+
+# Loop para controlar el flujo de la conversación
+while True:
+
+    conversacion_historica = ""
+
+    ingreso_usuario = input("\nTú: ")
+
+    if ingreso_usuario == "salir":
+        break
+
+    for pregunta, respuesta in zip(preguntas_anteriores, respuestas_anteriores):
+        conversacion_historica += f"Usuario pregunta: {pregunta}\nChatbot responde: {respuesta}\n"
+
+    prompt = f"Usuario pregunta: {ingreso_usuario}"
+    conversacion_historica += prompt
+    respuesta_gpt = preguntar_chat_gpt(conversacion_historica)
+
+    print(f"{respuesta_gpt}")
+
+    preguntas_anteriores.append(ingreso_usuario)
+    respuestas_anteriores.append(respuesta_gpt)
+```
+
+Y el chatbot ya recuerda la conversación:
+
+![](img/python-chatgpt06.png)
+
+### 4.3. - Generación de contenido y resúmenes automáticos
+
+
+### 4.4. - Análisis de sentimiento y clasificaciones
+
+
+### 4.5. - Traducción
+
+
+
+
 
 
 ## TEMA 5 - Otras consideraciones para la integración
