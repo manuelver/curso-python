@@ -617,5 +617,56 @@ El fichero del código completo es [traducir_texto.py](src/07_traducir_texto.py)
 
 ## TEMA 5 - Otras consideraciones para la integración
 
+### 5.1. - Filtrar respuestas – Palabras prohibidas
 
+Vamos a recuperar el código del chatbot que creamos y le vamos a añadir la biblioteca spacy, que nos ayudará al procesamiento del lenguaje natural. Así que importamos spacy, añadimos la variable cargando el modelo de procesamiento de lenguaje natural y otra de palabras_prohibidas:
+```python
+import spacy
+modelo_spacy = spacy.load("es_core_news_md")
+palabras_prohibidas = ["palabra1", "palabra2"]
+```
+
+En palabras_prohibidas hemos creado una lista ficticia pero estás palabras podrían ser palabras malsonantes, palabras de la competencia, palabras de jerga o cualquier listado que creamos que no debe salir en el output que nos devuelve chatgpt.
+
+Ahora vamos a crear la función para el filtrado:
+```python
+def filtrar_lista_negra(texto, lista_negra):
+    token = modelo_spacy(texto)
+    resultado = []
+    for t in token:
+        # Si el token no está en la lista negra, agregarlo al resultado
+        if t.text not in lista_negra:
+            resultado.append(t.text)
+        else:
+            resultado.append("[xxxxx]")
+
+    return " ".join(resultado)
+```
+
+Ahora tenemos que retocar la función preguntar_chat_gpt para que llame a la función nueva de filtrado en cada respuesta cambiando el return que teníamos:
+```python
+respuesta_sin_filtrar = respuesta.choices[0].text.strip()
+respuesta_filtrada = filtrar_lista_negra(respuesta_sin_filtrar, palabras_prohibidas)
+return respuesta_filtrada
+```
+
+Antes de hacer la prueba, y para que quede más despejada la ejecución del programa en la terminal, vamos a añadir una función que limpie el terminal con la biblioteca que tenemos importada os:
+```python
+def clearConsole():
+    # Función limpiar consola
+    os.system('clear')
+```
+
+Vamos a llamarla al inicio de la dinámica del programa, antes de la bienvenida.
+
+Y para probarlo, vamos a añadir en las palabras_prohibidas la palabra "paella" y le vamos a preguntar por el plato típico valenciano:
+
+![](img/python-chatgpt12.png)
+
+El fichero del código completo es [filtrar_palabras.py](src/08_filtrar_respuestas.py)
+
+### 5.2. - Verificar respuestas – Relevancia
+
+
+### 5.3. - Limitaciones y consideraciones éticas
 
