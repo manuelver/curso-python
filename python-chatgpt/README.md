@@ -378,8 +378,132 @@ Y el chatbot ya recuerda la conversación:
 
 ![](img/python-chatgpt06.png)
 
+4.2.1. - Color para diferenciar pregunta y respuesta
+Vamos a darle un poco de color para que se vea mejor en la terminal. Lo haremos con la librería colorama. Así queda el código:
+```python
+import openai
+import os
+from dotenv import load_dotenv
+from colorama import init, Fore
+
+load_dotenv()
+api_key = os.getenv("OPENAI_API_KEY")
+
+openai.api_key = api_key
+
+preguntas_anteriores = []
+respuestas_anteriores = []
+
+# Inicializar colorama
+init()
+
+
+def preguntar_chat_gpt(prompt, modelo="text-davinci-002"):
+    """
+    Pregunta a la API de OpenAI GPT-3
+    """
+
+    respuesta = openai.Completion.create(
+        engine=modelo,
+        prompt=prompt,
+        n=1,
+        temperature=0.1,
+        max_tokens=150
+    )
+
+    return respuesta.choices[0].text.strip()
+
+
+# Bienvenida
+print(Fore.YELLOW + "Bienvenido al chatbot de OpenAI GPT-3." + Fore.RESET)
+print(Fore.CYAN + "Escribe \"salir\" cuando quieras terminar la conversación." + Fore.RESET)
+
+# Loop para controlar el flujo de la conversación
+while True:
+
+    conversacion_historica = ""
+
+    ingreso_usuario = input(Fore.MAGENTA + "Tú: " + Fore.RESET)
+
+    if ingreso_usuario == "salir":
+        break
+
+    for pregunta, respuesta in zip(preguntas_anteriores, respuestas_anteriores):
+        conversacion_historica += f"{Fore.BLUE}Usuario pregunta: {Fore.RESET}{pregunta}{respuesta}\n"
+
+    prompt = f"{Fore.BLUE}Usuario pregunta: {Fore.RESET}{ingreso_usuario}"
+    conversacion_historica += prompt
+    respuesta_gpt = preguntar_chat_gpt(conversacion_historica)
+
+    print(f"{Fore.GREEN}{respuesta_gpt}{Fore.RESET}")
+
+    preguntas_anteriores.append(ingreso_usuario)
+    respuestas_anteriores.append(respuesta_gpt)
+```
+
 ### 4.3. - Generación de contenido y resúmenes automáticos
 
+Vamos a crear dos funciones, una para generar el contenido y otra para resumirlo. Creando un archivo nuevo con las bibliotecas necesarias y cargando la clave de nuevo, como en los anteriores casos.
+Función generar contenido:
+```python
+def crear_contenido(tema, tokens, temperatura, modelo="text-davinci-002"):
+    prompt = f"Escribe un artículo corto sobre el tema: {tema}"
+    respuesta = openai.Completion.create(
+        engine=modelo,
+        prompt=prompt,
+        n=1,
+        temperature=temperatura,
+        max_tokens=tokens
+    )
+    return respuesta.choices[0].text.strip()
+```
+
+Ahora, vamos a darle la dinámica al programa:
+```python
+# Bienvenida
+print("Bienvenido a la aplicación de creación de contenido. \n Necesito que me des algunos datos.")
+# Pedir datos
+tema = input("Elige un tema para tu artículo: ")
+tokens = int(input("Tokens máximos: "))
+temperatura = int(
+    input("Del 1 al 10, ¿Cuánto quieres que sea de creativo el artículo?: ")) / 10
+# Crear contenido
+articulo_creado = crear_contenido(tema, tokens, temperatura)
+print(articulo_creado)
+```
+
+![](img/python-chatgpt07.png)
+
+Ahora haremos lo mismo en otro fichero con la función para el resumen:
+```python
+def resumir_text(texto, tokens, temperatura, modelo="text-davinci-002
+    prompt = f"Resume el siguiente texto: {texto}\n\n"
+    respuesta = openai.Completion.create(
+        engine=modelo,
+        prompt=prompt,
+        n=1,
+        temperature=temperatura,
+        max_tokens=tokens
+    )
+    return respuesta.choices[0].text.strip()
+```
+Y su dinámica:
+```python
+# Bienvenida
+print("Bienvenido a la aplicación de creación de contenido. \n Necesito que me des algunos datos.")
+# Pedir datos
+original = input("Pega aquí el artículo a resumir: ")
+tokens = int(input("Tokens máximos: "))
+temperatura = int(
+    input("Del 1 al 10, ¿Cuánto quieres que sea de creativo el resumen?: ")) / 10
+# Crear contenido
+resumen = resumir_text(original, tokens, temperatura)
+print(resumen)
+```
+
+Pero en este artículo hay un problema. No podemos pasar saltos de línea. Así que tenemos que pasar el artículo a texto plano y eliminar todos los saltos de línea. He usado este artículo: https://www.unicef.org/es/comunicados-prensa/ninos-afectados-por-sequia-zonas-africa-borde-catastrofe 
+
+![](img/python-chatgpt08.png)
 
 ### 4.4. - Análisis de sentimiento y clasificaciones
 

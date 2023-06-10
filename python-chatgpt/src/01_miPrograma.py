@@ -1,3 +1,7 @@
+"""
+Primer programa con chatgpt
+"""
+
 import os
 import openai
 import spacy
