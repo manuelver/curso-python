@@ -248,6 +248,8 @@ if ubicacion:
 
 ![](img/python-chatgpt04.png)
 
+El fichero del código completo es [miPrograma.py](srec/01_miPrograma.py)
+
 ## TEMA 4 - Aplicaciones Prácticas de Python + ChatGPT
 
 ### 4.1. - Chatbot básico
@@ -440,7 +442,7 @@ while True:
     preguntas_anteriores.append(ingreso_usuario)
     respuestas_anteriores.append(respuesta_gpt)
 ```
-
+El fichero del código completo es [chatbot.py](src/02_chatbot.py)
 ### 4.3. - Generación de contenido y resúmenes automáticos
 
 Vamos a crear dos funciones, una para generar el contenido y otra para resumirlo. Creando un archivo nuevo con las bibliotecas necesarias y cargando la clave de nuevo, como en los anteriores casos.
@@ -474,6 +476,8 @@ print(articulo_creado)
 
 ![](img/python-chatgpt07.png)
 
+El fichero del código completo es [crear_contenido.py](src/03_crear_contenido.py)
+
 Ahora haremos lo mismo en otro fichero con la función para el resumen:
 ```python
 def resumir_text(texto, tokens, temperatura, modelo="text-davinci-002
@@ -505,15 +509,102 @@ Pero en este artículo hay un problema. No podemos pasar saltos de línea. Así 
 
 ![](img/python-chatgpt08.png)
 
+El fichero del código completo es [resumir_articulo.py](src/04_resumir_articulo.py)
+
 ### 4.4. - Análisis de sentimiento y clasificaciones
 
+Podemos analizar el sentimiento predominante en el texto y clasificarlo. Todo esto en dos funciones.
+
+La función de analisis de texto es:
+```python
+def analizar_sentimientos(texto):
+    prompt = f"Analiza los sentimientos del siguiente texto: '{texto}'. El sentimiento predominante es: "
+    respuesta = openai.Completion.create(
+        engine="text-davinci-002",
+        prompt=prompt,
+        n=1,
+        temperature=0.5,
+        max_tokens=100
+    )
+    return respuesta.choices[0].text.strip()
+```
+
+Ahora la dinámica del programa:
+```python
+texto_para_analizar = input("Pega aquí el texto a analizar: ")
+sentimiento = analizar_sentimientos(texto_para_analizar)
+print(sentimiento)
+```
+
+![](img/python-chatgpt09.png)
+
+Una consideración a tener en cuenta es que se podría crear un programa de scraping que recogiera los comentarios efectuados por usuarios en, por ejemplo, un artículo o un vídeo de youtube, y pasarselo a chatgpt para que indicará sus conclusiones de sentimiento predominante.
+
+Para clasificar texto la función y la dinámica es:
+```python
+def clasificar_texto(texto):
+    # Definir categorías en un array
+    categorias = [
+        "Arte",
+        "ciencia",
+        "deportes",
+        "entretenimiento",
+        "educación",
+        "finanzas",
+        "historia",
+        "literatura",
+        "matemáticas",
+        "medicina",
+        "medio ambiente",
+        "música",
+        "noticias",
+        "política",
+        "religión",
+        "salud",
+        "tecnología",
+        "viajes",
+    ]
+    prompt = f"Clasifica el siguiente texto: '{texto}' en una de estar categorías: {','.join(categorias)}. La categoría es: "
+    respuesta = openai.Completion.create(
+        engine="text-davinci-002",
+        prompt=prompt,
+        n=1,
+        temperature=0.5,
+        max_tokens=50
+    )
+    return respuesta.choices[0].text.strip()
+texto_para_clasificar = input("Ingresa texto a clasificar en una categoría: ")
+clasificacion = clasificar_texto(texto_para_clasificar)
+
+print(clasificacion)
+```
+
+Para la prueba he cogido los comentarios del grupo del canal telegram [seguridadinformátic4](t.me/seguridadinformatic4):
+
+![](img/python-chatgpt10.png)
 
 ### 4.5. - Traducción
 
+Tan solo con una función podremos traducir un texto al idioma que queramos. La función y la dinámica del programa:
+def traducir_texto(texto, idioma):
+```python
+    prompt = f"Traduce el siguiente texto al idioma {idioma}:\n\n{texto}\n\nTexto traducido: "
+    respuesta = openai.Completion.create(
+        engine="text-davinci-002",
+        prompt=prompt,
+        n=1,
+        temperature=0.5,
+        max_tokens=100
+    )
+    return respuesta.choices[0].text.strip()
+print("Bienvenido al traductor de texto\n")
+idioma = input("Escribe el idioma al que quieres traducir: ")
+texto_a_traducir = input("Escribe el texto a traducir: ")
+texto_traducido = traducir_texto(texto_a_traducir, idioma)
+print(f"El texto traducido es: {texto_traducido}")
+```
 
-
-
-
+![](img/python-chatgpt11.png)
 
 ## TEMA 5 - Otras consideraciones para la integración
 
