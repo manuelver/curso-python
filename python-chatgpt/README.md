@@ -538,6 +538,9 @@ print(sentimiento)
 
 ![](img/python-chatgpt09.png)
 
+
+El fichero del código completo es [analizar_sentimientos.py](src/05_analizar_sentimientos.py)
+
 Una consideración a tener en cuenta es que se podría crear un programa de scraping que recogiera los comentarios efectuados por usuarios en, por ejemplo, un artículo o un vídeo de youtube, y pasarselo a chatgpt para que indicará sus conclusiones de sentimiento predominante.
 
 Para clasificar texto la función y la dinámica es:
@@ -583,6 +586,9 @@ Para la prueba he cogido los comentarios del grupo del canal telegram [seguridad
 
 ![](img/python-chatgpt10.png)
 
+
+El fichero del código completo es [clasificar_texto.py](src/06_clasificar_texto.py)
+
 ### 4.5. - Traducción
 
 Tan solo con una función podremos traducir un texto al idioma que queramos. La función y la dinámica del programa:
@@ -605,6 +611,9 @@ print(f"El texto traducido es: {texto_traducido}")
 ```
 
 ![](img/python-chatgpt11.png)
+
+
+El fichero del código completo es [traducir_texto.py](src/07_traducir_texto.py)
 
 ## TEMA 5 - Otras consideraciones para la integración
 
