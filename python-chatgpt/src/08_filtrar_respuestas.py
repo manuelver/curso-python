@@ -5,6 +5,7 @@ Chatbot con OpenAI GPT-3
 import openai
 import os
 import spacy
+import numpy as np
 from dotenv import load_dotenv
 from colorama import init, Fore
 
@@ -24,8 +25,41 @@ init()
 
 
 def clearConsole():
-    # Función limpiar consola
+    """
+    Limpia la consola
+    """
+
     os.system('clear')
+
+
+def similitud_coseno(vec1, vec2):
+    """
+    Calcula la similitud coseno entre dos vectores
+    """
+
+    superposicion = np.dot(vec1, vec2)
+    magnitud1 = np.linalg.norm(vec1)  # Longitud del vector
+    magnitud2 = np.linalg.norm(vec2)  # Longitud del vector
+
+    sim_cos = superposicion / (magnitud1 * magnitud2)
+
+    return sim_cos
+
+
+def es_relevante(respuesta, entrada, umbral=0.2):
+    """
+    Determina si una respuesta es relevante para una entrada
+    """
+
+    entrada_vectorizada = modelo_spacy(entrada).vector
+    respuesta_vectorizada = modelo_spacy(respuesta).vector
+
+    # Ahora que tenemos las anteriores variables transformadas en vectores,
+    # podemos calcular la similitud coseno
+    similitud = similitud_coseno(entrada_vectorizada, respuesta_vectorizada)
+
+    # Si la similitud es mayor o igual al umbral, la respuesta es relevante
+    return similitud >= umbral
 
 
 def filtrar_lista_negra(texto, lista_negra):
@@ -73,8 +107,8 @@ def preguntar_chat_gpt(prompt, modelo="text-davinci-002"):
 
 # Bienvenida
 clearConsole()
-print(Fore.RED + "Bienvenido al chatbot de OpenAI GPT-3." + Fore.RESET)
-print(Fore.RED + "Escribe \"salir\" cuando quieras terminar la conversación." + Fore.RESET)
+print(Fore.BLUE + "Bienvenido al chatbot de OpenAI GPT-3." + Fore.RESET)
+print(Fore.BLUE + "Escribe \"salir\" cuando quieras terminar la conversación." + Fore.RESET)
 
 # Loop para controlar el flujo de la conversación
 while True:
@@ -94,7 +128,12 @@ while True:
     conversacion_historica += prompt
     respuesta_gpt = preguntar_chat_gpt(conversacion_historica)
 
-    print(f"{respuesta_gpt}")
+    relevante = es_relevante(respuesta_gpt, ingreso_usuario)
 
-    preguntas_anteriores.append(ingreso_usuario)
-    respuestas_anteriores.append(respuesta_gpt)
+    if relevante:
+        print(f"{respuesta_gpt}")
+
+        preguntas_anteriores.append(ingreso_usuario)
+        respuestas_anteriores.append(respuesta_gpt)
+    else:
+        print(Fore.RED + "La respuesta no es relevante ¿podrías reformularla?" + Fore.RESET)

@@ -663,10 +663,66 @@ Y para probarlo, vamos a añadir en las palabras_prohibidas la palabra "paella" 
 
 ![](img/python-chatgpt12.png)
 
-El fichero del código completo es [filtrar_palabras.py](src/08_filtrar_respuestas.py)
-
 ### 5.2. - Verificar respuestas – Relevancia
 
+Vamos a realizar tres pasos:
+- Calcular similitudes
+- Vectorizar los valores
+- Interceptar la respuesta
 
-### 5.3. - Limitaciones y consideraciones éticas
+#### 5.2.1. - Calcular similitudes
 
+Vamos a seguir con el chatbot para añadirle esta funcionalidad. Lo primero es instalar numpy que lo necesitaremos para realizar ciertos calculos. Importamos la biblioteca y le damos un alias:
+```python
+import numpy as np
+```
+
+Y vamos a crear una función con algunos principios matemáticos para aplicar a nuestro texto. Vamos a hacer que calcule lo que se llama la similitud coseno de dos vectores.
+```python
+def similitud_coseno(vec1, vec2):
+    superposicion = np.dot(vec1, vec2)
+    magnitud1 = np.linalg.norm(vec1) # Longitud del vector
+    magnitud2 = np.linalg.norm(vec2) # Longitud del vector
+    sim_cos = superposicion / (magnitud1 * magnitud2)
+    return sim_cos
+```
+
+El resultado de esta operación va a ser un valor entre -1 y uno. Este valor va a indicar la similitud, o sea, entre los dos vectores.
+
+Si se obtiene un valor uno indica que los vectores son idénticos,  que tienen el mismo ángulo si hablamos de números. Mientras que un valor de -1 indicaría que son completamente opuestos, que su ángulo es de 180 grados.
+En el caso de los análisis de texto, que es lo que nos interesa a nosotros, los vectores se generan a partir de los textos utilizando un modelo de lenguaje como spacy que tiene la capacidad de convertir cada texto en un vector numérico que representa su contenido semántico, así como lo escuchas 🤯
+
+Con lo cuál, la función similitud_coseno puede utilizarse para comparar estos vectores que son textos que han sido convertidos a valores numéricos según su valor semántico y así determinar cómo de similares son, en términos de contenido semántico.
+
+#### 5.2.2. - Vectorizar los valores
+
+Ahora, vamos a crear otra función que recogerá la respuesta y la entrada para calcular la similitud_coseno:
+def es_relevante(respuesta, entrada, umbral=0.5):
+```python
+entrada_vectorizada = modelo_spacy(entrada).vector
+respuesta_vectorizada = modelo_spacy(respuesta).vector
+similitud = similitud_coseno(entrada_vectorizada, respuesta_vectorizada)
+return similitud >= umbral
+```
+
+#### 5.2.3. - Interceptar la respuesta
+Ahora ya volvemos al loop que da la dinámica y lógica al chatbot, justo antes de imprimir la respuesta debemos añadir en una variable la llamada a la función anterior y el print y la recogida de respuestas meterlas en un condicional si la respuesta el relevante, según nuestra función. Si es false
+```python
+relevante = es_relevante(respuesta_gpt, ingreso_usuario)
+
+if relevante:
+    print(f"{respuesta_gpt}")
+
+    preguntas_anteriores.append(ingreso_usuario)
+    respuestas_anteriores.append(respuesta_gpt)
+else:
+    print(Fore.RED + "La respuesta no es relevante ¿podrías reformularla?" + Fore.RESET)
+```
+
+Le he dado colorcito rojo a la respuesta errónea. Vamos a probarlo. Le pido un poema y le pregunto sobre mi opinión:
+
+![](img/python-chatgpt13.png)
+
+Y hasta aquí el curso. ¡Sigue cortando leña! 🪓
+
+![](img/python-chatgpt14.png)
