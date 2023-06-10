@@ -4,6 +4,41 @@
 
 ## Índice
 
+
+[TEMA 1 - Introducción a ChatGPT y sus aplicaciones](#tema-1---introducción-a-chatgpt-y-sus-aplicaciones)
+- [APUNTES PYTHON Y CHATGPT](#apuntes-python-y-chatgpt)
+  - [Índice](#índice)
+  - [TEMA 1 - Introducción a ChatGPT y sus aplicaciones](#tema-1---introducción-a-chatgpt-y-sus-aplicaciones)
+    - [1.1. - ¿Qué es ChatGPT?](#11---qué-es-chatgpt)
+    - [1.2. - ¿Cómo funciona?](#12---cómo-funciona)
+    - [1.3. - Arquitectura](#13---arquitectura)
+    - [1.4. - Casos de uso](#14---casos-de-uso)
+  - [TEMA 2 - Configuración y Autenticación con la API de OpenAI](#tema-2---configuración-y-autenticación-con-la-api-de-openai)
+    - [2.1. - Pasos para autenticarse a ChatGPT](#21---pasos-para-autenticarse-a-chatgpt)
+    - [2.2. - Instalar y configurar las bibliotecas para OpenAI](#22---instalar-y-configurar-las-bibliotecas-para-openai)
+    - [2.3. - Descripción y documentación de las bibliotecas](#23---descripción-y-documentación-de-las-bibliotecas)
+  - [TEMA 3 - Interactuar con ChatGPT usando Python](#tema-3---interactuar-con-chatgpt-usando-python)
+    - [3.1. - Realizar peticiones básicas a chatgpt](#31---realizar-peticiones-básicas-a-chatgpt)
+  - [3.2. - Personalización de las peticiones de ChatGPT](#32---personalización-de-las-peticiones-de-chatgpt)
+    - [3.2.1. - Temperatura (creatividad)](#321---temperatura-creatividad)
+    - [3.2.2. - Tokens máximos (largo)](#322---tokens-máximos-largo)
+    - [3.2.3. - Cantidad de respuestas](#323---cantidad-de-respuestas)
+  - [3.3. - Procesar y analizar las respuestas de chatgpt](#33---procesar-y-analizar-las-respuestas-de-chatgpt)
+    - [3.3.1. - Analizar la respuesta](#331---analizar-la-respuesta)
+    - [3.3.2. - Utilizar la información extraída](#332---utilizar-la-información-extraída)
+  - [TEMA 4 - Aplicaciones Prácticas de Python + ChatGPT](#tema-4---aplicaciones-prácticas-de-python--chatgpt)
+    - [4.1. - Chatbot básico](#41---chatbot-básico)
+    - [4.2. - Mantener contexto de las conversaciones](#42---mantener-contexto-de-las-conversaciones)
+    - [4.3. - Generación de contenido y resúmenes automáticos](#43---generación-de-contenido-y-resúmenes-automáticos)
+    - [4.4. - Análisis de sentimiento y clasificaciones](#44---análisis-de-sentimiento-y-clasificaciones)
+    - [4.5. - Traducción](#45---traducción)
+  - [TEMA 5 - Otras consideraciones para la integración](#tema-5---otras-consideraciones-para-la-integración)
+    - [5.1. - Filtrar respuestas – Palabras prohibidas](#51---filtrar-respuestas--palabras-prohibidas)
+    - [5.2. - Verificar respuestas – Relevancia](#52---verificar-respuestas--relevancia)
+      - [5.2.1. - Calcular similitudes](#521---calcular-similitudes)
+      - [5.2.2. - Vectorizar los valores](#522---vectorizar-los-valores)
+      - [5.2.3. - Interceptar la respuesta](#523---interceptar-la-respuesta)
+
 ## TEMA 1 - Introducción a ChatGPT y sus aplicaciones
 ### 1.1. - ¿Qué es ChatGPT?
 
