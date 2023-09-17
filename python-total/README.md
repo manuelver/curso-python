@@ -9,7 +9,7 @@ Quizá encuentres aquí cosas que no están en el curso, o viceversa, son apunte
 
 ![](https://media.giphy.com/media/LYBHgc2yiO07G3dkkQ/giphy.gif)
 
-# Índice del curso y apuntes realizados
+## Índice del curso y apuntes realizados
 
 - [Día 1 - Programa un creador de nombres](dia_01/README.md)
   - 1.1. - print
@@ -144,7 +144,7 @@ Quizá encuentres aquí cosas que no están en el curso, o viceversa, son apunte
 
 [Apuntes en PDF](https://vergaracarmona.es/wp-content/uploads/2023/05/Apuntes_python_Manuel_Vergara.pdf)
 
-# Índice de ficheros
+## Índice de ficheros
 
 ```shell
 python-total
