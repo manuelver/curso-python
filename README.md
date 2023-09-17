@@ -1,4 +1,4 @@
-# Cursos de python 🚀
+# Cursos de python 🐍 
 
 Este repositorio contiene los apuntes tomados en diversos cursos de python reflejados en la siguiente tabla:
 
@@ -7,7 +7,8 @@ Este repositorio contiene los apuntes tomados en diversos cursos de python refle
 |             HolaMundo | [contenidos](./HolaMundo/README.md)             |    Bajo    |      5 horas       |         15 horas         | [Aprende python ahora!](https://www.youtube.com/watch?v=tQZy0U8s9LY&ab_channel=HolaMundo)               |
 |          Python total | [contenidos](./python-total/README.md)          | Intermedio |      30 horas      |        200 horas         | [Escuela Directa](https://www.udemy.com/course/python-total)                                            |
 |      Python y ChatGPT | [contenidos](./python-chatgpt/README.md)        | Intermedio |      2 horas       |         15 horas         | [Escuela Directa](https://www.udemy.com/course/python-chatgpt/), [ChapGPT](https://www.chat.openai.com) |
-| scripts-hacking-etico | [contenidos](./scripts-hacking-etico/README.md) |  Avanzado  |        ---         |       próximamente       | [ChapGPT](https://www.chat.openai.com), [Canal Telegram](https://t.me/seguridadinformatic4)             |
+| scripts-hacking-etico | [contenidos](./scripts-hacking-etico/README.md) |  Avanzado  |        ---         |         5 horas          | [ChapGPT](https://www.chat.openai.com), [Canal Telegram](https://t.me/seguridadinformatic4)             |
+|     30 days of python | [contenidos](./30-days-of-python/README.md)     | Intermedio |        ---         |       próximamente       | [Repo Asabeneh](https://github.com/Asabeneh/30-Days-Of-Python)                                          |
 
 Las prácticas y ejercicios aquí contenidos son los que hice mediante los cursos mencionados o por investigación propia, con mucho café para combatir el insomnio. Realmente, los apuntes no fueron pensados para compartirlos, por ello pueden tener lagunas de información o contenido adicional respecto al curso, ya que se redactaron para recordar procedimientos y conceptos que EMHO me parecieron relevantes. Teniendo estos documentos tan completos y entendiendo que el conocimiento debe ser libre, se decidió compartirlos. Si encuentras **cualquier error puedes abrir una issue o contactar conmigo**.
 
@@ -21,7 +22,7 @@ Recuerda,
 ---
 <br>
 
-# Qué es python según chatGPT 🤖
+## Qué es python según chatGPT 🤖
 
 Python es un lenguaje de programación interpretado y de alto nivel. Python se destaca por su sintaxis clara y legible, lo que lo hace muy accesible tanto para principiantes como para programadores experimentados.
 
@@ -235,7 +236,7 @@ Esta tabla solo proporciona una comparación general entre los lenguajes y que c
 
 # Agradecimientos 🎁
 
-Por supuesto, quiero agradecer a [Federico Garay](https://ar.linkedin.com/in/fedegaray) y a [Nicolás Schürmann](https://www.linkedin.com/in/nicolasschurmann/) (¡Cuidao con el [teclado](https://youtu.be/y0T8UqBkawQ) que se gasta!) por los cursos en concreto que he realizado con ellos y por todo el contenido libre que en sus webs y canales de RRSS.
+Por supuesto, quiero agradecer a [Federico Garay](https://ar.linkedin.com/in/fedegaray) y a [Nicolás Schürmann](https://www.linkedin.com/in/nicolasschurmann/) (¡Cuidao con el [teclado](https://youtu.be/y0T8UqBkawQ) que se gasta!) por los cursos en concreto que he realizado con ellos y por todo el contenido libre de sus webs y canales de RRSS.
 
 También a todos los compas que me han apoyado en este camino.
 
