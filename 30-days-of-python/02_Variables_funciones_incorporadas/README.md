@@ -40,3 +40,4 @@ Documento original en inglés: [Variables, Builtin Functions](https://github.com
 - Usa la función incorporada `input` para obtener el nombre, apellido, país y edad de un usuario y almacena los valores en las variables correspondientes.
 - Ejecuta `help('keywords')` en la terminal de Python o en tu archivo para verificar las palabras reservadas o palabras clave de Python.
 
+[Solución](./variables.py)
