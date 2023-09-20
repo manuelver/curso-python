@@ -38,3 +38,5 @@ Documento original en inglés: [tuples](https://github.com/Asabeneh/30-Days-Of-P
 ```
 nordic_countries = ('Dinamarca', 'Finlandia', 'Islandia', 'Noruega', 'Suecia')
 ```
+
+[Solución](01_tuplas.py)
