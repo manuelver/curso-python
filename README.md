@@ -2,13 +2,14 @@
 
 Este repositorio contiene los apuntes tomados en diversos cursos de python reflejados en la siguiente tabla:
 
-|                 Curso | Ubicación                                       |   Nivel    | Duración de vídeos | Duración personal aprox. | Fuente original                                                                                         |
-| --------------------: | :---------------------------------------------- | :--------: | :----------------: | :----------------------: | :------------------------------------------------------------------------------------------------------ |
-|             HolaMundo | [contenidos](./HolaMundo/README.md)             |    Bajo    |      5 horas       |         15 horas         | [Aprende python ahora!](https://www.youtube.com/watch?v=tQZy0U8s9LY&ab_channel=HolaMundo)               |
-|          Python total | [contenidos](./python-total/README.md)          | Intermedio |      30 horas      |        200 horas         | [Escuela Directa](https://www.udemy.com/course/python-total)                                            |
-|      Python y ChatGPT | [contenidos](./python-chatgpt/README.md)        | Intermedio |      2 horas       |         15 horas         | [Escuela Directa](https://www.udemy.com/course/python-chatgpt/), [ChapGPT](https://www.chat.openai.com) |
-| scripts-hacking-etico | [contenidos](./scripts-hacking-etico/README.md) |  Avanzado  |        ---         |         5 horas          | [ChapGPT](https://www.chat.openai.com), [Canal Telegram](https://t.me/seguridadinformatic4)             |
-|     30 days of python | [contenidos](./30-days-of-python/README.md)     | Intermedio |        ---         |       próximamente       | [Repo Asabeneh](https://github.com/Asabeneh/30-Days-Of-Python)                                          |
+|                          Nombre del curso <br> y ubicación |   Nivel    | Duración <br> de vídeos | Duración personal <br> aprox. | Fuente original                                                                                         |
+| ---------------------------------------------------------: | :--------: | :---------------------: | :---------------------------: | :------------------------------------------------------------------------------------------------------ |
+|                         [HolaMundo](./HolaMundo/README.md) |    Bajo    |         5 horas         |           15 horas            | [Aprende python ahora!](https://www.youtube.com/watch?v=tQZy0U8s9LY&ab_channel=HolaMundo)               |
+|                   [Python total](./python-total/README.md) | Intermedio |        30 horas         |           200 horas           | [Escuela Directa](https://www.udemy.com/course/python-total)                                            |
+|             [Python y ChatGPT](./python-chatgpt/README.md) | Intermedio |         2 horas         |           15 horas            | [Escuela Directa](https://www.udemy.com/course/python-chatgpt/), [ChapGPT](https://www.chat.openai.com) |
+|         [30 days of python](./30-days-of-python/README.md) | Intermedio |           ---           |         próximamente          | [Repo Asabeneh](https://github.com/Asabeneh/30-Days-Of-Python)                                          |
+| [scripts-hacking-etico](./scripts-hacking-etico/README.md) |  Avanzado  |           ---           |            5 horas            | [ChapGPT](https://www.chat.openai.com), [Canal Telegram](https://t.me/seguridadinformatic4)             |
+|                   [Cajón de sastre](./Catch-all/README.md) | Intermedio |           ---           |           continua            | [Personal](https://vergaracarmona.es)                                                                   |
 
 Las prácticas y ejercicios aquí contenidos son los que hice mediante los cursos mencionados o por investigación propia, con mucho café para combatir el insomnio. Realmente, los apuntes no fueron pensados para compartirlos, por ello pueden tener lagunas de información o contenido adicional respecto al curso, ya que se redactaron para recordar procedimientos y conceptos que EMHO me parecieron relevantes. Teniendo estos documentos tan completos y entendiendo que el conocimiento debe ser libre, se decidió compartirlos. Si encuentras **cualquier error puedes abrir una issue o contactar conmigo**.
 

@@ -3,7 +3,7 @@
 Estos apuntes y ejercicios en python han sido realizados siguiendo un repositorio de [Asabeneh](https://github.com/Asabeneh):
 - [30 Days of Python](https://github.com/Asabeneh/30-Days-Of-Python)
 
-El reposotorio original está en inglés, pero he traducido los ejercicios al español, así como los apuntes que he creído convenientes resaltar.
+El repositorio original está en inglés, pero he traducido los ejercicios al español, así como los apuntes que he creído convenientes resaltar.
 
 ## Índice del curso y apuntes realizados
 
