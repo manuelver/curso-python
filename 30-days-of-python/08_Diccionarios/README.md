@@ -25,3 +25,5 @@ Documento original en inglés: [Dictionaries](https://github.com/Asabeneh/30-Day
 10. Elimina uno de los elementos del diccionario.
 
 11. Elimina uno de los diccionarios por completo.
+
+[Solución](01_dic.py)
