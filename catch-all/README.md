@@ -6,6 +6,6 @@ Aquí iré dejando scripts y ejercicios que se me ocurran, con lo que no hay un 
 
 ## Índice de ejercicios
 
-|                                   Nombre | Descripción                                    |   Nivel    |
-| ---------------------------------------: | :--------------------------------------------- | :--------: |
-| [Words Linux](./01_scripts_words_linux/) | Scritp con el fichero: `/usr/share/dict/words` | intermedio |
+|                                            Nombre | Descripción                                    |   Nivel    |
+| ------------------------------------------------: | :--------------------------------------------- | :--------: |
+| [Words Linux](./01_scripts_words_linux/README.md) | Scritp con el fichero: `/usr/share/dict/words` | intermedio |
