@@ -81,3 +81,5 @@ persona = {
 ```
 Asabeneh Yetayeh vive en Finlandia. Está casado.
 ```
+
+[Solución](./01_condicionales.py)
