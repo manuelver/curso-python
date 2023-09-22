@@ -57,6 +57,8 @@ Documento original en inglés: [Loops](https://github.com/Asabeneh/30-Days-Of-Py
 
 8. Utiliza un bucle for para iterar de 0 a 100 e imprime solo los números impares.
 
+[Solución](01_bucles.py)
+
 ## Ejercicios: Nivel 2
 
 1. Utiliza un bucle for para iterar de 0 a 100 e imprime la suma de todos los números.
@@ -69,6 +71,8 @@ La suma de todos los números es 5050.
 La suma de todos los números pares es 2550. Y la suma de todos los números impares es 2500.
 ```
 
+[Solución](02_bucles.py)
+
 ## Ejercicios: Nivel 3
 
 1. Ve a la carpeta de datos y utiliza el archivo countries.py. Recorre los países y extrae todos los países que contienen la palabra "land".
@@ -79,3 +83,5 @@ La suma de todos los números pares es 2550. Y la suma de todos los números imp
 - ¿Cuál es el número total de idiomas en los datos?
 - Encuentra los diez idiomas más hablados en los datos.
 - Encuentra los 10 países más poblados del mundo.
+
+[Solución](03_bucles.py)
