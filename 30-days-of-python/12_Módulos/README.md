@@ -62,3 +62,5 @@ generate_colors('rgb', 1)
 Ejercicios: Nivel 3
 1. Llama a tu función shuffle_list, toma una lista como parámetro y devuelve una lista mezclada.
 2. Escribe una función que devuelva una matriz de siete números aleatorios en un rango de 0-9. Todos los números deben ser únicos.
+
+[Solución](01_modulos.py)
