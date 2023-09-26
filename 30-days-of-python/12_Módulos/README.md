@@ -64,3 +64,5 @@ Ejercicios: Nivel 3
 2. Escribe una función que devuelva una matriz de siete números aleatorios en un rango de 0-9. Todos los números deben ser únicos.
 
 [Solución](01_modulos.py)
+
+[<< Day 11](../11_Funciones/README.md) | [Day 13 >>](../13_Comprensión_de_listas/README.md)

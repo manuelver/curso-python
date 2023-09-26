@@ -5,3 +5,5 @@ Documento original en inglés: [Python Type Errors](https://github.com/Asabeneh/
 ## Ejercicios
 
 1. Abre tu shell interactivo de Python y prueba todos los ejemplos cubiertos en esta sección.
+
+[<< Day 14](../14_Funciones_de_orden_superior/README.md) | [Day 16 >>](../16_Fecha_y_hora_en_Python/README.md)

@@ -40,3 +40,5 @@ nordic_countries = ('Dinamarca', 'Finlandia', 'Islandia', 'Noruega', 'Suecia')
 ```
 
 [Solución](01_tuplas.py)
+
+[<< Day 5](../05_Listas/README.md) | [Day 7 >>](../07_Conjuntos/README.md)

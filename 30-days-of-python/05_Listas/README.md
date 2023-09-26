@@ -87,3 +87,5 @@ edades = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
 - Desempaqueta los primeros tres países y el resto como países escandinavos.
 
 [Solución](./01_listas.py)
+
+[<< Day 4](../04_Cadenas/README.md) | [Day 6 >>](../06_Tuplas/README.md)

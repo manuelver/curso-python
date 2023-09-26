@@ -43,5 +43,6 @@ Documento original en inglés: [Introduction](https://github.com/Asabeneh/30-Day
 - Escribe un ejemplo para diferentes tipos de datos en Python, como Número (Entero, Flotante, Complejo), Cadena de texto, Booleano, Lista, Tupla, Conjunto y Diccionario.
 - Encuentra la distancia euclidiana entre (2, 3) y (10, 8).
 
-
 [Solución](./03_introduccion.py)
+
+[<< INTRO](../README.md) | [Day 2 >>](../02_Variables_funciones_incorporadas/README.md)

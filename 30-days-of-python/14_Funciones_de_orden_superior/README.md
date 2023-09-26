@@ -43,3 +43,5 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 - Ordena los países por nombre, capital y población.
 - Filtra los diez idiomas más hablados por ubicación.
 - Filtra los diez países más poblados.
+
+[<< Day 13](../13_Comprensión_de_listas/README.md) | [Day 15 >>](../15_Errores_de_tipo_en_Python/README.md)

@@ -69,3 +69,5 @@ El área de un círculo con radio 10 es de 314 metros cuadrados.
 ```
 
 [Solución](./01_cadenas.py)
+
+[<< Day 3](../03_Operadores/README.md) | [Day 5 >>](../05_Listas/README.md)

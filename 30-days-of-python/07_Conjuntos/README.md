@@ -48,3 +48,5 @@ age = [22, 19, 24, 25, 26, 24, 25, 24]
 3. Soy un profesor y me encanta inspirar y enseñar a la gente. ¿Cuántas palabras únicas se han utilizado en la oración? Utiliza los métodos `split` y `set` para obtener las palabras únicas.
 
 [Solución](./01_sets.py)
+
+[<< Day 6](../06_Tuplas/README.md) | [Day 8 >>](../08_Diccionarios/README.md)

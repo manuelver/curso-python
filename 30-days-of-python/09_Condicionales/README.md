@@ -83,3 +83,5 @@ Asabeneh Yetayeh vive en Finlandia. Está casado.
 ```
 
 [Solución](./01_condicionales.py)
+
+[<< Day 8](../08_Diccionarios/README.md) | [Day 10 >>](../10_Bucles/README.md)

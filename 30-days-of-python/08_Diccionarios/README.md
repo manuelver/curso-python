@@ -27,3 +27,5 @@ Documento original en inglés: [Dictionaries](https://github.com/Asabeneh/30-Day
 11. Elimina uno de los diccionarios por completo.
 
 [Solución](01_dic.py)
+
+[<< Day 7](../07_Conjuntos/README.md) | [Day 9 >>](../09_Condicionales/README.md)

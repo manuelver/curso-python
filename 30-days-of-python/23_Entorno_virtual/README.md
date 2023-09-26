@@ -4,4 +4,6 @@ Documento original en inglés: [Virtual Environment](https://github.com/Asabeneh
 
 ## Ejercicios
 
-...
+1. Crea un directorio de proyecto con un entorno virtual basado en el ejemplo dado arriba.
+
+[<< Day 22](../22_Web_scraping/README.md) | [Day 24 >>](../24_Estadísticas/README.md)

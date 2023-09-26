@@ -41,3 +41,5 @@ Documento original en inglés: [Variables, Builtin Functions](https://github.com
 - Ejecuta `help('keywords')` en la terminal de Python o en tu archivo para verificar las palabras reservadas o palabras clave de Python.
 
 [Solución](./variables.py)
+
+[<< Day 1](../01_Introducción/README.md) | [Day 3 >>](../03_Operadores/README.md)
