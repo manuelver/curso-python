@@ -19,6 +19,8 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 5. Usa un bucle for para imprimir cada nombre en la lista de nombres.
 6. Usa un bucle for para imprimir cada número en la lista de números.
 
+[Solución](01_func_sup.py)
+
 ### Ejercicios: Nivel 2
 
 1. Usa map para crear una nueva lista cambiando cada país a mayúsculas en la lista de países.
@@ -37,11 +39,15 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 14. Declara una función llamada get_first_ten_countries que devuelva una lista de los primeros diez países de la lista de países.
 15. Declara una función llamada get_last_ten_countries que devuelva los últimos diez países en la lista de países.
 
+[Solución](02_func_sup.py)
+
 ### Ejercicios: Nivel 3
 
 1. Usa el archivo [countries_data.py](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries-data.py) y sigue las siguientes tareas:
 - Ordena los países por nombre, capital y población.
 - Filtra los diez idiomas más hablados por ubicación.
 - Filtra los diez países más poblados.
+
+[Solución](03_func_sup.py)
 
 [<< Day 13](../13_Comprensión_de_listas/README.md) | [Day 15 >>](../15_Errores_de_tipo_en_Python/README.md)
