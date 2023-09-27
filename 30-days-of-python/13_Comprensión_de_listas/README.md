@@ -63,4 +63,6 @@ names = [[('Asabeneh', 'Yetayeh')], [('David', 'Smith')], [('Donald', 'Trump')],
 ```
 7. Escribe una función lambda que pueda resolver una pendiente o una ordenada al origen de funciones lineales.
 
+[Solución](01_compr_listas.py)
+
 [<< Day 12](../12_Módulos/README.md) | [Day 14 >>](../14_Funciones_de_orden_superior/README.md)
