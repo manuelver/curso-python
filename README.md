@@ -13,7 +13,7 @@ Este repositorio contiene los apuntes tomados en diversos cursos de python refle
 
 Las prácticas y ejercicios aquí contenidos son los que hice mediante los cursos mencionados o por investigación propia, con mucho café para combatir el insomnio. Realmente, los apuntes no fueron pensados para compartirlos, por ello pueden tener lagunas de información o contenido adicional respecto al curso, ya que se redactaron para recordar procedimientos y conceptos que EMHO me parecieron relevantes. Teniendo estos documentos tan completos y entendiendo que el conocimiento debe ser libre, se decidió compartirlos. Si encuentras **cualquier error puedes abrir una issue o contactar conmigo**.
 
-Si te parece útil este documento puedes agradecerlo a través de las vías de contacto de la [web](https://vergaracarmona.es) o invítandome a un café ☕️ ⬇️
+Si te parece útil este documento puedes agradecerlo a través de las vías de contacto de la [web](https://vergaracarmona.es) o [invítandome a un café ☕️ ⬇️](#invítame-a-un-café)
 
 Recuerda, 
 
