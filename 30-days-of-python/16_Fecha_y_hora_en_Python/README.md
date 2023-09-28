@@ -14,4 +14,6 @@ Documento original en inglés: [Python Date time](https://github.com/Asabeneh/30
     - Obtener una marca de tiempo de cualquier actividad en una aplicación.
     - Publicar entradas en un blog.
 
+[Solución](01_time.py)
+
 [<< Day 15](../15_Errores_de_tipo_en_Python/README.md) | [Day 17 >>](../17_Manejo_de_excepciones/README.md)
