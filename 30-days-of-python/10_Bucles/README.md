@@ -86,4 +86,4 @@ La suma de todos los números pares es 2550. Y la suma de todos los números imp
 
 [Solución](03_bucles.py)
 
-[<< Day 9](../09_Condicionales/README.md) | [Day 10 >>](../10_Bucles/README.md)
+[<< Day 9](../09_Condicionales/README.md) | [Day 11 >>](../11_Funciones/README.md)
