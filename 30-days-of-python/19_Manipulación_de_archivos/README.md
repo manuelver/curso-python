@@ -67,6 +67,9 @@ print(paises_mas_poblados(archivo='./data/countries_data.json', top=3))
 ]
 ```
 
+
+[Solución](01_files.py)
+
 ### Ejercicios: Nivel 2
 
 1. Extrae todas las direcciones de correo electrónico entrantes como una lista del archivo email_exchange_big.txt.
@@ -110,6 +113,6 @@ a) Cuántas líneas contienen python o Python
 b) Cuántas líneas contienen JavaScript, javascript o Javascript
 c) Cuántas líneas contienen Java y no JavaScript
 
-[Solución](01_files.py)
+[Solución](02_files.py)
 
 [<< Day 18](../18_Expresiones_regulares/README.md) | [Day 20 >>](../20_Gestor_de_paquetes_de_Python/README.md)
