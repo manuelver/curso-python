@@ -108,3 +108,17 @@ for word in words:
 most_freq_words = sorted(word_freq, key=word_freq.get, reverse=True)[:3]
 
 print("Las tres palabras más frecuentes son:", most_freq_words)
+
+# Ejercicios: Nivel 4
+
+# 1. Extrae el DNI de la siguiente cadena.
+
+dni = """Asunto: Datos para la nómina.
+Respondiendo a su mail, le paso el dato personal que le faltaba. Mi DNI es 12345678A.
+Saludos.
+"""
+
+# Extraemos el DNI
+dni = re.search(r'\d{8}[A-Z]', dni).group()
+
+print("DNI:", dni)
