@@ -6,7 +6,7 @@ Documento original en inglés: [file handling](https://github.com/Asabeneh/30-Da
 
 ### Ejercicios: Nivel 1
 
-1. Escribe una función que cuente el número de líneas y palabras en un texto. Todos los archivos se encuentran en la carpeta data:
+1. Escribe una función que cuente el número de líneas y palabras en un texto. Todos los archivos se encuentran en la carpeta [data](./data):
 a) Lee el archivo obama_speech.txt y cuenta el número de líneas y palabras
 b) Lee el archivo michelle_obama_speech.txt y cuenta el número de líneas y palabras
 c) Lee el archivo donald_speech.txt y cuenta el número de líneas y palabras
@@ -109,5 +109,7 @@ c) Las diez palabras más frecuentes utilizadas en el discurso de Trump
 a) Cuántas líneas contienen python o Python
 b) Cuántas líneas contienen JavaScript, javascript o Javascript
 c) Cuántas líneas contienen Java y no JavaScript
+
+[Solución](01_files.py)
 
 [<< Day 18](../18_Expresiones_regulares/README.md) | [Day 20 >>](../20_Gestor_de_paquetes_de_Python/README.md)
