@@ -44,4 +44,6 @@ Distribución de Frecuencia: [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.
 
 1. Crea una clase llamada CuentaPersona. Tiene propiedades de nombre, apellido, ingresos, gastos y tiene métodos de total_ingreso, total_gasto, info_cuenta, agregar_ingreso, agregar_gasto y saldo_cuenta. Ingresos es un conjunto de ingresos y su descripción. Lo mismo ocurre con los gastos.
 
+[Solución](01_clases_objetos.py)
+
 [<< Day 20](../20_Gestor_de_paquetes_de_Python/README.md) | [Day 22 >>](../22_Web_scraping/README.md)
