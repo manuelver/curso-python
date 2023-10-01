@@ -20,4 +20,6 @@ Documento original en inglés: [python package manager](https://github.com/Asabe
 
 4. La Universidad de California en Irvine (UCI) es uno de los lugares más comunes para obtener conjuntos de datos para ciencia de datos y aprendizaje automático. Lee el contenido de UCI (https://archive.ics.uci.edu/ml/datasets.php). Sin bibliotecas adicionales, puede ser difícil, por lo que puedes intentarlo con BeautifulSoup4.
 
+[Solución](01_gestor_paquetes.py)
+
 [<< Day 19](../19_Manipulación_de_archivos/README.md) | [Day 21 >>](../21_Clases_y_objetos/README.md)
