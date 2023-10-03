@@ -10,4 +10,6 @@ Documento original en inglés: [Web Scraping](https://github.com/Asabeneh/30-Day
 
 3. Realiza un raspado web de la tabla de presidentes y guarda los datos como JSON (https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States). La tabla no está muy estructurada y el proceso de raspado puede llevar mucho tiempo.
 
+[Solución](01_web_scraping.py)
+
 [<< Day 21](../21_Clases_y_objetos/README.md) | [Day 23 >>](../23_Entorno_virtual/README.md)
