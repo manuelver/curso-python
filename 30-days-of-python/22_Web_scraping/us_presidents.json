@@ -1,1 +1,416 @@
-[]
+[
+  {
+    "no.[a]": "1",
+    "portrait": "\n",
+    "name(birth\u2013death)": "George Washington",
+    "term[14]": "April 30, 1789",
+    "party[b][15]": "\n",
+    "election": "Unaffiliated",
+    "vice president[16]": "1788\u20131789"
+  },
+  {
+    "no.[a]": "2",
+    "portrait": "\n",
+    "name(birth\u2013death)": "John Adams",
+    "term[14]": "March 4, 1797",
+    "party[b][15]": "\n",
+    "election": "Federalist",
+    "vice president[16]": "1796"
+  },
+  {
+    "no.[a]": "3",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Thomas Jefferson",
+    "term[14]": "March 4, 1801",
+    "party[b][15]": "\n",
+    "election": "Democratic-",
+    "vice president[16]": "1800"
+  },
+  {
+    "no.[a]": "4",
+    "portrait": "\n",
+    "name(birth\u2013death)": "James Madison",
+    "term[14]": "March 4, 1809",
+    "party[b][15]": "\n",
+    "election": "Democratic-",
+    "vice president[16]": "1808"
+  },
+  {
+    "no.[a]": "5",
+    "portrait": "\n",
+    "name(birth\u2013death)": "James Monroe",
+    "term[14]": "March 4, 1817",
+    "party[b][15]": "\n",
+    "election": "Democratic-",
+    "vice president[16]": "1816"
+  },
+  {
+    "no.[a]": "6",
+    "portrait": "\n",
+    "name(birth\u2013death)": "John Quincy Adams",
+    "term[14]": "March 4, 1825",
+    "party[b][15]": "\n",
+    "election": "Democratic-",
+    "vice president[16]": "1824"
+  },
+  {
+    "no.[a]": "7",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Andrew Jackson",
+    "term[14]": "March 4, 1829",
+    "party[b][15]": "\n",
+    "election": "Democratic",
+    "vice president[16]": "1828"
+  },
+  {
+    "no.[a]": "8",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Martin Van Buren",
+    "term[14]": "March 4, 1837",
+    "party[b][15]": "\n",
+    "election": "Democratic",
+    "vice president[16]": "1836"
+  },
+  {
+    "no.[a]": "9",
+    "portrait": "\n",
+    "name(birth\u2013death)": "William Henry Harrison",
+    "term[14]": "March 4, 1841",
+    "party[b][15]": "\n",
+    "election": "Whig",
+    "vice president[16]": "1840"
+  },
+  {
+    "no.[a]": "10",
+    "portrait": "\n",
+    "name(birth\u2013death)": "John Tyler",
+    "term[14]": "April 4, 1841",
+    "party[b][15]": "\n",
+    "election": "Whig",
+    "vice president[16]": "\u2013"
+  },
+  {
+    "no.[a]": "11",
+    "portrait": "\n",
+    "name(birth\u2013death)": "James K. Polk",
+    "term[14]": "March 4, 1845",
+    "party[b][15]": "\n",
+    "election": "Democratic",
+    "vice president[16]": "1844"
+  },
+  {
+    "no.[a]": "12",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Zachary Taylor",
+    "term[14]": "March 4, 1849",
+    "party[b][15]": "\n",
+    "election": "Whig",
+    "vice president[16]": "1848"
+  },
+  {
+    "no.[a]": "13",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Millard Fillmore",
+    "term[14]": "July 9, 1850",
+    "party[b][15]": "\n",
+    "election": "Whig",
+    "vice president[16]": "\u2013"
+  },
+  {
+    "no.[a]": "14",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Franklin Pierce",
+    "term[14]": "March 4, 1853",
+    "party[b][15]": "\n",
+    "election": "Democratic",
+    "vice president[16]": "1852"
+  },
+  {
+    "no.[a]": "15",
+    "portrait": "\n",
+    "name(birth\u2013death)": "James Buchanan",
+    "term[14]": "March 4, 1857",
+    "party[b][15]": "\n",
+    "election": "Democratic",
+    "vice president[16]": "1856"
+  },
+  {
+    "no.[a]": "16",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Abraham Lincoln",
+    "term[14]": "March 4, 1861",
+    "party[b][15]": "\n",
+    "election": "Republican",
+    "vice president[16]": "1860"
+  },
+  {
+    "no.[a]": "17",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Andrew Johnson",
+    "term[14]": "April 15, 1865",
+    "party[b][15]": "\n",
+    "election": "National Union",
+    "vice president[16]": "\u2013"
+  },
+  {
+    "no.[a]": "18",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Ulysses S. Grant",
+    "term[14]": "March 4, 1869",
+    "party[b][15]": "\n",
+    "election": "Republican",
+    "vice president[16]": "1868"
+  },
+  {
+    "no.[a]": "19",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Rutherford B. Hayes",
+    "term[14]": "March 4, 1877",
+    "party[b][15]": "\n",
+    "election": "Republican",
+    "vice president[16]": "1876"
+  },
+  {
+    "no.[a]": "20",
+    "portrait": "\n",
+    "name(birth\u2013death)": "James A. Garfield",
+    "term[14]": "March 4, 1881",
+    "party[b][15]": "\n",
+    "election": "Republican",
+    "vice president[16]": "1880"
+  },
+  {
+    "no.[a]": "21",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Chester A. Arthur",
+    "term[14]": "September 19, 1881",
+    "party[b][15]": "\n",
+    "election": "Republican",
+    "vice president[16]": "\u2013"
+  },
+  {
+    "no.[a]": "22",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Grover Cleveland",
+    "term[14]": "March 4, 1885",
+    "party[b][15]": "\n",
+    "election": "Democratic",
+    "vice president[16]": "1884"
+  },
+  {
+    "no.[a]": "23",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Benjamin Harrison",
+    "term[14]": "March 4, 1889",
+    "party[b][15]": "\n",
+    "election": "Republican",
+    "vice president[16]": "1888"
+  },
+  {
+    "no.[a]": "24",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Grover Cleveland",
+    "term[14]": "March 4, 1893",
+    "party[b][15]": "\n",
+    "election": "Democratic",
+    "vice president[16]": "1892"
+  },
+  {
+    "no.[a]": "25",
+    "portrait": "\n",
+    "name(birth\u2013death)": "William McKinley",
+    "term[14]": "March 4, 1897",
+    "party[b][15]": "\n",
+    "election": "Republican",
+    "vice president[16]": "1896"
+  },
+  {
+    "no.[a]": "26",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Theodore Roosevelt",
+    "term[14]": "September 14, 1901",
+    "party[b][15]": "\n",
+    "election": "Republican",
+    "vice president[16]": "\u2013"
+  },
+  {
+    "no.[a]": "27",
+    "portrait": "\n",
+    "name(birth\u2013death)": "William Howard Taft",
+    "term[14]": "March 4, 1909",
+    "party[b][15]": "\n",
+    "election": "Republican",
+    "vice president[16]": "1908"
+  },
+  {
+    "no.[a]": "28",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Woodrow Wilson",
+    "term[14]": "March 4, 1913",
+    "party[b][15]": "\n",
+    "election": "Democratic",
+    "vice president[16]": "1912"
+  },
+  {
+    "no.[a]": "29",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Warren G. Harding",
+    "term[14]": "March 4, 1921",
+    "party[b][15]": "\n",
+    "election": "Republican",
+    "vice president[16]": "1920"
+  },
+  {
+    "no.[a]": "30",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Calvin Coolidge",
+    "term[14]": "August 2, 1923",
+    "party[b][15]": "\n",
+    "election": "Republican",
+    "vice president[16]": "\u2013"
+  },
+  {
+    "no.[a]": "31",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Herbert Hoover",
+    "term[14]": "March 4, 1929",
+    "party[b][15]": "\n",
+    "election": "Republican",
+    "vice president[16]": "1928"
+  },
+  {
+    "no.[a]": "32",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Franklin D. Roosevelt",
+    "term[14]": "March 4, 1933",
+    "party[b][15]": "\n",
+    "election": "Democratic",
+    "vice president[16]": "1932"
+  },
+  {
+    "no.[a]": "33",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Harry S. Truman",
+    "term[14]": "April 12, 1945",
+    "party[b][15]": "\n",
+    "election": "Democratic",
+    "vice president[16]": "\u2013"
+  },
+  {
+    "no.[a]": "34",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Dwight D. Eisenhower",
+    "term[14]": "January 20, 1953",
+    "party[b][15]": "\n",
+    "election": "Republican",
+    "vice president[16]": "1952"
+  },
+  {
+    "no.[a]": "35",
+    "portrait": "\n",
+    "name(birth\u2013death)": "John F. Kennedy",
+    "term[14]": "January 20, 1961",
+    "party[b][15]": "\n",
+    "election": "Democratic",
+    "vice president[16]": "1960"
+  },
+  {
+    "no.[a]": "36",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Lyndon B. Johnson",
+    "term[14]": "November 22, 1963",
+    "party[b][15]": "\n",
+    "election": "Democratic",
+    "vice president[16]": "\u2013"
+  },
+  {
+    "no.[a]": "37",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Richard Nixon",
+    "term[14]": "January 20, 1969",
+    "party[b][15]": "\n",
+    "election": "Republican",
+    "vice president[16]": "1968"
+  },
+  {
+    "no.[a]": "38",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Gerald Ford",
+    "term[14]": "August 9, 1974",
+    "party[b][15]": "\n",
+    "election": "Republican",
+    "vice president[16]": "\u2013"
+  },
+  {
+    "no.[a]": "39",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Jimmy Carter",
+    "term[14]": "January 20, 1977",
+    "party[b][15]": "\n",
+    "election": "Democratic",
+    "vice president[16]": "1976"
+  },
+  {
+    "no.[a]": "40",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Ronald Reagan",
+    "term[14]": "January 20, 1981",
+    "party[b][15]": "\n",
+    "election": "Republican",
+    "vice president[16]": "1980"
+  },
+  {
+    "no.[a]": "41",
+    "portrait": "\n",
+    "name(birth\u2013death)": "George H. W. Bush",
+    "term[14]": "January 20, 1989",
+    "party[b][15]": "\n",
+    "election": "Republican",
+    "vice president[16]": "1988"
+  },
+  {
+    "no.[a]": "42",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Bill Clinton",
+    "term[14]": "January 20, 1993",
+    "party[b][15]": "\n",
+    "election": "Democratic",
+    "vice president[16]": "1992"
+  },
+  {
+    "no.[a]": "43",
+    "portrait": "\n",
+    "name(birth\u2013death)": "George W. Bush",
+    "term[14]": "January 20, 2001",
+    "party[b][15]": "\n",
+    "election": "Republican",
+    "vice president[16]": "2000"
+  },
+  {
+    "no.[a]": "44",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Barack Obama",
+    "term[14]": "January 20, 2009",
+    "party[b][15]": "\n",
+    "election": "Democratic",
+    "vice president[16]": "2008"
+  },
+  {
+    "no.[a]": "45",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Donald Trump",
+    "term[14]": "January 20, 2017",
+    "party[b][15]": "\n",
+    "election": "Republican",
+    "vice president[16]": "2016"
+  },
+  {
+    "no.[a]": "46",
+    "portrait": "\n",
+    "name(birth\u2013death)": "Joe Biden",
+    "term[14]": "January 20, 2021",
+    "party[b][15]": "\n",
+    "election": "Democratic",
+    "vice president[16]": "2020"
+  }
+]
