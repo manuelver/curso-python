@@ -2,7 +2,7 @@
 
 Este repositorio contiene los apuntes tomados en diversos cursos de python reflejados en la siguiente tabla:
 
-|                          Nombre del curso <br> y ubicación |   Nivel    | Duración <br> de vídeos | Duración personal <br> aprox. | Fuente original                                                                                         |
+|                          Nombre del curso <br> y ubicación |   Nivel    | Duración <br> de vídeos | Duración <br> personal aprox. | Fuente original                                                                                         |
 | ---------------------------------------------------------: | :--------: | :---------------------: | :---------------------------: | :------------------------------------------------------------------------------------------------------ |
 |                         [HolaMundo](./HolaMundo/README.md) |    Bajo    |         5 horas         |           15 horas            | [Aprende python ahora!](https://www.youtube.com/watch?v=tQZy0U8s9LY&ab_channel=HolaMundo)               |
 |                   [Python total](./python-total/README.md) | Intermedio |        30 horas         |           200 horas           | [Escuela Directa](https://www.udemy.com/course/python-total)                                            |
@@ -23,7 +23,10 @@ Recuerda,
 ---
 <br>
 
-## Qué es python según chatGPT 🤖
+## Información sobre python
+<details>
+<summary><strong> Qué es python según chatGPT 🤖</strong></summary>
+
 
 Python es un lenguaje de programación interpretado y de alto nivel. Python se destaca por su sintaxis clara y legible, lo que lo hace muy accesible tanto para principiantes como para programadores experimentados.
 
@@ -36,9 +39,10 @@ Una de las razones por las que Python ha ganado popularidad es su comunidad acti
 Además, Python es conocido por ser un lenguaje fácil de aprender y utilizar. Su sintaxis intuitiva y legible permite a los programadores escribir código de manera más rápida y eficiente, lo que reduce el tiempo de desarrollo y facilita la colaboración en proyectos.
 
 En resumen, Python es un lenguaje de programación de alto nivel, interpretado y fácil de aprender que se utiliza ampliamente en una variedad de aplicaciones, desde desarrollo web hasta análisis de datos e inteligencia artificial. Su enfoque en la legibilidad del código y su comunidad activa lo convierten en una elección popular entre los programadores.
+</details>
 
-## Historia de python 📜
-
+<details>
+<summary><strong>Historia de python 🏛️</strong></summary>
 Python fue creado a finales de los años ochenta​ por [Guido van Rossum](https://es.wikipedia.org/wiki/Guido_van_Rossum) en Stichting Mathematisch Centrum (CWI), en los Países Bajos, como un sucesor del lenguaje de programación ABC, capaz de manejar excepciones e interactuar con el sistema operativo Amoeba.
 
 El nombre del lenguaje proviene de la afición de su creador por los humoristas británicos [Monty Python](https://youtu.be/aQqhR26FOW8).
@@ -51,18 +55,20 @@ Guido van Rossum es el principal autor de Python, y su continuo rol central en d
 
 En 2019, Python fue el lenguaje de programación más popular en GitHub, superando a Java, el segundo lenguaje más popular, por más de 1 millón de repositorios.
 
-## Últimas versiones
+</details>
 
+<details>
+<summary><strong>Últimas versiones 🔄</strong></summary>
 Python 2.7.x (última versión de la serie Python 2.x) fue oficialmente descontinuado el 1 de enero de 2020 (paso inicialmente planeado para 2015), por lo que ya no se publicarán parches de seguridad y otras mejoras para él.​ Con el final del ciclo de vida de Python 2, solo tienen soporte la rama Python 3.6.x​ y posteriores.
 
 Con Python 3.5 llegaría el soporte incluido para entrada/salida asíncrona a través de la biblioteca asyncio, orientada a aplicaciones que requieren alto rendimiento de código concurrente, como servidores web, bibliotecas de conexión de bases de datos y colas de tareas distribuidas.
 
 En la actualidad, Python se aplica en los campos de inteligencia artificial y machine learning.
 
-## Información en tablas de python 📊
+</details>
 
 <details>
-<summary>Tabla desplegable de <strong>Usos de Python y sus Bibliotecas/módulos</strong></summary>
+<summary>Tabla de <strong>Usos de Python y sus Bibliotecas/módulos 📚</strong></summary>
 
 |                                          Uso principal | Bibliotecas/módulos utilizados                                                |
 | -----------------------------------------------------: | :---------------------------------------------------------------------------- |
@@ -206,7 +212,7 @@ En la actualidad, Python se aplica en los campos de inteligencia artificial y ma
 
 </details>
 <details>
-<summary>Tabla desplegable de <strong>comparación con otros lenguajes de programación</strong></summary>
+<summary>Tabla de <strong>comparación con otros lenguajes de programación 🤔</strong></summary>
 
 | Característica        | Python                                           | Java                                     | C++                                     | JavaScript                                |
 | --------------------- | ------------------------------------------------ | ---------------------------------------- | --------------------------------------- | ----------------------------------------- |
