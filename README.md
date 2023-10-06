@@ -8,12 +8,12 @@ Este repositorio contiene los apuntes tomados en diversos cursos de python refle
 |                   [Python total](./python-total/README.md) | Intermedio |        30 horas         |           200 horas           | [Escuela Directa](https://www.udemy.com/course/python-total)                                            |
 |             [Python y ChatGPT](./python-chatgpt/README.md) | Intermedio |         2 horas         |           15 horas            | [Escuela Directa](https://www.udemy.com/course/python-chatgpt/), [ChapGPT](https://www.chat.openai.com) |
 |         [30 days of python](./30-days-of-python/README.md) | Intermedio |           ---           |         próximamente          | [Repo Asabeneh](https://github.com/Asabeneh/30-Days-Of-Python)                                          |
-| [scripts-hacking-etico](./scripts-hacking-etico/README.md) |  Avanzado  |           ---           |            5 horas            | [ChapGPT](https://www.chat.openai.com), [Canal Telegram](https://t.me/seguridadinformatic4)             |
 |                   [Cajón de sastre](./catch-all/README.md) | Intermedio |           ---           |           continua            | [Personal](https://vergaracarmona.es)                                                                   |
+| [scripts-hacking-etico](./scripts-hacking-etico/README.md) |  Avanzado  |           ---           |            5 horas            | [ChapGPT](https://www.chat.openai.com), [Canal Telegram](https://t.me/seguridadinformatic4)             |
 
 Las prácticas y ejercicios aquí contenidos son los que hice mediante los cursos mencionados o por investigación propia, con mucho café para combatir el insomnio. Realmente, los apuntes no fueron pensados para compartirlos, por ello pueden tener lagunas de información o contenido adicional respecto al curso, ya que se redactaron para recordar procedimientos y conceptos que EMHO me parecieron relevantes. Teniendo estos documentos tan completos y entendiendo que el conocimiento debe ser libre, se decidió compartirlos. Si encuentras **cualquier error puedes abrir una issue o contactar conmigo**.
 
-Si te parece útil este documento puedes agradecerlo a través de las vías de contacto de la [web](https://vergaracarmona.es) o [invítandome a un café ☕️ ⬇️](#invítame-a-un-café)
+Si te parece útil este documento puedes agradecerlo a través de las vías de contacto de la [web](https://vergaracarmona.es) o [invítandome a un café ☕️](#invítame-a-un-café)
 
 Recuerda, 
 
@@ -237,9 +237,9 @@ Esta tabla solo proporciona una comparación general entre los lenguajes y que c
 
 # Agradecimientos 🎁
 
-Por supuesto, quiero agradecer a [Federico Garay](https://ar.linkedin.com/in/fedegaray) y a [Nicolás Schürmann](https://www.linkedin.com/in/nicolasschurmann/) (¡Cuidao con el [teclado](https://youtu.be/y0T8UqBkawQ) que se gasta!) por los cursos en concreto que he realizado con ellos y por todo el contenido libre de sus webs y canales de RRSS.
+Por supuesto, quiero agradecer a [Federico Garay](https://ar.linkedin.com/in/fedegaray) y a [Nicolás Schürmann](https://www.linkedin.com/in/nicolasschurmann/) (¡Cuidao con el [teclado](https://youtu.be/y0T8UqBkawQ) que se gasta!) por los cursos en concreto que realice con ellos, fueron mi despegue. También mi más sincero agradecimiento a todos los contenidos libres de webs, canales de RRSS, repositorios de códifo, etc.
 
-También a todos los compas que me han apoyado en este camino.
+Y por último, a todos los compas que me han apoyado en este camino.
 
 > [Solo no puedes, con amigos sí. 🤝](https://youtu.be/Ds7tje_Y0CM)
 
