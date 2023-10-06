@@ -237,7 +237,7 @@ Esta tabla solo proporciona una comparación general entre los lenguajes y que c
 
 # Agradecimientos 🎁
 
-Por supuesto, quiero agradecer a [Federico Garay](https://ar.linkedin.com/in/fedegaray) y a [Nicolás Schürmann](https://www.linkedin.com/in/nicolasschurmann/) (¡Cuidao con el [teclado](https://youtu.be/y0T8UqBkawQ) que se gasta!) por los cursos en concreto que realice con ellos, fueron mi despegue. También mi más sincero agradecimiento a todos los contenidos libres de webs, canales de RRSS, repositorios de códifo, etc.
+Por supuesto, quiero agradecer a [Federico Garay](https://ar.linkedin.com/in/fedegaray) y a [Nicolás Schürmann](https://www.linkedin.com/in/nicolasschurmann/) (¡Cuidao con el [teclado](https://youtu.be/y0T8UqBkawQ) que se gasta!) por los cursos en concreto que realice con ellos, fueron mi despegue. También mi más sincero agradecimiento a todos los contenidos libres de webs, canales de RRSS, repositorios de código, etc.
 
 Y por último, a todos los compas que me han apoyado en este camino.
 
