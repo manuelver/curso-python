@@ -8,4 +8,6 @@ Documento original en inglés: [statistics](https://github.com/Asabeneh/30-Days-
 
 [Solución 01](01_stats.py)
 
+[Solución 02](02_stats.py)
+
 [<< Day 23](../23_Entorno_virtual/README.md) | [Day 25 >>](../25_Pandas/README.md)
