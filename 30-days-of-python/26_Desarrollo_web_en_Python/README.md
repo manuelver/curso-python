@@ -6,4 +6,6 @@ Documento original en inglés: [Python web](https://github.com/Asabeneh/30-Days-
 
 1. Construirás esta [aplicación](https://thirtydaysofpython-v1-final.herokuapp.com/). Solo queda la parte del analizador de texto.
 
+[Solución](./web/)
+
 [<< Day 25](../25_Pandas/README.md) | [Day 27 >>](../27_Python_con_MongoDB/README.md)
