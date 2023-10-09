@@ -5,7 +5,7 @@ Estos apuntes y ejercicios en python han sido realizados siguiendo un repositori
 
 El repositorio original está en inglés, pero he traducido los ejercicios al español, así como los apuntes que he creído convenientes resaltar.
 
-![](https://media.tenor.com/LcLprEbYSXAAAAAC/willy-fog.gif)
+![](https://c.tenor.com/Zdpc10JrZrIAAAAC/tenor.gif)
 
 ## Índice del curso y apuntes realizados
 
