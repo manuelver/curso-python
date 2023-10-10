@@ -7,7 +7,7 @@ Este repositorio contiene los apuntes tomados en diversos cursos de python refle
 |                         [HolaMundo](./HolaMundo/README.md) |    Bajo    |         5 horas         |           15 horas            | [Aprende python ahora!](https://www.youtube.com/watch?v=tQZy0U8s9LY&ab_channel=HolaMundo)               |
 |                   [Python total](./python-total/README.md) | Intermedio |        30 horas         |           200 horas           | [Escuela Directa](https://www.udemy.com/course/python-total)                                            |
 |             [Python y ChatGPT](./python-chatgpt/README.md) | Intermedio |         2 horas         |           15 horas            | [Escuela Directa](https://www.udemy.com/course/python-chatgpt/), [ChapGPT](https://www.chat.openai.com) |
-|         [30 days of python](./30-days-of-python/README.md) | Intermedio |           ---           |         próximamente          | [Repo Asabeneh](https://github.com/Asabeneh/30-Days-Of-Python)                                          |
+|         [30 days of python](./30-days-of-python/README.md) | Intermedio |           ---           |           25 horas            | [Repo Asabeneh](https://github.com/Asabeneh/30-Days-Of-Python)                                          |
 |                   [Cajón de sastre](./catch-all/README.md) | Intermedio |           ---           |           continua            | [Personal](https://vergaracarmona.es)                                                                   |
 | [scripts-hacking-etico](./scripts-hacking-etico/README.md) |  Avanzado  |           ---           |            5 horas            | [ChapGPT](https://www.chat.openai.com), [Canal Telegram](https://t.me/seguridadinformatic4)             |
 
