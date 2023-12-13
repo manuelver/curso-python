@@ -68,6 +68,35 @@ En la actualidad, Python se aplica en los campos de inteligencia artificial y ma
 </details>
 
 <details>
+<summary><strong>PEP 20 - Zen de Python 📄</strong></summary>
+
+El Zen de Python es una colección de 20 principios de software que influyen en el diseño del Lenguaje de Programación Python, de los cuales 19 fueron escritos por Tim Peter en junio de 1999. El texto es distribuido como dominio público: 
+
+```
+Bello es mejor que feo.
+Explícito es mejor que implícito.
+Simple es mejor que complejo.
+Complejo es mejor que complicado.
+Plano es mejor que anidado.
+Espaciado es mejor que denso.
+La legibilidad es importante.
+Los casos especiales no son lo suficientemente especiales como para romper las reglas.
+Sin embargo la practicidad le gana a la pureza.
+Los errores nunca deberían pasar silenciosamente.
+A menos que se silencien explícitamente.
+Frente a la ambigüedad, evitar la tentación de adivinar.
+Debería haber una, y preferiblemente solo una, manera obvia de hacerlo.
+A pesar de que eso no sea obvio al principio a menos que seas Holandés.
+Ahora es mejor que nunca.
+A pesar de que nunca es muchas veces mejor que *ahora* mismo.
+Si la implementación es difícil de explicar, es una mala idea.
+Si la implementación es fácil de explicar, puede que sea una buena idea.
+Los espacios de nombres son una gran idea, ¡tengamos más de esos!
+```
+
+</details>
+
+<details>
 <summary>Tabla de <strong>Usos de Python y sus Bibliotecas/módulos 📚</strong></summary>
 
 |                                          Uso principal | Bibliotecas/módulos utilizados                                                |
