@@ -10,6 +10,7 @@ Este repositorio contiene los apuntes tomados en diversos cursos de python refle
 |         [30 days of python](./30-days-of-python/README.md) | Intermedio |           ---           |           25 horas            | [Repo Asabeneh](https://github.com/Asabeneh/30-Days-Of-Python)                                          |
 |                   [Cajón de sastre](./catch-all/README.md) | Intermedio |           ---           |           continua            | [Personal](https://vergaracarmona.es)                                                                   |
 | [scripts-hacking-etico](./scripts-hacking-etico/README.md) |  Avanzado  |           ---           |            5 horas            | [ChapGPT](https://www.chat.openai.com), [Canal Telegram](https://t.me/seguridadinformatic4)             |
+|             [Python ofensivo](./python-ofensivo/README.md) |  Avanzado  |        35 horas         |           ¿? horas            | [hack4u](https://hack4u.io)                                                                             |
 
 Las prácticas y ejercicios aquí contenidos son los que hice mediante los cursos mencionados o por investigación propia, con mucho café para combatir el insomnio. Realmente, los apuntes no fueron pensados para compartirlos, por ello pueden tener lagunas de información o contenido adicional respecto al curso, ya que se redactaron para recordar procedimientos y conceptos que EMHO me parecieron relevantes. Teniendo estos documentos tan completos y entendiendo que el conocimiento debe ser libre, se decidió compartirlos. Si encuentras **cualquier error puedes abrir una issue o contactar conmigo**.
 
@@ -24,10 +25,9 @@ Recuerda,
 <br>
 
 ## Información sobre python
+
 <details>
 <summary><strong> Qué es python según chatGPT 🤖</strong></summary>
-
-
 Python es un lenguaje de programación interpretado y de alto nivel. Python se destaca por su sintaxis clara y legible, lo que lo hace muy accesible tanto para principiantes como para programadores experimentados.
 
 Una de las características distintivas de Python es su enfoque en la legibilidad del código, lo que se conoce como el principio "bello es mejor que feo" (beautiful is better than ugly). Esto se logra mediante el uso de una sintaxis clara y estructurada que facilita la comprensión y el mantenimiento del código.
@@ -54,22 +54,10 @@ Guido van Rossum es el principal autor de Python, y su continuo rol central en d
 > Guido van Rossum
 
 En 2019, Python fue el lenguaje de programación más popular en GitHub, superando a Java, el segundo lenguaje más popular, por más de 1 millón de repositorios.
-
-</details>
-
-<details>
-<summary><strong>Últimas versiones 🔄</strong></summary>
-Python 2.7.x (última versión de la serie Python 2.x) fue oficialmente descontinuado el 1 de enero de 2020 (paso inicialmente planeado para 2015), por lo que ya no se publicarán parches de seguridad y otras mejoras para él.​ Con el final del ciclo de vida de Python 2, solo tienen soporte la rama Python 3.6.x​ y posteriores.
-
-Con Python 3.5 llegaría el soporte incluido para entrada/salida asíncrona a través de la biblioteca asyncio, orientada a aplicaciones que requieren alto rendimiento de código concurrente, como servidores web, bibliotecas de conexión de bases de datos y colas de tareas distribuidas.
-
-En la actualidad, Python se aplica en los campos de inteligencia artificial y machine learning.
-
 </details>
 
 <details>
 <summary><strong>PEP 20 - Zen de Python 📄</strong></summary>
-
 El Zen de Python es una colección de 20 principios de software que influyen en el diseño del Lenguaje de Programación Python, de los cuales 19 fueron escritos por Tim Peter en junio de 1999. El texto es distribuido como dominio público: 
 
 ```
@@ -93,6 +81,15 @@ Si la implementación es difícil de explicar, es una mala idea.
 Si la implementación es fácil de explicar, puede que sea una buena idea.
 Los espacios de nombres son una gran idea, ¡tengamos más de esos!
 ```
+</details>
+
+<details>
+<summary><strong>Últimas versiones 🔄</strong></summary>
+Python 2.7.x (última versión de la serie Python 2.x) fue oficialmente descontinuado el 1 de enero de 2020 (paso inicialmente planeado para 2015), por lo que ya no se publicarán parches de seguridad y otras mejoras para él.​ Con el final del ciclo de vida de Python 2, solo tienen soporte la rama Python 3.6.x​ y posteriores.
+
+Con Python 3.5 llegaría el soporte incluido para entrada/salida asíncrona a través de la biblioteca asyncio, orientada a aplicaciones que requieren alto rendimiento de código concurrente, como servidores web, bibliotecas de conexión de bases de datos y colas de tareas distribuidas.
+
+En la actualidad, Python se aplica en los campos de inteligencia artificial y machine learning.
 
 </details>
 
