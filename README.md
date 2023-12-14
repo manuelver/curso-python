@@ -43,7 +43,7 @@ En resumen, Python es un lenguaje de programación de alto nivel, interpretado y
 
 <details>
 <summary><strong>Historia de python 🏛️</strong></summary>
-Python fue creado a finales de los años ochenta​ por [Guido van Rossum](https://es.wikipedia.org/wiki/Guido_van_Rossum) en Stichting Mathematisch Centrum (CWI), en los Países Bajos, como un sucesor del lenguaje de programación ABC, capaz de manejar excepciones e interactuar con el sistema operativo Amoeba.
+Python fue creado a finales de los años ochenta por [Guido van Rossum](https://es.wikipedia.org/wiki/Guido_van_Rossum) en Stichting Mathematisch Centrum (CWI), en los Países Bajos, como un sucesor del lenguaje de programación ABC, capaz de manejar excepciones e interactuar con el sistema operativo Amoeba.
 
 El nombre del lenguaje proviene de la afición de su creador por los humoristas británicos [Monty Python](https://youtu.be/aQqhR26FOW8).
 
@@ -85,7 +85,7 @@ Los espacios de nombres son una gran idea, ¡tengamos más de esos!
 
 <details>
 <summary><strong>Últimas versiones 🔄</strong></summary>
-Python 2.7.x (última versión de la serie Python 2.x) fue oficialmente descontinuado el 1 de enero de 2020 (paso inicialmente planeado para 2015), por lo que ya no se publicarán parches de seguridad y otras mejoras para él.​ Con el final del ciclo de vida de Python 2, solo tienen soporte la rama Python 3.6.x​ y posteriores.
+Python 2.7.x (última versión de la serie Python 2.x) fue oficialmente descontinuado el 1 de enero de 2020 (paso inicialmente planeado para 2015), por lo que ya no se publicarán parches de seguridad y otras mejoras para él. Con el final del ciclo de vida de Python 2, solo tienen soporte la rama Python 3.6.x y posteriores.
 
 Con Python 3.5 llegaría el soporte incluido para entrada/salida asíncrona a través de la biblioteca asyncio, orientada a aplicaciones que requieren alto rendimiento de código concurrente, como servidores web, bibliotecas de conexión de bases de datos y colas de tareas distribuidas.
 
