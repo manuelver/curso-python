@@ -16,4 +16,4 @@ Quizá encuentres aquí cosas que no están en el vídeo, o viceversa, son apunt
 | 0. [Cajón de sastre de ejercicios](./00_cajon_sastre)        |
 | 1. [Ejemplos de oneliner en python](./01_oneliner/README.md) |
 | 2. [Shebang y convenios](./02_shebang_convenios/README.md)   |
-
+| 3. [Proyecto biblioteca](./03_proyecto_biblioteca/README.md) |
