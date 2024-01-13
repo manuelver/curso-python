@@ -8,4 +8,5 @@ Aquí iré dejando scripts y ejercicios que se me ocurran, con lo que no hay un 
 
 |                                            Nombre | Descripción                                    |   Nivel    |
 | ------------------------------------------------: | :--------------------------------------------- | :--------: |
-| [Words Linux](./01_scripts_words_linux/README.md) | Scritp con el fichero: `/usr/share/dict/words` | intermedio |
+| [Words Linux](./01_scripts_words_linux/README.md) | Script con el fichero: `/usr/share/dict/words` | intermedio |
+| [Words Linux](./02_scripts_descifrador_wargame/)  | Script descifrador de código al estilo wargame | intermedio |
