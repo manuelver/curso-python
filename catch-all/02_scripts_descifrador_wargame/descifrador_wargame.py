@@ -132,7 +132,7 @@ def main():
     """
 
     code_clear()
-    print(("#"*36) + "BIENVENIDO AL DESCIFRADOR DE CÓDIGOS" + ("#"*36))
+    print(("#"*36) + "\nBIENVENIDO AL DESCIFRADOR DE CÓDIGOS\n" + ("#"*36))
     CODIGO = input("Introduzca el código a descifrar: ")
 
     print(descifrador(CODIGO))
