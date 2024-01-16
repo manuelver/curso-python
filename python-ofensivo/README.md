@@ -11,9 +11,14 @@ Quizá encuentres aquí cosas que no están en el vídeo, o viceversa, son apunt
 
 ![](https://c.tenor.com/-SV9TjUGabMAAAAC/hacker-python.gif)
 
-| Ejercicios y apuntes                                         |
-| ------------------------------------------------------------ |
-| 0. [Cajón de sastre de ejercicios](./00_cajon_sastre)        |
-| 1. [Ejemplos de oneliner en python](./01_oneliner/README.md) |
-| 2. [Shebang y convenios](./02_shebang_convenios/README.md)   |
-| 3. [Proyecto biblioteca](./03_proyecto_biblioteca/README.md) |
+| Ejercicios y apuntes                                                 |
+| -------------------------------------------------------------------- |
+| 0. [Cajón de sastre de ejercicios](./00_cajon_sastre)                |
+| 1. [Ejemplos de oneliner en python](./01_oneliner/README.md)         |
+| 2. [Shebang y convenios](./02_shebang_convenios/README.md)           |
+| 3. [Proyecto biblioteca](./03_proyecto_biblioteca/)                  |
+| 4. [Proyecto tienda de animales](./04_proyecto_tienda_animales/)     |
+| 5. [Proyecto flota de vehículos](./05_proyecto_flota_vehiculos/)     |
+| 6. [Proyecto gestor de notas](./06_proyecto_gestor_notas/)           |
+| 7. [Conexiones de red y protocolos](./07_conexiones_red_protocolos/) |
+| 8. [Librerías](./08_librerias/)                                      |
