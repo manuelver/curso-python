@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+"""
+Librería tkinter - messagebox
+
+"""
+
+import tkinter as tk
+from tkinter import messagebox as mb
+
+
+def accion_boton():
+    mb.showinfo("Información",
+                "Este texto ha salido porque has pulsado el botón")
+
+
+root = tk.Tk()
+root.geometry("150x80")
+root.title("Button() Widget & messagebox")
+
+boton = tk.Button(root, text="ClickMe", command=accion_boton)
+boton.pack(pady=10)
+
+root.mainloop()
