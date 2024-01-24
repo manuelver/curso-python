@@ -2,6 +2,8 @@
 """
 Librería tkinter - messagebox
 
+Con dir(messagebox) podemos ver los métodos que tiene esta librería
+
 """
 
 import tkinter as tk
