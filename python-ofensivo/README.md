@@ -22,3 +22,6 @@ Quizá encuentres aquí cosas que no están en el vídeo, o viceversa, son apunt
 | 6. [Proyecto gestor de notas](./06_proyecto_gestor_notas/)           |
 | 7. [Conexiones de red y protocolos](./07_conexiones_red_protocolos/) |
 | 8. [Librerías](./08_librerias/)                                      |
+| 9. [Bloc de notas](./09_bloc_notas/)                                 |
+| 10. [Calculadora](./10_calculadora/)                                 |
+| 11. [Chat cifrado con E2E](./11_chat_cifrado_E2E/)                   |
