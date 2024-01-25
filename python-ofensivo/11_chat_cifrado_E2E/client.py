@@ -3,7 +3,7 @@
 CLIENTE DE CHAT CIFRADO E2E
 """
 
-
+import ssl
 import socket as s
 import threading as th
 from tkinter import *
@@ -65,6 +65,7 @@ def client_program():
     port = 1234
 
     client_socket = s.socket(s.AF_INET, s.SOCK_STREAM)
+    client_socket = ssl.wrap_socket(client_socket)
     client_socket.connect((host, port))
 
     username = input("\n[+] Introduce tu usuario: ")
@@ -76,9 +77,6 @@ def client_program():
 
     window = Tk()
     window.title(f'Chat cifrado E2E - {username}')
-    # window.geometry('500x700')
-    # window.iconbitmap("oveja-negra.ico")
-    # window.iconphoto(False, PhotoImage(file="oveja-negra.png"))
 
     text_widget = ScrolledText(window, state='disabled')
     text_widget.pack(padx=5, pady=5)

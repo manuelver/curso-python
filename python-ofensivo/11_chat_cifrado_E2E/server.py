@@ -5,6 +5,7 @@ SERVER DE CHAT CIFRADO E2E
 
 import socket as s
 import threading as th
+import ssl
 
 
 def client_thread(client_socket, clients, usernames):
@@ -55,6 +56,10 @@ def server_program():
     server_socket = s.socket(s.AF_INET, s.SOCK_STREAM)
     server_socket.setsockopt(s.SOL_SOCKET, s.SO_REUSEADDR, 1)  # TIME_WAIT
     server_socket.bind((host, port))
+    server_socket = ssl.wrap_socket(
+        server_socket, keyfile='server-key.key', 
+        certfile='server-cert.pem', server_side=True
+    )
     server_socket.listen()
 
     print(f"\n[+] Server está en escucha...")
