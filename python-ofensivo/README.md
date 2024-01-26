@@ -13,7 +13,7 @@ Quizá encuentres aquí cosas que no están en el vídeo, o viceversa, son apunt
 
 | Ejercicios y apuntes                                                 |
 | -------------------------------------------------------------------- |
-| 0. [Cajón de sastre de ejercicios](./00_ejercicios/)               |
+| 0. [Cajón de sastre de ejercicios](./00_ejercicios/)                 |
 | 1. [Ejemplos de oneliner en python](./01_oneliner/README.md)         |
 | 2. [Shebang y convenios](./02_shebang_convenios/README.md)           |
 | 3. [Proyecto biblioteca](./03_proyecto_biblioteca/)                  |
@@ -25,3 +25,4 @@ Quizá encuentres aquí cosas que no están en el vídeo, o viceversa, son apunt
 | 9. [Bloc de notas](./09_bloc_notas/)                                 |
 | 10. [Calculadora](./10_calculadora/)                                 |
 | 11. [Chat cifrado con E2E](./11_chat_cifrado_E2E/)                   |
+| 12 [Escaner de puertos](./12_escaner_puertos/)                       |
