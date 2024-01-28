@@ -8,6 +8,9 @@ import argparse
 
 
 def get_arguments():
+    """
+    Obtiene los argumentos de la línea de comandos
+    """
 
     parser = argparse.ArgumentParser(description='Escaner de red ARP')
     parser.add_argument(
@@ -21,6 +24,9 @@ def get_arguments():
 
 
 def scan(ip):
+    """
+    Escanea la red en busca de hosts
+    """
 
     arp_packet = scapy.ARP(pdst=ip)
     broadcast_packet = scapy.Ether(dst='ff:ff:ff:ff:ff:ff')
@@ -34,6 +40,9 @@ def scan(ip):
         print(response)
 
 def main():
+    """
+    Función principal
+    """
 
     target = get_arguments()
     scan(target)
