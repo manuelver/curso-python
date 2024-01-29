@@ -52,7 +52,7 @@ def process_sniffed_packet(packet):
 
 def sniff(interface):
     """
-    
+    Sniffing de paquetes
     """
 
     print("\n[+] Interceptando paquetes de la máquina victima: \n")

