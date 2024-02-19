@@ -6,7 +6,8 @@ Aquí iré dejando scripts y ejercicios que se me ocurran, con lo que no hay un 
 
 ## Índice de ejercicios
 
-|                                            Nombre | Descripción                                    |   Nivel    |
-| ------------------------------------------------: | :--------------------------------------------- | :--------: |
-| [Words Linux](./01_scripts_words_linux/README.md) | Script con el fichero: `/usr/share/dict/words` | intermedio |
-| [Words Linux](./02_scripts_descifrador_wargame/)  | Script descifrador de código al estilo wargame | intermedio |
+|                                                   Nombre | Descripción                                    |   Nivel    |
+| -------------------------------------------------------: | :--------------------------------------------- | :--------: |
+|        [Words Linux](./01_scripts_words_linux/README.md) | Script con el fichero: `/usr/share/dict/words` | intermedio |
+| [Descifrador wargame](./02_scripts_descifrador_wargame/) | Script descifrador de código al estilo wargame | intermedio |
+|                              [Clima España](./03_clima/) | Script conectado a API AEMET                   | intermedio |
