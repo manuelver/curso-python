@@ -4,9 +4,12 @@ Utilizo esta web:
 https://www.el-tiempo.net/api
 
 Contiene una serie de APIs para consultar el tiempo. 
-- Escoger provincia: https://www.el-tiempo.net/api/json/v2/provincias/[CODPROV]
-- Lista municipio: https://www.el-tiempo.net/api/json/v2/provincias/[CODPROV]/municipios
-- Escoger municipio: https://www.el-tiempo.net/api/json/v2/provincias/[CODPROV]/municipios/[ID]
+- Escoger provincia: 
+https://www.el-tiempo.net/api/json/v2/provincias/[CODPROV]
+- Lista municipio: 
+https://www.el-tiempo.net/api/json/v2/provincias/[CODPROV]/municipios
+- Escoger municipio: 
+https://www.el-tiempo.net/api/json/v2/provincias/[CODPROV]/municipios/[ID]
 
 """
 
@@ -20,7 +23,7 @@ from termcolor import colored
 
 
 def signal_handler(sig, frame):
-    print(colored("Saliendo...", "red"))
+    print(colored("\n\n[!] Saliendo...\n", "red"))
     sys.exit(0)
 
 
@@ -32,14 +35,15 @@ SPAIN_URL = "https://www.el-tiempo.net/api/json/v2/home"
 PROVINCIAS_URL = "https://www.el-tiempo.net/api/json/v2/provincias"
 
 
-def LimpiarPantalla():
+def limpiar_pantalla():
     """
     Limpiar la pantalla
     """
 
     os.system("clear")
 
-def Pausa():
+
+def pausa():
     """
     Esperar 2 segundos
     """
@@ -47,7 +51,7 @@ def Pausa():
     os.system("sleep 2")
 
 
-def RequestUrl(url):
+def request_url(url):
     """
     Realizar una petición GET a una URL y devolver el JSON
     """
@@ -65,14 +69,14 @@ def RequestUrl(url):
         sys.exit(1)
 
 
-def ExtraerProvinciasData():
+def extraer_provincias_data():
     """
     Extraer todas las provincias disponibles
     """
 
     dic_id_codprov_provincias = {}
 
-    provincias_data_request = RequestUrl(PROVINCIAS_URL)
+    provincias_data_request = request_url(PROVINCIAS_URL)
 
     provincias_data = provincias_data_request["provincias"]
 
@@ -90,7 +94,7 @@ def ExtraerProvinciasData():
     return dic_id_codprov_provincias
 
 
-def SeleccionarProvincia(dic_id_codprov_provincias):
+def seleccionar_provincia(dic_id_codprov_provincias):
     """
     Seleccionar una provincia
     """
@@ -105,13 +109,13 @@ def SeleccionarProvincia(dic_id_codprov_provincias):
         f"\n[+] Has seleccionado la provincia: {nombre_prov_selec}\n", "green")
     )
 
-    Pausa()
-    LimpiarPantalla()
+    pausa()
+    limpiar_pantalla()
 
     return dic_id_codprov_provincias[int(prov_selec)]['codprov']
 
 
-def ExtrarMunicipiosData(cod_prov):
+def extrar_municipios_data(cod_prov):
     """
     Extraer todos los municipios de una provincia
     """
@@ -120,7 +124,7 @@ def ExtrarMunicipiosData(cod_prov):
 
     municipios_url = f"{PROVINCIAS_URL}/{cod_prov}/municipios"
 
-    municipios_data_request = RequestUrl(municipios_url)
+    municipios_data_request = request_url(municipios_url)
 
     municipios_data = municipios_data_request["municipios"]
 
@@ -138,7 +142,7 @@ def ExtrarMunicipiosData(cod_prov):
     return dic_id_codmun_municipio
 
 
-def SeleccionarMunicipio(dic_id_codmun_municipio):
+def seleccionar_municipio(dic_id_codmun_municipio):
 
     mun_selec = input(colored(
         "[+] Selecciona el número de un municipio: ", "magenta"
@@ -150,23 +154,23 @@ def SeleccionarMunicipio(dic_id_codmun_municipio):
         f"\n[+] Has seleccionado el municipio: {nombre_mun_selec}\n", "green"
     ))
 
-    Pausa()
-    LimpiarPantalla()
+    pausa()
+    limpiar_pantalla()
 
     return dic_id_codmun_municipio[int(mun_selec)]['codmun']
 
 
-def InfoTiempo(cod_prov, cod_mun):
+def info_tiempo(cod_prov, cod_mun):
 
     url_tiempo = f"{PROVINCIAS_URL}/{cod_prov}/municipios/{cod_mun}"
 
-    tiempo_data_request = RequestUrl(url_tiempo)
+    tiempo_data_request = request_url(url_tiempo)
 
     titulo = tiempo_data_request["metadescripcion"]
     fecha = tiempo_data_request["fecha"]
 
-    hora_amanecer = tiempo_data_request["orto"]
-    hora_ocaso = tiempo_data_request["ocaso"]
+    hora_amanecer = tiempo_data_request["pronostico"]["hoy"]["@attributes"]["orto"]
+    hora_ocaso = tiempo_data_request["pronostico"]["hoy"]["@attributes"]["ocaso"]
 
     estado_cielo = tiempo_data_request["stateSky"]["description"]
 
@@ -190,20 +194,19 @@ def InfoTiempo(cod_prov, cod_mun):
     print(colored(f"[+] Humedad: {humedad}%\n", "blue"))
 
 
-
 def main():
 
-    LimpiarPantalla()
+    limpiar_pantalla()
 
-    dic_id_codprov_provincias = ExtraerProvinciasData()
+    dic_id_codprov_provincias = extraer_provincias_data()
 
-    cod_prov = SeleccionarProvincia(dic_id_codprov_provincias)
+    cod_prov = seleccionar_provincia(dic_id_codprov_provincias)
 
-    dic_id_codmun_municipio = ExtrarMunicipiosData(cod_prov)
+    dic_id_codmun_municipio = extrar_municipios_data(cod_prov)
 
-    cod_mun = SeleccionarMunicipio(dic_id_codmun_municipio)
+    cod_mun = seleccionar_municipio(dic_id_codmun_municipio)
 
-    InfoTiempo(cod_prov, cod_mun)
+    info_tiempo(cod_prov, cod_mun)
 
 
 if __name__ == "__main__":
