@@ -1,0 +1,22 @@
+[
+    {
+        "codigo": "",
+        "url": "",
+        "redireccion": ""
+    },
+    {
+        "codigo": "NA1w9oky",
+        "url": "http://localhost:5000/NA1w9oky",
+        "redireccion": "https://vergaracarmona.es"
+    },
+    {
+        "codigo": "XuI6ysnl",
+        "url": "http://localhost:5000/XuI6ysnl",
+        "redireccion": "https://www.linkedin.com/in/manu-vergara"
+    },
+    {
+        "codigo": "uMsW2vzQ",
+        "url": "http://localhost:5000/uMsW2vzQ",
+        "redireccion": "https://gitea.vergaracarmona.es/manudocker"
+    }
+]
