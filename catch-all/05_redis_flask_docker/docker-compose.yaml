@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  api:
+    container_name: app-python-flask-with-redis
+    build: .
+    env_file:
+      - .env
+    ports:
+      - '5000:5000'
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7.0-alpine
+    container_name: redis-python
+    ports:
+      - '6379:6379'
+
