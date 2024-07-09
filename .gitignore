@@ -177,3 +177,10 @@ cython_debug/
 # Ignore binary files of mitmproxy
 
 mitmproxy/
+
+
+# Logs del bot telegram
+bot.log*
+logs/
+
+

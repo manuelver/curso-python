@@ -13,3 +13,4 @@ Aquí iré dejando scripts y ejercicios que se me ocurran, con lo que no hay un 
 |                              [Clima España](./03_clima/) | Script conectado a API AEMET                             | intermedio |
 |              [acortador de enlaces](./04_acortador_url/) | Script para acortar enlaces y redirigirlos con app Flask | intermedio |
 |                   [API Caching](./05_redis_flask_docker) | App Flask con caché en Redis y con una bbdd              | intermedio |
+|            [bots Telegram](./06_bots_telegram/README.md) | Bots de Telegram con Python                              |  avanzado  |
