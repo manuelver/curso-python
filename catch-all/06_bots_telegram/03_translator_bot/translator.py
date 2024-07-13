@@ -28,6 +28,7 @@ def def_handler(sig, frame):
     Función manejadora de señales para salir del programa de manera elegante.
     """
     logger.info("Saliendo del programa...")
+    print("\n[!] Saliendo del programa...")
     exit(1)
 
 
