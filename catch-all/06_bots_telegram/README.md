@@ -5,7 +5,7 @@
 | [Bot id del chat](./01_id_bot/)           | Bot que devuelve el id del bot                    | básico     |
 | [Bot mensajes](./02_pruebas_bot/)         | Bot que devuelve mensajes básicos. Loggin         | intermedio |
 | [Bot de traducción](./03_translator_bot/) | Bot que traduce mensajes a varios idiomas. Loggin | avanzado   |
-| **Bot de clima** (próximamente)           | Bot que devuelve el clima de una ciudad           | intermedio |
+| [Bot de clima](./04_clima_bot/)           | Bot que devuelve el clima de una ciudad           | avanzado   |
 | **Bot de noticias** (próximamente)        | Bot que devuelve noticias de última hora          | intermedio |
 | **Bot de mareas** (próximamente)          | Bot que devuelve información de mareas            | avanzado   |
 | **Bot de juegos** (próximamente)          | Bot con juegos de adivinanzas y preguntas         | avanzado   |
