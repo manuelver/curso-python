@@ -183,4 +183,8 @@ mitmproxy/
 bot.log*
 logs/
 
+# Ignore database files
+rss.db
 
+# Ignore vscode settings
+.vscode
