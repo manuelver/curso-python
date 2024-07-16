@@ -1,0 +1,36 @@
+version: '3.7'
+
+services:
+  movie_bot:
+    env_file:
+      - .env
+    image: movie_bot_python:latest
+    container_name: movie_bot
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+    restart: unless-stopped
+    depends_on:
+      bbdd:
+        condition: service_healthy
+
+  bbdd:
+    image: mysql:latest
+    container_name: bbdd_movie_bot
+    env_file:
+      - .env
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    ports:
+      - "3306:3306"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -p${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      retries: 5
+      start_period: 30s
+      timeout: 10s
