@@ -1,9 +1,15 @@
 # Bots de Telegram
 
+<div style="display:block; margin-left:auto; margin-right:auto; width:50%;">
+
+![](https://www.pngmart.com/files/15/Baby-Bender-PNG.png)
+
+</div>
+
 | Nombre                                    | Descripción                                       | Nivel      |
 | ----------------------------------------- | ------------------------------------------------- | ---------- |
 | [Bot id del chat](./01_id_bot/)           | Bot que devuelve el id del bot                    | básico     |
-| [Bot mensajes](./02_pruebas_bot/)         | Bot que devuelve mensajes básicos. Loggin         | intermedio |
+| [Bot mensajes](./02_pruebas_bot/)         | Bot que devuelve mensajes básicos. Loggin         | básico     |
 | [Bot de traducción](./03_translator_bot/) | Bot que traduce mensajes a varios idiomas. Loggin | intermedio |
 | [Bot de clima](./04_clima_bot/)           | Bot que devuelve el clima de una ciudad           | intermedio |
 | [Bot de noticias](./05_rss_bot/)          | Bot que devuelve noticias de última hora          | intermedio |
