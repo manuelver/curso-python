@@ -5,7 +5,6 @@ from src import Botz
 
 def main():
 
-    # Mi nombre de usuario (manuelver)
     print(r"""
     
                                       _                
