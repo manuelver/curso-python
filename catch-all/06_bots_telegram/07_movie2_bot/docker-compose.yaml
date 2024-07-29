@@ -1,0 +1,20 @@
+# version: '3.7'
+
+services:
+  movie2_bot:
+    env_file:
+      - .env
+    image: movie2_bot_python:latest
+    container_name: movie2_bot
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Madrid
+    volumes:
+      - ./movie2_bot_data:/app/db
+      - ./logs:/app/logs
+    restart: unless-stopped
+
+volumes:
+  movie2_bot_data:
+  logs:

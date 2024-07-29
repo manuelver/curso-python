@@ -1,0 +1,6 @@
+Babel==2.15.0
+boto3==1.34.145
+imdbpie~=4.0
+python-dotenv==1.0.1
+python-telegram-bot[job-queue]==21.4
+six==1.16.0
