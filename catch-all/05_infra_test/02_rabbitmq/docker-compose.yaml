@@ -7,10 +7,23 @@ services:
         - 5672:5672
         - 15672:15672
     volumes:
-        - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
-        - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+        - ./rabbitmq/data/:/var/lib/rabbitmq/
+        - ./rabbitmq/log/:/var/log/rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: invent
+      RABBITMQ_DEFAULT_PASS: 123456
+      RABBITMQ_ERLANG_COOKIE: 'randomcookievalue'
     networks:
         - rabbitmq_go_net
+    restart: unless-stopped
+    labels:
+      description: "RabbitMQ Server in container docker"
+      maintainer: "manuelver"
+    healthcheck:
+      test: ["CMD", "rabbitmqctl", "status"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
 
 networks:
   rabbitmq_go_net:

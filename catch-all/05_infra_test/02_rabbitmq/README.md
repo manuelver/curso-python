@@ -6,7 +6,7 @@
   - [Pruebas](#pruebas)
     - [Hello World](#hello-world)
     - [Work Queues](#work-queues)
-    - [Publish/Subscribe (Próximamente)](#publishsubscribe-próximamente)
+    - [Publish/Subscribe](#publishsubscribe)
     - [Routing (Próximamente)](#routing-próximamente)
     - [Topics (Próximamente)](#topics-próximamente)
     - [RPC (Próximamente)](#rpc-próximamente)
@@ -122,10 +122,41 @@ sudo rabbitmqctl list_queues name messages_ready messages_unacknowledged
 ```
 
 
-### Publish/Subscribe (Próximamente)
+### Publish/Subscribe
 
+A diferencia de las colas de trabajo, donde cada tarea se entrega a un solo trabajador, este tutorial demuestra el patrón de publicación/suscripción, que entrega mensajes a múltiples consumidores.
 
+El ejemplo es un sistema de registro con dos programas: uno que emite mensajes de registro y otro que los recibe y los imprime.
 
+Cada instancia del programa receptor recibe todos los mensajes, permitiendo que los registros se dirijan al disco o se visualicen en pantalla.
+
+**Enfoque:**
+A diferencia de las colas de trabajo, donde cada tarea se entrega a un solo trabajador, este tutorial demuestra el patrón de publicación/suscripción, que entrega mensajes a múltiples consumidores.
+
+El ejemplo es un sistema de registro con dos programas: uno que emite mensajes de registro y otro que los recibe y los imprime.
+
+Cada instancia del programa receptor recibe todos los mensajes, permitiendo que los registros se dirijan al disco o se visualicen en pantalla.
+
+**Exchange:**
+En RabbitMQ, los productores envían mensajes a un intercambio, no directamente a una cola.
+
+Un intercambio enruta los mensajes a las colas según las reglas definidas por su tipo.
+
+Los tipos de intercambios incluyen directo, tópico, cabeceras y fanout. El tutorial se centra en fanout, que transmite mensajes a todas las colas conocidas.
+
+Ejemplo de declaración de un intercambio fanout:
+
+```python
+channel.exchange_declare(exchange='logs', exchange_type='fanout')
+```
+
+**Colas Temporales:**
+Las colas temporales se crean con nombres generados aleatoriamente, y se eliminan automáticamente cuando se cierra la conexión del consumidor.
+Ejemplo de declaración de una cola temporal:
+
+```python
+result = channel.queue_declare(queue='', exclusive=True)
+```
 
 
 ### Routing (Próximamente)
