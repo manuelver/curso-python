@@ -179,12 +179,17 @@ cython_debug/
 mitmproxy/
 
 
-# Logs del bot telegram
+# Logs
 bot.log*
 logs/
+*.log
 
 # Ignore database files
 rss.db
 
 # Ignore vscode settings
 .vscode
+
+# Ignore volume files
+rabbitmq/
+rabbitmq/*
