@@ -9,10 +9,10 @@ services:
     volumes:
         - ./rabbitmq/data/:/var/lib/rabbitmq/
         - ./rabbitmq/log/:/var/log/rabbitmq
-    environment:
-      RABBITMQ_DEFAULT_USER: invent
-      RABBITMQ_DEFAULT_PASS: 123456
-      RABBITMQ_ERLANG_COOKIE: 'randomcookievalue'
+    # environment:
+    #   RABBITMQ_DEFAULT_USER: invent
+    #   RABBITMQ_DEFAULT_PASS: 123456
+    #   RABBITMQ_ERLANG_COOKIE: 'randomcookievalue'
     networks:
         - rabbitmq_go_net
     restart: unless-stopped

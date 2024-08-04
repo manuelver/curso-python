@@ -7,18 +7,27 @@
     - [Hello World](#hello-world)
     - [Work Queues](#work-queues)
     - [Publish/Subscribe](#publishsubscribe)
-    - [Routing (Próximamente)](#routing-próximamente)
+    - [Routing](#routing)
+      - [Enlaces](#enlaces)
+      - [Intercambio Directo](#intercambio-directo)
+      - [Múltiples Enlaces](#múltiples-enlaces)
+      - [Emisión de Logs](#emisión-de-logs)
+      - [Suscripción](#suscripción)
+      - [Código de Ejemplo](#código-de-ejemplo)
+      - [Ejemplos de Uso](#ejemplos-de-uso)
     - [Topics (Próximamente)](#topics-próximamente)
     - [RPC (Próximamente)](#rpc-próximamente)
 
 
 ## Despliegue rabbitmq con docker
 
+Para desplegar RabbitMQ rápidamente, puedes usar Docker. Ejecuta el siguiente comando para iniciar un contenedor con RabbitMQ y su consola de gestión:
+
 ```bash
 docker run -d --hostname my-rabbit --name some-rabbit -p 8080:15672 -p 5672:5672 rabbitmq:3-management
 ```
 
-Con [docker-compose.yaml](./docker-compose.yaml):
+Si prefieres usar docker-compose, utiliza el archivo [docker-compose.yaml](./docker-compose.yaml) con el siguiente comando:
 
 ```bash
 docker compose up -d
@@ -41,7 +50,9 @@ Tenemos que diferenciar algunos conceptos:
 
 Vamos a programar un producer y un consumer en Python.
 
-RabbitMQ habla múltiples protocolos. Este tutorial utiliza AMQP 0-9-1, que es un protocolo abierto de propósito general para mensajería. Hay un gran número de clientes para RabbitMQ en muchos idiomas diferentes. En esta serie de tutoriales vamos a usar Pika 1.0.0, que es el cliente Python recomendado por el equipo de RabbitMQ. Para instalarlo puedes usar la herramienta de gestión de paquetes pip:
+RabbitMQ habla múltiples protocolos. Este tutorial utiliza AMQP 0-9-1, que es un protocolo abierto de propósito general para mensajería. 
+
+Hay un gran número de clientes para RabbitMQ en muchos idiomas diferentes. En esta serie de tutoriales vamos a usar Pika 1.0.0, que es el cliente Python recomendado por el equipo de RabbitMQ. Para instalarlo puedes usar la herramienta de gestión de paquetes pip:
 
 ```bash
 pip install pika --upgrade
@@ -159,10 +170,145 @@ result = channel.queue_declare(queue='', exclusive=True)
 ```
 
 
-### Routing (Próximamente)
+### Routing
+
+En el tutorial anterior, creamos un sistema de registro simple que enviaba mensajes de log a múltiples receptores. En este tutorial, añadiremos la capacidad de suscribirse solo a un subconjunto de mensajes, permitiendo, por ejemplo, que solo los mensajes de error críticos se registren en un archivo, mientras que todos los mensajes de log se imprimen en la consola.
 
 
+#### Enlaces
 
+En ejemplos anteriores, ya creamos enlaces entre intercambios (exchanges) y colas (queues). Un enlace determina qué colas están interesadas en los mensajes de un intercambio. Los enlaces pueden incluir una clave de enrutamiento (routing key) que especifica qué mensajes de un intercambio deben ser enviados a una cola.
+
+```python
+channel.queue_bind(exchange=exchange_name,
+                   queue=queue_name,
+                   routing_key='black')
+```
+
+La clave de enlace depende del tipo de intercambio. En un intercambio de tipo `fanout`, esta clave es ignorada. 
+
+#### Intercambio Directo
+
+Anteriormente, usamos un intercambio de tipo `fanout` que transmitía todos los mensajes a todos los consumidores sin distinción. Ahora utilizaremos un intercambio `direct` que permite filtrar mensajes basándose en su severidad. Así, los mensajes serán enviados solo a las colas que coincidan exactamente con la clave de enrutamiento del mensaje.
+
+Por ejemplo, si un intercambio tiene dos colas con claves de enlace `orange` y `black`, un mensaje con clave de enrutamiento `orange` solo irá a la cola correspondiente a `orange`.
+
+#### Múltiples Enlaces
+
+Es posible vincular varias colas con la misma clave de enlace. En este caso, el intercambio `direct` actúa como un `fanout`, enviando el mensaje a todas las colas que tengan una clave de enlace coincidente.
+
+#### Emisión de Logs
+
+Usaremos este modelo para nuestro sistema de logs. En lugar de `fanout`, enviaremos mensajes a un intercambio `direct`, usando la severidad del log como clave de enrutamiento. 
+
+Primero, debemos declarar un intercambio:
+
+```python
+channel.exchange_declare(exchange='direct_logs',
+                         exchange_type='direct')
+```
+
+Y luego podemos enviar un mensaje:
+
+```python
+channel.basic_publish(exchange='direct_logs',
+                      routing_key=severity,
+                      body=message)
+```
+
+Las severidades pueden ser `'info'`, `'warning'` o `'error'`.
+
+#### Suscripción
+
+Para recibir mensajes, crearemos un enlace para cada severidad de interés.
+
+```python
+result = channel.queue_declare(queue='', exclusive=True)
+queue_name = result.method.queue
+
+for severity in severities:
+    channel.queue_bind(exchange='direct_logs',
+                       queue=queue_name,
+                       routing_key=severity)
+```
+
+#### Código de Ejemplo
+
+- **`emit_log_direct.py`**: Script para emitir mensajes de log.
+
+```python
+#!/usr/bin/env python
+import pika
+import sys
+
+connection = pika.BlockingConnection(
+    pika.ConnectionParameters(host='localhost'))
+channel = connection.channel()
+
+channel.exchange_declare(exchange='direct_logs', exchange_type='direct')
+
+severity = sys.argv[1] if len(sys.argv) > 1 else 'info'
+message = ' '.join(sys.argv[2:]) or 'Hello World!'
+channel.basic_publish(
+    exchange='direct_logs', routing_key=severity, body=message)
+print(f" [x] Sent {severity}:{message}")
+connection.close()
+```
+
+- **`receive_logs_direct.py`**: Script para recibir mensajes de log.
+
+```python
+#!/usr/bin/env python
+import pika
+import sys
+
+connection = pika.BlockingConnection(
+    pika.ConnectionParameters(host='localhost'))
+channel = connection.channel()
+
+channel.exchange_declare(exchange='direct_logs', exchange_type='direct')
+
+result = channel.queue_declare(queue='', exclusive=True)
+queue_name = result.method.queue
+
+severities = sys.argv[1:]
+if not severities:
+    sys.stderr.write("Usage: %s [info] [warning] [error]\n" % sys.argv[0])
+    sys.exit(1)
+
+for severity in severities:
+    channel.queue_bind(
+        exchange='direct_logs', queue=queue_name, routing_key=severity)
+
+print(' [*] Waiting for logs. To exit press CTRL+C')
+
+
+def callback(ch, method, properties, body):
+    print(f" [x] {method.routing_key}:{body}")
+
+
+channel.basic_consume(
+    queue=queue_name, on_message_callback=callback, auto_ack=True)
+
+channel.start_consuming()
+```
+
+#### Ejemplos de Uso
+
+- Para guardar solo los mensajes de `'warning'` y `'error'` en un archivo:
+  ```bash
+  python receive_logs_direct.py warning error > logs_from_rabbit.log
+  ```
+
+- Para ver todos los mensajes de log en pantalla:
+  ```bash
+  python receive_logs_direct.py info warning error
+  ```
+
+- Para emitir un mensaje de error:
+  ```bash
+  python emit_log_direct.py error "Run. Run. Or it will explode."
+  ```
 
 
 ### Topics (Próximamente)
