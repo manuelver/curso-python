@@ -193,3 +193,5 @@ rss.db
 # Ignore volume files
 rabbitmq/
 rabbitmq/*
+*_data
+*_data/*
