@@ -1,0 +1,50 @@
+services:
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ${PWD}/prometheus.yml:/etc/prometheus/prometheus.yml
+    restart: unless-stopped
+    networks:
+      - monitoring-net
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:9090/-/healthy"]
+      interval: 1m30s
+      timeout: 30s
+      retries: 3
+      start_period: 30s
+
+  grafana:
+    hostname: grafana
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - 3001:3000
+    restart: unless-stopped
+    networks:
+      - monitoring-net
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:3000/api/health"]
+      interval: 1m30s
+      timeout: 30s
+      retries: 3
+      start_period: 30s
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - prometheus
+    ports:
+      - "8080:8080"
+    networks:
+      - monitoring-net
+    command: ["python3", "app/main.py"]
+
+networks:
+  monitoring-net:
+    driver: bridge
