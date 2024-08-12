@@ -3,6 +3,11 @@
 
 Este repositorio contiene ejemplos de diagramas de arquitectura generados mediante código utilizando la biblioteca `diagrams` en Python. Esta herramienta permite crear representaciones visuales de arquitecturas de software de manera programática.
 
+Más info:
+- [Repo](https://github.com/mingrammer/diagrams)
+- [Web](https://diagrams.mingrammer.com/)
+
+
 ## Instalación
 
 Crear un entorno virtual y activarlo:
