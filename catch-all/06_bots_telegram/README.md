@@ -1,6 +1,6 @@
 # Bots de Telegram
 
-<div style="display:block; margin-left:auto; margin-right:auto; width:50%;">
+<div style="display:block; margin-left:auto; margin-right:auto; max-width:500px;">
 
 ![](https://www.pngmart.com/files/15/Baby-Bender-PNG.png)
 
