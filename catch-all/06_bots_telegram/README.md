@@ -16,6 +16,7 @@
 | [Bot de películas](./06_movie_bot/)                   | Bot que devuelve información de películas         | intermedio |
 | [Bot trivial de películas](./07_movie2_bot/README.md) | Bot que devuelve información de series            | avanzado   |
 | [Bot de chatgpt](./08_chatgpt_bot/README.md)          | Bot que mantiene conversaciones con GPT-3         | avanzado   |
+| [Bot con Ollama](./09_ollama_bot/README.md)           | Bot que mantiene conversaciones con Ollama        | intermedio |
 | **Bot de recetas** (próximamente)                     | Bot que devuelve recetas de cocina                | avanzado   |
 | **Bot de deportes** (próximamente)                    | Bot que devuelve información de deportes          | avanzado   |
 | **Bot de mareas** (próximamente)                      | Bot que devuelve información de mareas            | avanzado   |
