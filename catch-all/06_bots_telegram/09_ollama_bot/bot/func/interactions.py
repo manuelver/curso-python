@@ -5,10 +5,11 @@ import aiohttp
 import json
 
 from aiogram import types
-from aiohttp import ClientTimeout
+from aiohttp import ClientTimeout, ClientResponseError, RequestInfo
 from asyncio import Lock
 from functools import wraps
 from dotenv import load_dotenv
+from yarl import URL
 
 
 load_dotenv('.env')
@@ -72,11 +73,25 @@ async def generate(payload: dict, modelname: str, prompt: str):
 
                 if response.status != 200:
 
-                    raise aiohttp.ClientResponseError(
-
-                        status=response.status, message=response.reason
-
+                    request_info = RequestInfo(
+                        url=URL(url),
+                        method='POST',
+                        headers=response.request_info.headers,
+                        real_url=response.request_info.real_url,
                     )
+                    raise ClientResponseError(
+                        request_info=request_info,
+                        history=tuple(),
+                        status=response.status,
+                        message=response.reason,
+                        headers=response.headers
+                    )
+
+                    # raise aiohttp.ClientResponseError(
+
+                    #     status=response.status, message=response.reason
+
+                    # )
 
                 buffer = b""
 

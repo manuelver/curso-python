@@ -1,19 +1,25 @@
-# WORK IN PROGRESS
-version: '3.8'
+
 services:
+
   ollama-tg:
     build: .
     container_name: ollama-tg
     restart: on-failure
     env_file:
       - ./.env
-  
+    networks:
+      - ollama-net
+    depends_on:
+      - ollama-api
+
   ollama-api:
     image: ollama/ollama:latest
     container_name: ollama-server
     volumes:
       - ./ollama:/root/.ollama
-    
+    networks:
+      - ollama-net
+
     # Descomenta para habilitar la GPU de NVIDIA
     # De lo contrario, se ejecuta solo en la CPU:
 
@@ -28,3 +34,9 @@ services:
     restart: always
     ports:
       - '11434:11434'
+    environment:
+      - OLLAMA_MODELS=/ollama/models
+
+networks:
+  ollama-net:
+    driver: bridge
