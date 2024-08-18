@@ -14,8 +14,8 @@ services:
     volumes:
       - ./ollama:/root/.ollama
     
-    # Uncomment to enable NVIDIA GPU
-    # Otherwise runs on CPU only:
+    # Descomenta para habilitar la GPU de NVIDIA
+    # De lo contrario, se ejecuta solo en la CPU:
 
     # deploy:
     #   resources:
