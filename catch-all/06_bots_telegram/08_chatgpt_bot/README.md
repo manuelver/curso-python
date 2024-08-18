@@ -3,13 +3,12 @@
 
 > Repositorio original: https://github.com/father-bot/chatgpt_telegram_bot
 
-Todos amamos [chat.openai.com](https://chat.openai.com), pero... Es TERRIBLEMENTE lento, tiene límites diarios, y solo es accesible a través de una interfaz web arcaica.
+Este repositorio es ChatGPT recreado como un Bot de Telegram.
 
-Este repositorio es ChatGPT recreado como un Bot de Telegram. **Y funciona genial.**
-
-Puedes desplegar tu propio bot.
+Puedes desplegarlo tu mismo.
 
 ## Características
+
 - Respuestas con baja latencia (usualmente toma entre 3-5 segundos)
 - Sin límites de solicitudes
 - Transmisión de mensajes (mira la demo)
@@ -31,6 +30,7 @@ Puedes desplegar tu propio bot.
 ---
 
 ## Comandos del Bot
+
 - `/retry` – Regenerar la última respuesta del bot
 - `/new` – Iniciar nuevo diálogo
 - `/mode` – Seleccionar modo de chat
@@ -39,6 +39,7 @@ Puedes desplegar tu propio bot.
 - `/help` – Mostrar ayuda
 
 ## Configuración
+
 1. Obtén tu clave de [OpenAI API](https://openai.com/api/)
 
 2. Obtén tu token de bot de Telegram desde [@BotFather](https://t.me/BotFather)
@@ -55,4 +56,5 @@ Puedes desplegar tu propio bot.
     ```
 
 ## Referencias
+
 1. [*Construye ChatGPT desde GPT-3*](https://learnprompting.org/docs/applied_prompting/build_chatgpt)
