@@ -1,0 +1,9 @@
+services:
+  urlf4ck3r:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["-u", "https://vergaracarmona.es", "-o", "output.txt"]
+    volumes:
+      - ./output:/app/output
+    container_name: urlf4ck3r
