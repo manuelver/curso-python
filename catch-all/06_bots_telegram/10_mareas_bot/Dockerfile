@@ -11,7 +11,6 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copiamos el resto de los archivos de la aplicación
-COPY .env /app/.
 COPY ./bot /app  
 
 # Comando para ejecutar el programa

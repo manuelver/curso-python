@@ -7,8 +7,6 @@ services:
         condition: service_healthy
       tablamareas-redis:
         condition: service_healthy
-    env_file:
-      - .env
     networks:
       - tablamareas_network
     restart: unless-stopped
@@ -16,31 +14,31 @@ services:
       test: ["CMD-SHELL", "pgrep -f bot.py || exit 1"]
       interval: 10s
       retries: 3
-      start_period: 10s
+      start_period: 5s
 
 
   tablamareas-db:
     image: postgres:16-alpine
     container_name: tablamareas-db
     env_file:
-      - .env
+      - .db.env
     networks:
       - tablamareas_network
     volumes:
       - pgdata:/var/lib/postgresql/data
     restart: unless-stopped
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U $POSTGRES_USER"]
+      test: ["CMD-SHELL", "pg_isready -U mareasuser -d tablamareasdb || exit 1"]
       interval: 10s
-      retries: 5
-      start_period: 10s
+      retries: 3
+      start_period: 5s
 
 
   tablamareas-redis:
     image: redis:alpine
     container_name: tablamareas-redis
     env_file:
-      - .env
+      - .redis.env
     networks:
       - tablamareas_network
     restart: unless-stopped
@@ -48,7 +46,7 @@ services:
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 10s
-      retries: 5
+      retries: 3
       start_period: 5s
 
 

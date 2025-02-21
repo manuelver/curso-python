@@ -6,7 +6,6 @@ Comandos:
 - /reset: Borrar el historial
 - /help: Mostrar este mensaje de ayuda
 """
-
 import aiohttp
 import json
 import logging
@@ -14,13 +13,21 @@ import os
 import psycopg2
 import redis
 
+from aiohttp import ClientError, ClientResponseError, ClientConnectionError, ClientPayloadError
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler
 
+######################
+#  Configuración    #
+######################
+
 # Cargar variables de entorno
 load_dotenv()
+
+# Obtener token de Telegram
+TELEGRAM_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 
 # Configuración de logging: toma el nivel desde la variable de entorno LOG_LEVEL
 log_level = os.getenv('LOG_LEVEL', 'INFO').upper()
@@ -29,10 +36,12 @@ logging.basicConfig(
     level=getattr(logging, log_level, logging.INFO)
 )
 
-# Excluir mensajes de nivel INFO de httpx
-
 
 class ExcludeInfoFilter(logging.Filter):
+    """
+    Excluir mensajes de nivel INFO de httpx
+    """
+
     def filter(self, record):
         return record.levelno != logging.INFO
 
@@ -40,19 +49,27 @@ class ExcludeInfoFilter(logging.Filter):
 httpx_logger = logging.getLogger("httpx")
 httpx_logger.addFilter(ExcludeInfoFilter())
 
-# Helper: Quitar dominio de la URL para que el callback_data sea corto
 
+######################
+#  Funciones Helper  #
+######################
 
 def shorten_url(url):
+    """
+    Helper: Quitar dominio de la URL para que el callback_data sea corto
+    """
     domain = "https://tablademareas.com"
+
     if url.startswith(domain):
         return url[len(domain):]
     return url
 
-# Helper: Obtener el objeto chat, ya sea de update.message o de update.callback_query.message
-
 
 def get_chat(update: Update):
+    """
+    Helper: Obtener el objeto chat
+    ya sea de update.message o de update.callback_query.message
+    """
     if update.message:
         return update.message.chat
     elif update.callback_query and update.callback_query.message:
@@ -60,7 +77,10 @@ def get_chat(update: Update):
     return None
 
 
-# Conexión a Redis
+######################
+#  Conexión a Redis  #
+######################
+
 try:
     REDIS_PASSWORD = os.getenv('REDIS_PASSWORD')
     r = redis.Redis(
@@ -72,16 +92,20 @@ except Exception as e:
     logging.error(f"⚠️  Error conectando a Redis: {e}")
     r = None
 
-# Funciones de caché
-
 
 def cache_set(key, value, expire=3600):
+    """
+    Guardar datos en caché con un tiempo de expiración
+    """
     if r:
         r.set(key, json.dumps(value), ex=expire)
         logging.info(f"🗃️ Guardado en caché: {key}")
 
 
 def cache_get(key):
+    """
+    Obtener datos de la caché
+    """
     if r:
         data = r.get(key)
         if data:
@@ -90,8 +114,11 @@ def cache_get(key):
         logging.info(f"🚫 Cache MISS para {key}")
     return None
 
+#########################
+# Conexión a PostgreSQL #
+#########################
 
-# Conexión a PostgreSQL
+
 DATABASE_URL = os.getenv('DATABASE_URL')
 
 
@@ -132,32 +159,49 @@ def init_db():
     logging.info("✅ Base de datos inicializada correctamente.")
 
 
-# Obtener token de Telegram
-TELEGRAM_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
-
-# Función para obtener datos de la web con caché
-
+######################
+#  Funciones del Bot #
+######################
 
 async def fetch(url):
+    """
+    Función para obtener datos de la web con caché
+    """
     url = url.split("#")[0]  # eliminar fragmentos
     cached_data = cache_get(url)
     if cached_data:
         return cached_data
+
     async with aiohttp.ClientSession() as session:
         try:
-            async with session.get(url, headers={"User-Agent": "Mozilla/5.0"}) as response:
+            async with session.get(
+                url,
+                headers={"User-Agent": "Mozilla/5.0"}
+            ) as response:
                 response.raise_for_status()
                 text = await response.text()
                 cache_set(url, text)
                 return text
+        except ClientResponseError as e:
+            logging.error(
+                f"❌ Error HTTP {e.status} en fetch {url}: {e.message}"
+            )
+        except ClientConnectionError:
+            logging.error(f"⚠️ Error de conexión al intentar acceder a {url}")
+        except ClientPayloadError:
+            logging.error(f"❗ Error en la carga de datos desde {url}")
+        except ClientError as e:
+            logging.error(f"🔴 Error en fetch {url}: {e}")
         except Exception as e:
-            logging.error(f"❌ Error en fetch {url}: {e}")
-            return None
+            logging.error(f"⚡ Error inesperado en fetch {url}: {e}")
 
-# Función para registrar eventos
+    return None
 
 
 def log_user_event(telegram_id, event_type, event_data):
+    """
+    Función para registrar eventos
+    """
     conn = get_db_connection()
     if not conn:
         return
@@ -169,10 +213,11 @@ def log_user_event(telegram_id, event_type, event_data):
             """, (telegram_id, event_type, json.dumps(event_data)))
     logging.info(f"📝 Evento registrado: {event_type} - {event_data}")
 
-# Comando /start
-
 
 async def start(update: Update, context):
+    """
+    Comando /start
+    """
     user = update.message.from_user
     conn = get_db_connection()
     if conn:
@@ -185,13 +230,15 @@ async def start(update: Update, context):
                 """, (user.id, user.username, user.first_name, user.last_name))
     logging.info(f"👤 Nuevo usuario registrado: {user.username} ({user.id})")
     log_user_event(user.id, "start_command", {})
+
     await update.message.reply_text("¡Bienvenido! Soy un bot de tabla de mareas (https://tablademareas.com/).")
     await show_continents(update)
 
-# Comando /reset
-
 
 async def reset(update: Update, context):
+    """
+    Comando /reset
+    """
     user = update.message.from_user
     conn = get_db_connection()
     if conn:
@@ -204,18 +251,20 @@ async def reset(update: Update, context):
     log_user_event(user.id, "reset_command", {})
     await update.message.reply_text("Tu historial ha sido borrado.")
 
-# Comando /help
-
 
 async def help_command(update: Update, context):
+    """
+    Comando /help
+    """
     await update.message.reply_text(
         "Opciones:\n- /start: Iniciar el bot\n- /reset: Borrar el historial\n- /help: Mostrar este mensaje de ayuda"
     )
 
-# Función para obtener continentes (nivel 0)
-
 
 async def show_continents(update: Update):
+    """
+    Función para obtener continentes (nivel 0)
+    """
     chat = get_chat(update)
     full_url = "https://tablademareas.com/"
     response_text = await fetch(full_url)
@@ -237,10 +286,11 @@ async def show_continents(update: Update):
     else:
         await update.callback_query.edit_message_text('Selecciona un continente:', reply_markup=InlineKeyboardMarkup(keyboard))
 
-# Callback para continente: mostrar países
-
 
 async def continent_callback(update: Update, context):
+    """
+    Callback para continente: mostrar países
+    """
     query = update.callback_query
     await query.answer()
     short_url = query.data.split(":", 1)[1]
@@ -262,10 +312,11 @@ async def continent_callback(update: Update, context):
     log_user_event(query.from_user.id, "continent_selected", {"url": full_url})
     await query.edit_message_text('Selecciona un país:', reply_markup=InlineKeyboardMarkup(keyboard))
 
-# Callback para país: mostrar provincias
-
 
 async def country_callback(update: Update, context):
+    """
+    Callback para país: mostrar provincias
+    """
     query = update.callback_query
     await query.answer()
     short_url = query.data.split(":", 1)[1]
@@ -287,10 +338,11 @@ async def country_callback(update: Update, context):
     log_user_event(query.from_user.id, "country_selected", {"url": full_url})
     await query.edit_message_text('Selecciona una provincia:', reply_markup=InlineKeyboardMarkup(keyboard))
 
-# Callback para provincia: mostrar puertos
-
 
 async def province_callback(update: Update, context):
+    """
+    Callback para provincia: mostrar puertos
+    """
     query = update.callback_query
     await query.answer()
     short_url = query.data.split(":", 1)[1]
@@ -326,10 +378,11 @@ async def province_callback(update: Update, context):
     log_user_event(query.from_user.id, "province_selected", {"url": full_url})
     await query.edit_message_text('Selecciona un puerto:', reply_markup=InlineKeyboardMarkup(keyboard))
 
-# Callback para puerto: acción final
-
 
 async def port_callback(update: Update, context):
+    """
+    Callback para puerto: acción final
+    """
     query = update.callback_query
     await query.answer()
     short_url = query.data.split(":", 1)[1]
@@ -339,16 +392,18 @@ async def port_callback(update: Update, context):
     log_user_event(query.from_user.id, "port_selected", {"url": full_url})
     await query.edit_message_text(f"Enlace del puerto: {full_url}")
 
-# Función principal para iniciar el bot
-
 
 def main():
+    """
+    Función principal para iniciar el bot
+    """
     app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("reset", reset))
     app.add_handler(CommandHandler("help", help_command))
-    app.add_handler(CallbackQueryHandler(
-        continent_callback, pattern='^continent:'))
+    app.add_handler(
+        CallbackQueryHandler(continent_callback, pattern='^continent:')
+    )
     app.add_handler(CallbackQueryHandler(
         country_callback, pattern='^country:'))
     app.add_handler(CallbackQueryHandler(
@@ -359,6 +414,6 @@ def main():
     app.run_polling()
 
 
-# Ejecutar la función principal si el script se ejecuta directamente
+
 if __name__ == "__main__":
     main()
