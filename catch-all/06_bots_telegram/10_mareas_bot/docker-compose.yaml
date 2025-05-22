@@ -2,6 +2,19 @@ services:
   tablamareas-app:
     build: .
     container_name: tablamareas-app
+    # Crear .env con:
+    # TELEGRAM_BOT_TOKEN=<TOKEN TELEGRAM>
+    # REDIS_PASSWORD=<REDIS PASSWORD>
+    # DATABASE_URL=postgresql://<POSTGRES_USER>:<POSTGRES_PASSWORD>@tablamareas-db:5432/<POSTGRES_DB>
+    # LOG_LEVEL=INFO
+
+    # POSTGRES_USER=<POSTGRES_USER>
+    # POSTGRES_PASSWORD=<POSTGRES_PASSWORD>
+    # POSTGRES_DB=<POSTGRES_DB>
+
+    # REDIS_PASSWORD=<REDIS_PASSWORD>
+    env_file:
+      - .env
     depends_on:
       tablamareas-db:
         condition: service_healthy
@@ -20,6 +33,10 @@ services:
   tablamareas-db:
     image: postgres:16-alpine
     container_name: tablamareas-db
+    # Crear .db.env con:
+    # POSTGRES_USER=<POSTGRES_USER>
+    # POSTGRES_PASSWORD=<POSTGRES_PASSWORD>
+    # POSTGRES_DB=<POSTGRES_DB>
     env_file:
       - .db.env
     networks:
@@ -28,7 +45,7 @@ services:
       - pgdata:/var/lib/postgresql/data
     restart: unless-stopped
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U mareasuser -d tablamareasdb || exit 1"]
+      test: ["CMD-SHELL", "pg_isready -U $POSTGRES_USER -d $POSTGRES_DB || exit 1"]
       interval: 10s
       retries: 3
       start_period: 5s
@@ -37,6 +54,8 @@ services:
   tablamareas-redis:
     image: redis:alpine
     container_name: tablamareas-redis
+    # Crear .redis.env con:
+    # REDIS_PASSWORD=<REDIS PASSWORD>
     env_file:
       - .redis.env
     networks:
