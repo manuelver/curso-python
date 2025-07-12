@@ -5,5 +5,7 @@ services:
       dockerfile: Dockerfile
     command: ["-u", "https://vergaracarmona.es", "-o", "output.txt"]
     volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
       - ./output:/app/output
     container_name: urlf4ck3r

@@ -11,6 +11,9 @@ services:
       - PGID=1000
       - TZ=Europe/Madrid
     restart: unless-stopped
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
     depends_on:
       bbdd:
         condition: service_healthy
@@ -28,6 +31,9 @@ services:
     ports:
       - "3306:3306"
     restart: unless-stopped
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
     healthcheck:
       test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -p${MYSQL_ROOT_PASSWORD}"]
       interval: 10s

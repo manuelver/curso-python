@@ -11,6 +11,8 @@ services:
       - PGID=1000
       - TZ=Europe/Madrid
     volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
       - ./movie2_bot_data:/app/db
       - ./logs:/app/logs
     restart: unless-stopped

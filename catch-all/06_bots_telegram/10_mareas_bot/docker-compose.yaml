@@ -23,6 +23,9 @@ services:
     networks:
       - tablamareas_network
     restart: unless-stopped
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
     healthcheck:
       test: ["CMD-SHELL", "pgrep -f bot.py || exit 1"]
       interval: 10s
@@ -41,9 +44,11 @@ services:
       - .db.env
     networks:
       - tablamareas_network
-    volumes:
-      - pgdata:/var/lib/postgresql/data
     restart: unless-stopped
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - pgdata:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U $POSTGRES_USER -d $POSTGRES_DB || exit 1"]
       interval: 10s
@@ -62,6 +67,9 @@ services:
       - tablamareas_network
     restart: unless-stopped
     command: redis-server --requirepass "$REDIS_PASSWORD"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 10s

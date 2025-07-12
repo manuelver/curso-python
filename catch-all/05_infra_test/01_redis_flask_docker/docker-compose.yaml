@@ -8,6 +8,9 @@ services:
       - .env
     ports:
       - '5000:5000'
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
     depends_on:
       - redis
 
@@ -16,4 +19,7 @@ services:
     container_name: redis-python
     ports:
       - '6379:6379'
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
 

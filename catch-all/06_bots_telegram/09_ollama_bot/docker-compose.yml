@@ -9,6 +9,9 @@ services:
       - ./.env
     networks:
       - ollama-net
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
     depends_on:
       - ollama-api
 
@@ -16,6 +19,8 @@ services:
     image: ollama/ollama:latest
     container_name: ollama-server
     volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
       - ./ollama:/root/.ollama
     networks:
       - ollama-net
