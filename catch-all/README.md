@@ -17,3 +17,4 @@ Aquí iré dejando scripts y ejercicios que se me ocurran, con lo que no hay un 
 |       [Diagram as code](./07_diagrams_as_code/README.md) | Diagramas de infraestructuras con Python                         |   fácil    |
 |                    [urlf4ck3r](./08_urlf4ck3r/README.md) | Script para buscar enlaces en una web y guardarlos en un fichero | intermedio |
 |  [Solucionador Rubik](./09_rubiks-cube-solver/README.md) | Script para resolver un cubo de Rubik                            |   fácil    |
+|          [Sorteo amigo invisible](./10_amigo_invisible/) | Script para sortear reparto del amigo invisible y enviar mails   |   fácil    |
